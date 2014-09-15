@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Emulator1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CancerQuestPretotype_Droid\MainActivity.cs">
+    <Files>
+      <File FileName="CancerQuestPretotype_Droid\MainActivity.cs" Line="6" Column="6" />
+      <File FileName="CancerQuestPretotype_Droid\Resources\menu\PopupMenu.xml" Line="11" Column="11" />
+      <File FileName="CancerQuestPretotype_Droid\LoginActivity.cs" Line="32" Column="32" />
+      <File FileName="CancerQuestPretotype_Droid\MyQuestionsActivity.cs" Line="2" Column="2" />
+      <File FileName="CancerQuestPretotype_Droid\MyVisitsActivity.cs" Line="46" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CancerQuestPretotype__Droid MonoForAntroid.PreferredDevice="Nexus 4" />
+</Properties>

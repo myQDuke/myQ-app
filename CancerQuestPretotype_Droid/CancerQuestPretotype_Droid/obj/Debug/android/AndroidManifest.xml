@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="CancerQuestPretotype_Droid.CancerQuestPretotype_Droid">
+  <uses-sdk android:minSdkVersion="18" />
+  <application android:label="CancerQuestPretotype_Droid" android:name="mono.android.app.Application" android:debuggable="true">
+    <activity android:label="MainActivity" android:name="cancerquestpretotype_droid.MainActivity" />
+    <activity android:icon="@drawable/icon" android:label="CancerQuest" android:name="cancerquestpretotype_droid.LoginActivity" />
+    <activity android:label="MyQuestionsActivity" android:name="cancerquestpretotype_droid.MyQuestionsActivity" />
+    <activity android:label="MyVisitsActivity" android:name="cancerquestpretotype_droid.MyVisitsActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="CancerQuestPretotype_Droid.CancerQuestPretotype_Droid.mono.MonoRuntimeProvider.__mono_init__" />
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.CancerQuestPretotype_Droid.CancerQuestPretotype_Droid" />
+      </intent-filter>
+    </receiver>
+    <activity android:icon="@drawable/icon" android:label="CancerQuest" android:name="cancerquestpretotype_droid.cancerquestpretotype_droid.TrialSplashScreen" android:theme="@style/Mono.Android.Theme.Splash" android:noHistory="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+  <activity android:name=".LoginActivity">
+    <intent-filter>
+      <action android:name="android.intent.action.MAIN" />
+      <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+  </activity>
+  <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
