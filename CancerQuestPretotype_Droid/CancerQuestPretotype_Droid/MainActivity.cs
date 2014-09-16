@@ -32,20 +32,8 @@ namespace CancerQuestPretotype_Droid
 				menu.Inflate (Resource.Menu.PopupMenu);
 
 				menu.MenuItemClick += (s1, arg1) => {
-
-					string itemText = arg1.ToString(); 
-					Console.WriteLine(itemText); 
-
-					if (itemText.Equals("My Questions"))
-					{
-						var appIntent = new Intent(this, typeof(MyQuestionsActivity));
-						StartActivity(appIntent); 
-					}
-					if (itemText.Equals("My Visits"))
-					{
-						var appIntent = new Intent(this, typeof(MyVisitsActivity));
-						StartActivity(appIntent); 
-					}
+					var appIntent = new Intent(this, typeof(MyQuestionsActivity));
+					StartActivity(appIntent); 
 				};
 					
 				menu.DismissEvent += (s2, arg2) => {

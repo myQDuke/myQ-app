@@ -26,4 +26,30 @@
         android:layout_marginTop="15dp"
         android:fontFamily="calibri"
         android:layout_marginBottom="15dp" />
+    <TextView
+        android:text="How will cancer affect my sleep patterns?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Q4"
+        android:gravity="center"
+        android:fontFamily="calibri" />
+    <TextView
+        android:text="What is the percent possibility of survival for heart cancer?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Q2"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:clickable="true" />
+    <TextView
+        android:text="Is it okay to be around smokers if I have lung cancer?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Q6"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:clickable="true" />
 </LinearLayout>
