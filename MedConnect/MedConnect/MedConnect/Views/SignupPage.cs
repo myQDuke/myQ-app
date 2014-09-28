@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using MedConnect.ViewModels; 
 
 namespace MedConnect.Views
 {
-    class LoginPage : ContentPage
+    public class SignupPage : ContentPage 
     {
-        public LoginPage() 
+        public SignupPage() 
         {
             TableView tableView = new TableView
             {

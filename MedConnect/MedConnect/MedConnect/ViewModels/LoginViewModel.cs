@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedConnect.Views
+namespace MedConnect.ViewModels
 {
-    public class SavedQuestionsPage
+    public class LoginViewModel
     {
+
     }
 }
