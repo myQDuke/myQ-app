@@ -38,3 +38,4 @@ C:\Users\Bec\Documents\GitHub\CancerQuest_app\CancerQuestPretotype_Droid\CancerQ
 C:\Users\Bec\Documents\GitHub\CancerQuest_app\CancerQuestPretotype_Droid\CancerQuestPretotype_Droid\obj\Debug\res\layout\myvisits.xml
 C:\Users\Bec\Documents\GitHub\CancerQuest_app\CancerQuestPretotype_Droid\CancerQuestPretotype_Droid\obj\Debug\R.cs.flag
 C:\Users\Bec\Documents\GitHub\CancerQuest_app\CancerQuestPretotype_Droid\CancerQuestPretotype_Droid\obj\Debug\uploadflags.txt
+C:\Users\Bec\Documents\GitHub\CancerQuest_app\CancerQuestPretotype_Droid\CancerQuestPretotype_Droid\obj\Debug\CancerQuestPretotype_Droid.csprojResolveAssemblyReference.cache
