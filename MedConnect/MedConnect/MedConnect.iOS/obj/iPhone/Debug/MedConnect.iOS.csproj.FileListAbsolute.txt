@@ -21,3 +21,18 @@ C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\MedConnect\MedConn
 C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\Newtonsoft.Json.xml
 C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\Microsoft.Threading.Tasks.xml
 C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\System.Net.Http.Primitives.xml
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\FormsTemplateiOS.exe.config
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\FormsTemplateiOS.exe
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\FormsTemplateiOS.pdb
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\MedConnect.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\Xamarin.Forms.Platform.iOS.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\MedConnect.pdb
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\MedConnect.dll.mdb
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.xml
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\bin\iPhone\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\obj\iPhone\Debug\
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\obj\iPhone\Debug\MedConnect.iOS.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\obj\iPhone\Debug\FormsTemplateiOS.exe
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.iOS\obj\iPhone\Debug\FormsTemplateiOS.pdb

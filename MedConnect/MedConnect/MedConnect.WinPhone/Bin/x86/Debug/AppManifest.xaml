@@ -6,10 +6,5 @@
     <AssemblyPart x:Name="Xamarin.Forms.Core" Source="Xamarin.Forms.Core.dll" />
     <AssemblyPart x:Name="Xamarin.Forms.Platform.WP8" Source="Xamarin.Forms.Platform.WP8.dll" />
     <AssemblyPart x:Name="Xamarin.Forms.Xaml" Source="Xamarin.Forms.Xaml.dll" />
-    <AssemblyPart x:Name="PortableRest" Source="PortableRest.dll" />
-    <AssemblyPart x:Name="System.Net.Http" Source="System.Net.Http.dll" />
-    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
-    <AssemblyPart x:Name="Microsoft.Threading.Tasks" Source="Microsoft.Threading.Tasks.dll" />
-    <AssemblyPart x:Name="System.Net.Http.Primitives" Source="System.Net.Http.Primitives.dll" />
   </Deployment.Parts>
 </Deployment>
