@@ -1,9 +1,9 @@
-C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.dll
-C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.dll
-C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\packages\Xamarin.Android.Support.v4.19.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll
-C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Core.dll
-C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll
-C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\packages\Xamarin.Android.Support.v4.19.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Core.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll
+C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\packages\Xamarin.Forms.1.0.6186\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Facades\System.Collections.Concurrent.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Facades\System.Collections.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Facades\System.ComponentModel.Annotations.dll

@@ -1,0 +1,43 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinStore.Droid\Fragments\ProductDetailsFragment.cs">
+    <Files>
+      <File FileName="XamarinStore.Droid\Fragments\ProductDetailsFragment.cs" Line="42" Column="42" />
+      <File FileName="XamarinStore.Droid\Fragments\ProductListFragment.cs" Line="26" Column="26" />
+      <File FileName="Shared\Models\Product.cs" Line="40" Column="40" />
+      <File FileName="XamarinStore.Droid\Helpers\Images.cs" Line="3" Column="3" />
+      <File FileName="XamarinStore.Droid\MainActivity.cs" Line="39" Column="39" />
+      <File FileName="XamarinStore.Droid\App.cs" Line="26" Column="26" />
+      <File FileName="Shared\Models\ProductSize.cs" Line="31" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="XamarinStore" expanded="True">
+            <Node name="Data" expanded="True" />
+            <Node name="Models" expanded="True" />
+          </Node>
+          <Node name="XamarinStore.Droid" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="ComponentReferenceFolder" expanded="True" />
+            <Node name="Fragments" expanded="True">
+              <Node name="ProductDetailsFragment.cs" selected="True" />
+            </Node>
+            <Node name="Helpers" expanded="True" />
+            <Node name="Properties" expanded="True" />
+            <Node name="Resources" expanded="True">
+              <Node name="layout" expanded="True" />
+              <Node name="menu" expanded="True" />
+              <Node name="values" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.XamarinStore.Droid MonoForAntroid.PreferredDevice="Nexus 4" AndroidDeviceId-Debug="emulator-5554" />
+</Properties>

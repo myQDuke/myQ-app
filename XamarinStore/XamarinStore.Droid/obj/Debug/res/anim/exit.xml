@@ -1,0 +1,1 @@
+<set><objectAnimator android:propertyName="x" android:valueType="floatType" android:valueFrom="0" android:valueTo="-1280" android:duration="@android:integer/config_mediumAnimTime" xmlns:android="http://schemas.android.com/apk/res/android" /></set>

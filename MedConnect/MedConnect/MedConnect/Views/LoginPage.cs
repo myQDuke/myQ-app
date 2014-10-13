@@ -13,8 +13,7 @@ namespace MedConnect.Views
     {
         public LoginPage() 
         {
-            var viewModel = new LoginViewModel();
-            User user; 
+            var viewModel = new MainViewModel();
 
             var usernameCell = new EntryCell
             {
@@ -56,11 +55,7 @@ namespace MedConnect.Views
                 string username = usernameCell.Text;
                 string password = passwordCell.Text;
                 System.Diagnostics.Debug.WriteLine(username);
-                if (viewModel.validateLogin(username, password))
-                {
-                    user = viewModel.getUser(username);
-                    Navigation.PushAsync(new RecommendedQuestionsPage(user));
-                }
+                viewModel.authenticate(username, password, this);
             };
         }
     }

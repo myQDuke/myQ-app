@@ -1,12 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CancerQuestPretotype_Droid\MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.chimneychomchom" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CancerQuestPretotype_Droid\MyVisitsActivity.cs">
     <Files>
-      <File FileName="CancerQuestPretotype_Droid\MainActivity.cs" Line="6" Column="6" />
-      <File FileName="CancerQuestPretotype_Droid\Resources\menu\PopupMenu.xml" Line="1" Column="1" />
-      <File FileName="CancerQuestPretotype_Droid\LoginActivity.cs" Line="1" Column="1" />
-      <File FileName="CancerQuestPretotype_Droid\MyQuestionsActivity.cs" Line="1" Column="1" />
-      <File FileName="CancerQuestPretotype_Droid\MyVisitsActivity.cs" Line="1" Column="1" />
+      <File FileName="CancerQuestPretotype_Droid\MainActivity.cs" Line="4" Column="4" />
+      <File FileName="CancerQuestPretotype_Droid\LoginActivity.cs" Line="10" Column="10" />
+      <File FileName="CancerQuestPretotype_Droid\MyQuestionsActivity.cs" Line="19" Column="19" />
+      <File FileName="CancerQuestPretotype_Droid\MyVisitsActivity.cs" Line="22" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
