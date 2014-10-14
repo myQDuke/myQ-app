@@ -11,7 +11,7 @@ namespace MedConnect.ViewModels
 {
     public class RecommendedQuestionsViewModel
     {
-        public ObservableCollection<Question> RecommendedQuestions { get; set; }
+        private ObservableCollection<Question> RecommendedQuestions;
         private const string BaseAddress = "http://cancerquest.azurewebsites.net/";
 
         public RecommendedQuestionsViewModel()
@@ -34,6 +34,12 @@ namespace MedConnect.ViewModels
             {
                 Text = "How can I manage my symptoms?"
             });
+        }
+
+        public ObservableCollection<Question> getRecQuestions()
+        {
+            //should this be linked to the main view model? 
+            return RecommendedQuestions;
         }
     }
 }

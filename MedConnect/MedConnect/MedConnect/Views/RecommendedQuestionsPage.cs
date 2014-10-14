@@ -11,11 +11,13 @@ namespace MedConnect.Views
 {
     public class RecommendedQuestionsPage : ContentPage
     {
-        private User User; 
+        private User User;
+        private MainViewModel mvm;
 
-        public RecommendedQuestionsPage(User user)
+        public RecommendedQuestionsPage(User user, MainViewModel main)
         {
-            User = user; 
+            User = user;
+            mvm = main;
 
             Title = "Recommended Questions";
 
@@ -23,7 +25,7 @@ namespace MedConnect.Views
             Content = list;
 
             var viewModel = new RecommendedQuestionsViewModel();
-            list.ItemsSource = viewModel.RecommendedQuestions;
+            list.ItemsSource = viewModel.getRecQuestions();
 
             var cell = new DataTemplate(typeof(TextCell));
             cell.SetBinding(TextCell.TextProperty, "Text");
@@ -35,11 +37,10 @@ namespace MedConnect.Views
             list.ItemTapped += (sender, args) =>
             {
                 var question = args.Item as Question;
-                if (question == null)
-                    return;
+                if (question == null) return;
                 user.Questions.Add(question);
                 System.Diagnostics.Debug.WriteLine("Question successfully added to user bucket");
-                Navigation.PushAsync(new SavedQuestionsPage(user));
+                mvm.viewBasket(this);
                 list.SelectedItem = null;
             };
         }
