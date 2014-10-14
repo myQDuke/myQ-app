@@ -1,0 +1,41 @@
+2014-10-14 15:33:19.830 FormsTemplateiOS[4202:1403] MonoTouch: Socket error while connecting to MonoDevelop on 127.0.0.1:10000: Connection refused
+2014-10-14 15:33:22.136 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+  Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
+ in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+2014-10-14 15:33:22.138 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 15:33:22.143 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+  Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
+ in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+2014-10-14 15:33:22.145 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 15:33:22.149 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+  Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
+ in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+2014-10-14 15:33:22.150 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 15:33:22.154 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+  Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
+ in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+2014-10-14 15:33:22.155 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 15:33:22.160 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+  Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
+ in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+2014-10-14 15:33:22.162 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 15:33:22.165 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+  Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
+ in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+2014-10-14 15:33:22.166 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 15:33:32.556 FormsTemplateiOS[4202:70b] kevinoh
+2014-10-14 15:33:32.557 FormsTemplateiOS[4202:70b] kevinoh
+2014-10-14 15:36:10.381 FormsTemplateiOS[4202:70b] Unhandled managed exception: Object reference not set to an instance of an object (System.NullReferenceException)
+  at MedConnect.Views.RecommendedQuestionsPage+<RecommendedQuestionsPage>c__AnonStorey0.<>m__0 (System.Object sender, Xamarin.Forms.ItemTappedEventArgs args) [0x00024] in /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/Views/RecommendedQuestionsPage.cs:41 
+  at Xamarin.Forms.ListView.NotifyRowTapped (Int32 groupIndex, Int32 inGroupIndex) [0x00000] in <filename unknown>:0 
+  at Xamarin.Forms.Platform.iOS.ListViewRenderer+ListViewDataSource.RowSelected (MonoTouch.UIKit.UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) MonoTouch.UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
+  at MonoTouch.UIKit.UIApplication.Main (System.String[] args, IntPtr principal, IntPtr delegate) [0x00005] in /Developer/MonoTouch/Source/monotouch/src/UIKit/UIApplication.cs:62 
+  at MonoTouch.UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in /Developer/MonoTouch/Source/monotouch/src/UIKit/UIApplication.cs:46 
+  at MedConnect.iOS.Application.Main (System.String[] args) [0x00008] in /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.iOS/Main.cs:17 

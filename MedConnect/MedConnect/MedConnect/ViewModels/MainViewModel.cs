@@ -25,6 +25,7 @@ namespace MedConnect.ViewModels
         //this is for logging in
         public void authenticate(string username, string password, ContentPage cur)
         {
+			System.Diagnostics.Debug.WriteLine(username);
             if (webService.authenticate(username, password))
             {
                 curUser = new User();

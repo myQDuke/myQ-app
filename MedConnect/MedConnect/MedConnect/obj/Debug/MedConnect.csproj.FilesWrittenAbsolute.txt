@@ -1,0 +1,15 @@
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/MedConnect.dll.config
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/MedConnect.dll.mdb
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/MedConnect.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/obj/Debug/MedConnect.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/obj/Debug/MedConnect.dll.mdb
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Microsoft.Threading.Tasks.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Microsoft.Threading.Tasks.Extensions.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Newtonsoft.Json.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/PortableRest.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.Extensions.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.Primitives.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Xamarin.Forms.Core.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Xamarin.Forms.Xaml.dll

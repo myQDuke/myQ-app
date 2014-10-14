@@ -37,6 +37,7 @@ namespace MedConnect.Views
             list.ItemTapped += (sender, args) =>
             {
                 var question = args.Item as Question;
+				//try catch here? some unhandled exception here...
                 if (question == null) return;
                 user.Questions.Add(question);
                 System.Diagnostics.Debug.WriteLine("Question successfully added to user bucket");
