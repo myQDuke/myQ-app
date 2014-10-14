@@ -15,7 +15,7 @@ namespace MedConnect.ViewModels
 	public class MainViewModel
 	{
         private WebService webService;
-		private static User curUser;
+		private static User curUser {get;}
         //should we have instances of every view so that we can cache them? or is that stupid and should we make new 
 
 		public MainViewModel () {
