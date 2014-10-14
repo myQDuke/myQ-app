@@ -11,6 +11,7 @@ namespace MedConnect
 	public class Basket
 	{
         public ObservableCollection<Question> Questions { get; set; }
+        public ObservableCollection<Visit> Visits { get; set; }
 
 		public Basket ()
 		{
@@ -20,6 +21,11 @@ namespace MedConnect
         public void addQuestion(Question toAdd) {
             Questions.Add(toAdd); 
         }
+        public void addVisit(Visit v)
+        {
+            Visits.Add(v);
+        }
+
 	}
 }
 
