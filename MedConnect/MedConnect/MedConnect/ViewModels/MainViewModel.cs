@@ -43,8 +43,6 @@ namespace MedConnect.ViewModels
         {
             cur.Navigation.PushAsync(new SavedQuestionsPage(curUser));
         }
-
-
 	}
 }
 

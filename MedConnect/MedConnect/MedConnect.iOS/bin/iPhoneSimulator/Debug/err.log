@@ -1,41 +1,61 @@
-2014-10-14 15:33:19.830 FormsTemplateiOS[4202:1403] MonoTouch: Socket error while connecting to MonoDevelop on 127.0.0.1:10000: Connection refused
-2014-10-14 15:33:22.136 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+2014-10-14 21:16:50.809 FormsTemplateiOS[5107:1303] MonoTouch: Socket error while connecting to MonoDevelop on 127.0.0.1:10000: Connection refused
+objc[5107]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-10-14 21:16:52.467 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b2ce830 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/iAdFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.470 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b2d2850 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/TwitterFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.473 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b2bb7b0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-10-14 21:16:52.479 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b2cb040 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/StoreKitFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.483 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b368de0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/MusicLibrary.axbundle> (not loaded)
+2014-10-14 21:16:52.545 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b39e8c0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/PassKitFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.549 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b3a0c90 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/EventKitUIFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.555 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b3a2f50 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/RemoteUIFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.559 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b3a6890 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/SocialFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.564 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b3ac790 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GameKitFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.568 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b3b2f00 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.572 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b3b3a80 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GameCenterUIFramework.axbundle> (not loaded)
+2014-10-14 21:16:52.587 FormsTemplateiOS[5107:70b] Cannot find executable for CFBundle 0x7b2a9610 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/StoreKitUI.axbundle> (not loaded)
+2014-10-14 21:16:53.203 FormsTemplateiOS[5107:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
   Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
   Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
  in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-2014-10-14 15:33:22.138 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
-2014-10-14 15:33:22.143 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+2014-10-14 21:16:53.225 FormsTemplateiOS[5107:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7b44d650 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 21:16:53.228 FormsTemplateiOS[5107:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
   Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
   Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
  in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-2014-10-14 15:33:22.145 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
-2014-10-14 15:33:22.149 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+2014-10-14 21:16:53.229 FormsTemplateiOS[5107:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7b44d650 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 21:16:53.232 FormsTemplateiOS[5107:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
   Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
   Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
  in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-2014-10-14 15:33:22.150 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
-2014-10-14 15:33:22.154 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+2014-10-14 21:16:53.233 FormsTemplateiOS[5107:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7b44d650 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 21:16:53.236 FormsTemplateiOS[5107:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
   Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
   Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
  in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-2014-10-14 15:33:22.155 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
-2014-10-14 15:33:22.160 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+2014-10-14 21:16:53.236 FormsTemplateiOS[5107:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7b44d650 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 21:16:53.239 FormsTemplateiOS[5107:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
   Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
   Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
  in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-2014-10-14 15:33:22.162 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
-2014-10-14 15:33:22.165 FormsTemplateiOS[4202:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
+2014-10-14 21:16:53.240 FormsTemplateiOS[5107:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7b44d650 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 21:16:53.243 FormsTemplateiOS[5107:70b] Error loading /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib:  dlopen(/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin/Contents/MacOS/IOHIDLib, 262): Symbol not found: __dealloc
   Referenced from: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
   Expected in: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
  in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-2014-10-14 15:33:22.166 FormsTemplateiOS[4202:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7d322fd0 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
-2014-10-14 15:33:32.556 FormsTemplateiOS[4202:70b] kevinoh
-2014-10-14 15:33:32.557 FormsTemplateiOS[4202:70b] kevinoh
-2014-10-14 15:36:10.381 FormsTemplateiOS[4202:70b] Unhandled managed exception: Object reference not set to an instance of an object (System.NullReferenceException)
-  at MedConnect.Views.RecommendedQuestionsPage+<RecommendedQuestionsPage>c__AnonStorey0.<>m__0 (System.Object sender, Xamarin.Forms.ItemTappedEventArgs args) [0x00024] in /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/Views/RecommendedQuestionsPage.cs:41 
-  at Xamarin.Forms.ListView.NotifyRowTapped (Int32 groupIndex, Int32 inGroupIndex) [0x00000] in <filename unknown>:0 
-  at Xamarin.Forms.Platform.iOS.ListViewRenderer+ListViewDataSource.RowSelected (MonoTouch.UIKit.UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath) [0x00000] in <filename unknown>:0 
-  at (wrapper managed-to-native) MonoTouch.UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
-  at MonoTouch.UIKit.UIApplication.Main (System.String[] args, IntPtr principal, IntPtr delegate) [0x00005] in /Developer/MonoTouch/Source/monotouch/src/UIKit/UIApplication.cs:62 
-  at MonoTouch.UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in /Developer/MonoTouch/Source/monotouch/src/UIKit/UIApplication.cs:46 
-  at MedConnect.iOS.Application.Main (System.String[] args) [0x00008] in /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.iOS/Main.cs:17 
+2014-10-14 21:16:53.245 FormsTemplateiOS[5107:70b] Cannot find function pointer IOHIDLibFactory for factory 13AA9C44-6F1B-11D4-907C-0005028F18D5 in CFBundle/CFPlugIn 0x7b44d650 </System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin> (bundle, not loaded)
+2014-10-14 21:17:01.799 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:17:01.800 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:17:03.201 FormsTemplateiOS[5107:70b] Question successfully added to user bucket
+2014-10-14 21:17:05.679 FormsTemplateiOS[5107:70b] Question successfully added to user bucket
+2014-10-14 21:17:07.454 FormsTemplateiOS[5107:70b] Question successfully added to user bucket
+2014-10-14 21:17:09.474 FormsTemplateiOS[5107:70b] Question successfully added to user bucket
+2014-10-14 21:17:12.478 FormsTemplateiOS[5107:70b] Question successfully added to user bucket
+2014-10-14 21:17:49.206 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:17:49.207 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:17:57.481 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:17:57.481 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:19:55.632 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:19:55.644 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:21:18.883 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:21:18.887 FormsTemplateiOS[5107:70b] kevinoh
+2014-10-14 21:21:31.951 FormsTemplateiOS[5107:70b] Question successfully added to user bucket

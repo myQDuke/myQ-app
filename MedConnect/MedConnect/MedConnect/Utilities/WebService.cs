@@ -20,7 +20,9 @@ namespace MedConnect.Utilies
 
         public ObservableCollection<Question> getData()
         {
-            return Constants.questions;
+			ObservableCollection<Question> yolo = new ObservableCollection<Question>();
+
+            return yolo;
         }
 	}
 }
