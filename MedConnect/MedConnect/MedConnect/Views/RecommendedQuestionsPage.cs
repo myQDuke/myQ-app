@@ -9,20 +9,20 @@ using MedConnect.Models;
 
 namespace MedConnect.Views 
 {
-    public class RecommendedQuestionsPage : ContentPage
+    public class RecommendedQuestionsPage : ViewPage
     {
-        private User User;
-        private MainViewModel mvm;
-
-        public RecommendedQuestionsPage(User user, MainViewModel main)
+        public RecommendedQuestionsPage (User user, MainViewModel main) : base(user, main)
         {
-            User = user;
-            mvm = main;
+            var menuButton = getMenu();
 
             Title = "Recommended Questions";
 
             var list = new ListView();
-            Content = list;
+
+            this.Content = new StackLayout
+            {
+                Children = { menuButton, list }
+            };
 
             var viewModel = new RecommendedQuestionsViewModel();
             list.ItemsSource = viewModel.getRecQuestions();
@@ -41,7 +41,7 @@ namespace MedConnect.Views
                 if (question == null) return;
                 user.Questions.Add(question);
                 System.Diagnostics.Debug.WriteLine("Question successfully added to user bucket");
-                mvm.viewBasket(this);
+                _mainViewModel.viewBasket(this);
                 list.SelectedItem = null;
             };
         }

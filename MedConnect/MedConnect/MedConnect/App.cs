@@ -14,8 +14,10 @@ namespace MedConnect
         {
             //var recommendedQuestions = new RecommendedQuestionsPage();
             var loginPage = new LoginPage();
+            //var viewPage = new ViewPage();
             //return new NavigationPage(recommendedQuestions);
             return new NavigationPage(loginPage);
+            //return new NavigationPage(viewPage);
         }
     }
 }

@@ -9,16 +9,16 @@ namespace MedConnect.Models
     public class Question
     {
         public string Text { get; set; }
-        public int rating { get; set; }
-        public List<string> tags { get; set; }
+        public int Rating { get; set; }
+        public List<string> Tags { get; set; }
 
         public Question()
         {
-            tags = new List<string>();
+            Tags = new List<string>();
         }
         public void addTag(string toAdd)
         {
-            tags.Add(toAdd);
+            Tags.Add(toAdd);
         }
     }
 }

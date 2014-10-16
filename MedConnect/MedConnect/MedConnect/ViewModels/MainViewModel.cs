@@ -8,41 +8,45 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-
-
 namespace MedConnect.ViewModels
 {
 	public class MainViewModel
 	{
-        private WebService webService;
-        private static User curUser;
+        private WebService _webService;
+        private static User _currentUser;
         //should we have instances of every view so that we can cache them? or is that stupid and should we make new ones everytime... 
 
 		public MainViewModel () {
-            webService = new WebService();
+            _webService = new WebService();
 		}
 
         //this is for logging in
         public void authenticate(string username, string password, ContentPage cur)
         {
 			System.Diagnostics.Debug.WriteLine(username);
-            if (webService.authenticate(username, password))
+            if (_webService.authenticate(username, password))
             {
-                curUser = new User();
-                curUser.Name = username;
-                curUser.Questions = webService.getData();
-                cur.Navigation.PushAsync(new RecommendedQuestionsPage(curUser, this));
+                _currentUser = new User();
+                _currentUser.Name = username;
+                _currentUser.Questions = _webService.getData();
+                cur.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this));
             }
             else {
                 cur.Navigation.PushAsync(new SignupPage());
             }
         }
 
-        //
-        public void viewBasket(ContentPage cur)
+        public void viewBasket(ContentPage currentPage)
         {
-            cur.Navigation.PushAsync(new SavedQuestionsPage(curUser));
+            currentPage.Navigation.PushAsync(new SavedQuestionsPage(_currentUser, this));
         }
+
+        public void viewRecommendedQuestions(ContentPage currentPage)
+        {
+            currentPage.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this)); 
+        }
+
+        
 	}
 }
 

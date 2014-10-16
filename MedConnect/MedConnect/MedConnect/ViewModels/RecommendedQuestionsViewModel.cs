@@ -11,26 +11,26 @@ namespace MedConnect.ViewModels
 {
     public class RecommendedQuestionsViewModel
     {
-        private ObservableCollection<Question> RecommendedQuestions;
-        private const string BaseAddress = "http://cancerquest.azurewebsites.net/";
+        private ObservableCollection<Question> _recommendedQuestions;
+        private const string _baseAddress = "http://cancerquest.azurewebsites.net/";
 
         public RecommendedQuestionsViewModel()
         {
-            RecommendedQuestions = new ObservableCollection<Question>();
+            _recommendedQuestions = new ObservableCollection<Question>();
 
-            RecommendedQuestions.Add(new Question
+            _recommendedQuestions.Add(new Question
             {
                 Text = "What type of cancer do I have?"
             });
-            RecommendedQuestions.Add(new Question
+            _recommendedQuestions.Add(new Question
             {
                 Text = "Will certain activities make my symptoms worse?"
             });
-            RecommendedQuestions.Add(new Question
+            _recommendedQuestions.Add(new Question
             {
                 Text = "What diagnostic tests or procedures will I need and how often?"
             });
-            RecommendedQuestions.Add(new Question
+            _recommendedQuestions.Add(new Question
             {
                 Text = "How can I manage my symptoms?"
             });
@@ -39,7 +39,7 @@ namespace MedConnect.ViewModels
         public ObservableCollection<Question> getRecQuestions()
         {
             //should this be linked to the main view model? 
-            return RecommendedQuestions;
+            return _recommendedQuestions;
         }
     }
 }
