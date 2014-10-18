@@ -4,40 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using MedConnect.Views; 
 using MedConnect.ViewModels;
 using MedConnect.Models; 
 
 namespace MedConnect.Views
 {
-    class LoginPage : ContentPage
+    class LoginPage : TitlePage
     {
         public LoginPage() 
         {
             var viewModel = new MainViewModel();
+            var titleLabel = getTitle(); 
 
-            var usernameCell = new EntryCell
+            var usernameCell = new Entry
             {
-                Label = "Username"
+                Placeholder = "Username"
             };
 
-            var passwordCell = new EntryCell
+            var passwordCell = new Entry
             {
-                Label = "Password"
+                Placeholder = "Password",
+                IsPassword = true 
             };
-
-            TableView tableView = new TableView
-            {
-                Intent = TableIntent.Form,
-                Root = new TableRoot
-               {
-                   new TableSection
-                   {
-                       usernameCell, passwordCell
-                   }
-               }
-            };
-
-            tableView.SetBinding(EntryCell.TextProperty, "Username");
 
             var submitButton = new Button
             {
@@ -47,7 +36,7 @@ namespace MedConnect.Views
             this.Padding = new Thickness(50);
             this.Content = new StackLayout
             {
-                Children = { tableView, submitButton }
+                Children = { titleLabel, usernameCell, passwordCell, submitButton }
             };
 
             submitButton.Clicked += (sender, args) =>

@@ -4,30 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using MedConnect.ViewModels; 
 
 namespace MedConnect.Views
 {
-    public class SignupPage : ContentPage 
+    public class SignupPage : TitlePage
     {
         public SignupPage() 
         {
-            TableView tableView = new TableView
+            var viewModel = new MainViewModel();
+            var titleLabel = getTitle();
+
+            var usernameCell = new Entry
             {
-                Intent = TableIntent.Form,
-                Root = new TableRoot
-               {
-                   new TableSection
-                   {
-                       new EntryCell
-                       {
-                           Label = "Username"
-                       },
-                       new EntryCell
-                       {
-                           Label = "Password"
-                       }
-                   }
-               }
+                Placeholder = "Username"
+            };
+
+            var passwordCell = new Entry
+            {
+                Placeholder = "Password",
+                IsPassword = true
             };
 
             var submitButton = new Button
@@ -36,10 +32,17 @@ namespace MedConnect.Views
             };
 
             this.Padding = new Thickness(50);
-
             this.Content = new StackLayout
             {
-                Children = { tableView, submitButton }
+                Children = { titleLabel, usernameCell, passwordCell, submitButton }
+            };
+
+            submitButton.Clicked += (sender, args) =>
+            {
+                string username = usernameCell.Text;
+                string password = passwordCell.Text;
+                System.Diagnostics.Debug.WriteLine(username);
+                viewModel.authenticate(username, password, this);
             };
         }
     }

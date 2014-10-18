@@ -16,6 +16,7 @@ namespace MedConnect.Models
         {
             Tags = new List<string>();
         }
+
         public void addTag(string toAdd)
         {
             Tags.Add(toAdd);

@@ -19,11 +19,21 @@ namespace MedConnect.Views
             Title = "Saved Questions";
 
             var list = new ListView();
-            var menuButton = getMenu(); 
+            var menuButton = getMenu();
+
+            var titleLabel = new Label
+            {
+                Text = "My Saved Questions"
+            };
+
+            var submitQuestionButton = new Button
+            {
+                Text = "Add Question"
+            };
 
             this.Content = new StackLayout
             {
-                Children = { menuButton, list }
+                Children = { menuButton, titleLabel, list, submitQuestionButton }
             };
 
             list.ItemsSource = user.Questions;
@@ -31,7 +41,24 @@ namespace MedConnect.Views
             var cell = new DataTemplate(typeof(TextCell));
             cell.SetBinding(TextCell.TextProperty, "Text");
 
-            list.ItemTemplate = cell; 
+            list.ItemTemplate = cell;
+
+            list.ItemTapped += (sender, args) =>
+            {
+                var question = args.Item as Question;
+                //try catch here? some unhandled exception here...
+                if (question == null) return;
+                var modalPage = new EditQuestionPage(question, _user, _mainViewModel);
+                Navigation.PushModalAsync(modalPage);
+                list.SelectedItem = null;
+            };
+
+            submitQuestionButton.Clicked += (sender, args) =>
+            {
+                var modalPage = new SubmitQuestionPage(_user, _mainViewModel);
+                Navigation.PushModalAsync(modalPage);
+                System.Diagnostics.Debug.WriteLine("The modal page is now on screen");       
+            };
            
         }
     }

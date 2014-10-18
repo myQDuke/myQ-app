@@ -14,6 +14,10 @@ namespace MedConnect.Views
         public RecommendedQuestionsPage (User user, MainViewModel main) : base(user, main)
         {
             var menuButton = getMenu();
+            var titleLabel = new Label
+            {
+                Text = "Recommended Questions"
+            };
 
             Title = "Recommended Questions";
 
@@ -21,7 +25,7 @@ namespace MedConnect.Views
 
             this.Content = new StackLayout
             {
-                Children = { menuButton, list }
+                Children = {titleLabel, menuButton, list }
             };
 
             var viewModel = new RecommendedQuestionsViewModel();
