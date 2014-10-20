@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using MedConnect.ViewModels; 
 
+//Email, username, password, confirm password, gender, age range, cancer types 
+
 namespace MedConnect.Views
 {
     public class SignupPage : TitlePage

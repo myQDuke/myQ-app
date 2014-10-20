@@ -36,6 +36,8 @@ namespace MedConnect.Views
 
             list.ItemTemplate = cell;
 
+            list.HasUnevenRows = true;
+
             this.Padding = new Thickness(50);
 
             list.ItemTapped += (sender, args) =>

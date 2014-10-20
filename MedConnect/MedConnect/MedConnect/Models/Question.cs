@@ -9,7 +9,9 @@ namespace MedConnect.Models
     public class Question
     {
         public string Text { get; set; }
-        public int Rating { get; set; }
+        public int helpfulVotes { get; set; }
+        public int notHelpfulVotes { get; set; }
+        public int totalVotes { get; set; }
         public List<string> Tags { get; set; }
 
         public Question()
