@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using MedConnect.ViewModels;
-using MedConnect.Models; 
+using MedConnect.Models;
+using System.Collections.ObjectModel; 
 
 namespace MedConnect.Views 
 {
@@ -29,7 +30,7 @@ namespace MedConnect.Views
             };
 
             var viewModel = new RecommendedQuestionsViewModel();
-            list.ItemsSource = viewModel.getRecQuestions();
+			list.ItemsSource = getData(viewModel); 
 
             var cell = new DataTemplate(typeof(TextCell));
             cell.SetBinding(TextCell.TextProperty, "Text");
@@ -51,5 +52,10 @@ namespace MedConnect.Views
                 list.SelectedItem = null;
             };
         }
+		public ObservableCollection<Question> getData(RecommendedQuestionsViewModel vm)
+		{
+			return null;
+			//return vm.getRecQuestions ();
+		}
     }
 }

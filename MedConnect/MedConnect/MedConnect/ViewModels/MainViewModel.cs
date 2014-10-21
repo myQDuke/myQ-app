@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace MedConnect.ViewModels
 {
@@ -18,6 +19,19 @@ namespace MedConnect.ViewModels
 
 		public MainViewModel () {
             _webService = new WebService();
+
+			//testing connection
+			testConnection ();
+		}
+		public async Task<ObservableCollection<Question>> testConnection()
+		{
+			ObservableCollection<Question> result = await _webService.testRest ();
+			foreach(Question q in result) 
+			{
+				System.Diagnostics.Debug.WriteLine(q.Text);
+			}
+
+			return result;
 		}
 
         //this is for logging in

@@ -8,6 +8,7 @@ namespace MedConnect.Models
 {
     public class Question
     {
+		public int id { get; set; }
         public string Text { get; set; }
         public int helpfulVotes { get; set; }
         public int notHelpfulVotes { get; set; }

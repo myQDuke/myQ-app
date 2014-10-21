@@ -5,18 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PortableRest; 
-using MedConnect.Models; 
+using MedConnect.Models;
+using MedConnect.Utilies; 
 
 namespace MedConnect.ViewModels
 {
     public class RecommendedQuestionsViewModel
     {
-        private ObservableCollection<Question> _recommendedQuestions;
-        private const string _baseAddress = "http://cancerquest.azurewebsites.net/";
+		private ObservableCollection<Question> _recommendedQuestions;
+		//hacky solution; need to figure out a better design for this
+		private WebService _webservice;
 
         public RecommendedQuestionsViewModel()
         {
-            _recommendedQuestions = new ObservableCollection<Question>();
+			_recommendedQuestions = new ObservableCollection<Question>();
 
             _recommendedQuestions.Add(new Question
             {
@@ -34,10 +36,13 @@ namespace MedConnect.ViewModels
             {
                 Text = "How can I manage my symptoms?"
             });
+			_webservice = new WebService ();
+			
         }
 
-        public ObservableCollection<Question> getRecQuestions()
-        {
+		public async Task<ObservableCollection<Question>> getRecQuestions()
+		{
+			_recommendedQuestions = await _webservice.testRest ();
             //should this be linked to the main view model? 
             return _recommendedQuestions;
         }
