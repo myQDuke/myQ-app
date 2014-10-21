@@ -25,8 +25,8 @@ namespace MedConnect.Utilies
 		public async Task<ObservableCollection<Question>> testRest()
 		{
 			var questions = await _temp.GetStringAsync (_temp.BaseAddress + "/questions/");
-
-			return JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
+			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
+			return po;
 		}
 
         //this will be async later, where the api call is made

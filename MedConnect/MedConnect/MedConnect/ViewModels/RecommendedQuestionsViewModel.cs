@@ -6,45 +6,65 @@ using System.Text;
 using System.Threading.Tasks;
 using PortableRest; 
 using MedConnect.Models;
-using MedConnect.Utilies; 
+using MedConnect.Utilies;
+using System.ComponentModel; 
 
 namespace MedConnect.ViewModels
 {
-    public class RecommendedQuestionsViewModel
+	public class RecommendedQuestionsViewModel : ViewModel
     {
-		private ObservableCollection<Question> _recommendedQuestions;
+		public ObservableCollection<Question> _recommendedQuestions;
+
+		public ObservableCollection<Question> RecommendedQuestions {
+			get {
+				return _recommendedQuestions;
+			}
+			set {
+				_recommendedQuestions = value;
+				OnPropertyChanged ("RecommendedQuestions");
+			}
+		}
+
 		//hacky solution; need to figure out a better design for this
 		private WebService _webservice;
 
         public RecommendedQuestionsViewModel()
         {
-			_recommendedQuestions = new ObservableCollection<Question>();
+			RecommendedQuestions = new ObservableCollection<Question>();
 
-            _recommendedQuestions.Add(new Question
+			RecommendedQuestions.Add(new Question
             {
                 Text = "What type of cancer do I have?"
             });
-            _recommendedQuestions.Add(new Question
+			RecommendedQuestions.Add(new Question
             {
                 Text = "Will certain activities make my symptoms worse?"
             });
-            _recommendedQuestions.Add(new Question
+			RecommendedQuestions.Add(new Question
             {
                 Text = "What diagnostic tests or procedures will I need and how often?"
             });
-            _recommendedQuestions.Add(new Question
+			RecommendedQuestions.Add(new Question
             {
                 Text = "How can I manage my symptoms?"
             });
 			_webservice = new WebService ();
+
+			getRecQuestions ();
 			
         }
 
-		public async Task<ObservableCollection<Question>> getRecQuestions()
+		public async void getRecQuestions()
 		{
-			_recommendedQuestions = await _webservice.testRest ();
-            //should this be linked to the main view model? 
-            return _recommendedQuestions;
+			RecommendedQuestions.Clear ();
+			var tempQ = await _webservice.testRest ();
+			/*
+
+			foreach (var q in tempQ) {
+				RecommendedQuestions.Add (q);
+			}*/
+			RecommendedQuestions = tempQ;
+			
         }
     }
 }

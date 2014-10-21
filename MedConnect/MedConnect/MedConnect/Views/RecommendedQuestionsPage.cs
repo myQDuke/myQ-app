@@ -12,6 +12,9 @@ namespace MedConnect.Views
 {
     public class RecommendedQuestionsPage : ViewPage
     {
+
+		private RecommendedQuestionsViewModel viewModel;
+
         public RecommendedQuestionsPage (User user, MainViewModel main) : base(user, main)
         {
             var menuButton = getMenu();
@@ -29,8 +32,11 @@ namespace MedConnect.Views
                 Children = {titleLabel, menuButton, list }
             };
 
-            var viewModel = new RecommendedQuestionsViewModel();
-			list.ItemsSource = getData(viewModel); 
+            viewModel = new RecommendedQuestionsViewModel();
+
+			this.BindingContext = viewModel;
+
+			list.SetBinding (ListView.ItemsSourceProperty, new Binding ("RecommendedQuestions"));
 
             var cell = new DataTemplate(typeof(TextCell));
             cell.SetBinding(TextCell.TextProperty, "Text");
@@ -39,7 +45,7 @@ namespace MedConnect.Views
 
             list.HasUnevenRows = true;
 
-            this.Padding = new Thickness(50);
+            this.Padding = new Thickness(0);
 
             list.ItemTapped += (sender, args) =>
             {
@@ -52,10 +58,12 @@ namespace MedConnect.Views
                 list.SelectedItem = null;
             };
         }
-		public ObservableCollection<Question> getData(RecommendedQuestionsViewModel vm)
+		/*
+		public async Task<ObservableCollection<Question>> getData(RecommendedQuestionsViewModel vm)
 		{
-			return null;
-			//return vm.getRecQuestions ();
+			//return null;
+			//return await vm.getRecQuestions ();
 		}
+		*/
     }
 }

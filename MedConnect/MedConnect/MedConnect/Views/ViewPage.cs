@@ -21,7 +21,8 @@ namespace MedConnect.Views
         }
 
         public Button getMenu()
-        {
+		{
+
             var menuButton = new Button { Text = "Menu" };
 
             menuButton.Clicked += async (sender, e) =>

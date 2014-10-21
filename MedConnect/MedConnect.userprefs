@@ -1,15 +1,25 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MedConnect/MedConnect/Models/Tag.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MedConnect/MedConnect/ViewModels/RecommendedQuestionsViewModel.cs">
     <Files>
-      <File FileName="MedConnect/MedConnect/ViewModels/MainViewModel.cs" Line="1" Column="1" />
+      <File FileName="MedConnect/MedConnect/ViewModels/MainViewModel.cs" Line="27" Column="27" />
+      <File FileName="MedConnect/MedConnect/Utilities/WebService.cs" Line="33" Column="33" />
       <File FileName="MedConnect/MedConnect/Views/LoginPage.cs" Line="1" Column="1" />
       <File FileName="MedConnect/MedConnect/Models/User.cs" Line="1" Column="1" />
-      <File FileName="MedConnect/MedConnect/Models/Tag.cs" Line="1" Column="1" />
+      <File FileName="MedConnect/MedConnect/Models/Question.cs" Line="31" Column="31" />
+      <File FileName="MedConnect/MedConnect/ViewModels/RecommendedQuestionsViewModel.cs" Line="1" Column="1" />
+      <File FileName="MedConnect/MedConnect/Views/RecommendedQuestionsPage.cs" Line="1" Column="1" />
+      <File FileName="MedConnect/MedConnect/Utilities/Constants.cs" Line="1" Column="1" />
+      <File FileName="MedConnect/MedConnect/ViewModels/LoginViewModel.cs" Line="1" Column="1" />
+      <File FileName="MedConnect/MedConnect/ViewModels/ViewModel.cs" Line="3" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/ViewModels/RecommendedQuestionsViewModel.cs" line="72" column="24" />
+      <Breakpoint file="/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/ViewModels/RecommendedQuestionsViewModel.cs" line="35" column="1" />
+      <Breakpoint file="/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/ViewModels/RecommendedQuestionsViewModel.cs" line="36" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

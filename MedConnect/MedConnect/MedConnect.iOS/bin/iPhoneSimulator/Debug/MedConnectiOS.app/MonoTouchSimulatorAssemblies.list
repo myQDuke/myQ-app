@@ -23,4 +23,16 @@ System.Linq.dll
 System.Diagnostics.Debug.dll
 System.Net.Http.dll
 MedConnect.dll
+Newtonsoft.Json.dll
+System.Text.Encoding.dll
+System.Text.RegularExpressions.dll
+System.Xml.ReaderWriter.dll
+System.Xml.XDocument.dll
+System.Xml.Linq.dll
+System.Runtime.Serialization.Primitives.dll
+System.Runtime.Serialization.dll
+System.Text.Encoding.Extensions.dll
+System.Diagnostics.Tools.dll
+Microsoft.CSharp.dll
+Mono.CSharp.dll
 System.Resources.ResourceManager.dll

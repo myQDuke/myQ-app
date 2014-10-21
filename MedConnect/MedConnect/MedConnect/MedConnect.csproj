@@ -54,6 +54,7 @@
     <Compile Include="Views\SubmitQuestionPage.cs" />
     <Compile Include="Views\TitlePage.cs" />
     <Compile Include="Views\ViewPage.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
