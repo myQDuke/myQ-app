@@ -21,7 +21,7 @@ namespace MedConnect.ViewModels
             _webService = new WebService();
 
 			//testing connection
-			testConnection ();
+			//testConnection ();
 		}
 		public async Task<ObservableCollection<Question>> testConnection()
 		{
