@@ -16,3 +16,11 @@
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Xamarin.Forms.Xaml.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/MedConnect.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/MedConnect.dll.mdb
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Newtonsoft.Json.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Newtonsoft.Json.xml
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/PortableRest.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/PortableRest.xml
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Microsoft.Threading.Tasks.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Microsoft.Threading.Tasks.xml
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/System.Net.Http.Primitives.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/System.Net.Http.Primitives.xml

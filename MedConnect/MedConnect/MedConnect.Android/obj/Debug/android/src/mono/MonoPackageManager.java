@@ -119,7 +119,10 @@ class MonoPackageManager_Resources {
 		"System.Xml.ReaderWriter.dll",
 		"System.Xml.XDocument.dll",
 		"System.Xml.XmlSerializer.dll",
+		"PortableRest.dll",
 		"Newtonsoft.Json.dll",
+		"Microsoft.Threading.Tasks.dll",
+		"System.Net.Http.Primitives.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

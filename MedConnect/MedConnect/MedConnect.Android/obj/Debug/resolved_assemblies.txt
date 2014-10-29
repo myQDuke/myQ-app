@@ -50,4 +50,7 @@
 /Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/Facades/System.Xml.ReaderWriter.dll
 /Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/Facades/System.Xml.XDocument.dll
 /Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/Facades/System.Xml.XmlSerializer.dll
-/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Newtonsoft.Json.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/PortableRest.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Newtonsoft.Json.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Microsoft.Threading.Tasks.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/System.Net.Http.Primitives.dll

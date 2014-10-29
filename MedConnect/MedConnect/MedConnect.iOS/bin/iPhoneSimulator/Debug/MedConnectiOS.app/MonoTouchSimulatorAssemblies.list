@@ -23,6 +23,8 @@ System.Linq.dll
 System.Diagnostics.Debug.dll
 System.Net.Http.dll
 MedConnect.dll
+PortableRest.dll
+System.Net.dll
 Newtonsoft.Json.dll
 System.Text.Encoding.dll
 System.Text.RegularExpressions.dll
@@ -35,4 +37,6 @@ System.Text.Encoding.Extensions.dll
 System.Diagnostics.Tools.dll
 Microsoft.CSharp.dll
 Mono.CSharp.dll
+Microsoft.Threading.Tasks.dll
+System.Net.Http.Primitives.dll
 System.Resources.ResourceManager.dll

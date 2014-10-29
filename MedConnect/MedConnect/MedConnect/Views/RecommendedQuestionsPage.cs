@@ -58,12 +58,5 @@ namespace MedConnect.Views
                 list.SelectedItem = null;
             };
         }
-		/*
-		public async Task<ObservableCollection<Question>> getData(RecommendedQuestionsViewModel vm)
-		{
-			//return null;
-			//return await vm.getRecQuestions ();
-		}
-		*/
     }
 }

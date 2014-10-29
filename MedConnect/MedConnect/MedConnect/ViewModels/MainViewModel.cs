@@ -37,7 +37,8 @@ namespace MedConnect.ViewModels
         //this is for logging in
         public void authenticate(string username, string password, ContentPage cur)
         {
-			System.Diagnostics.Debug.WriteLine(username);
+			 _webService.testLogin (username, password);
+			/*
             if (_webService.authenticate(username, password))
             {
                 _currentUser = new User();
@@ -48,6 +49,7 @@ namespace MedConnect.ViewModels
             else {
                 cur.Navigation.PushAsync(new SignupPage());
             }
+            */
         }
 
         public void viewBasket(ContentPage currentPage)
