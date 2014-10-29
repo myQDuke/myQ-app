@@ -3,6 +3,8 @@
 /Users/kevinoh/CancerQuest_app/MedConnect/packages/Xamarin.Forms.1.0.6186/lib/MonoAndroid10/Xamarin.Forms.Core.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/packages/Xamarin.Forms.1.0.6186/lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/packages/Xamarin.Forms.1.0.6186/lib/MonoAndroid10/Xamarin.Forms.Xaml.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/packages/Microsoft.Net.Http.2.2.22/lib/monoandroid/System.Net.Http.Primitives.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/packages/Microsoft.Net.Http.2.2.22/lib/monoandroid/System.Net.Http.Extensions.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/MedConnect.dll
 /Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/Facades/System.Collections.Concurrent.dll
 /Library/Frameworks/Mono.framework/External/xbuild-frameworks/MonoAndroid/v1.0/Facades/System.Collections.dll
@@ -53,4 +55,3 @@
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/PortableRest.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Newtonsoft.Json.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/Microsoft.Threading.Tasks.dll
-/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.Android/bin/Debug/System.Net.Http.Primitives.dll

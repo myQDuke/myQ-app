@@ -72,6 +72,8 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"System.Net.Http.Primitives.dll",
+		"System.Net.Http.Extensions.dll",
 		"MedConnect.dll",
 		"System.Collections.Concurrent.dll",
 		"System.Collections.dll",
@@ -122,7 +124,6 @@ class MonoPackageManager_Resources {
 		"PortableRest.dll",
 		"Newtonsoft.Json.dll",
 		"Microsoft.Threading.Tasks.dll",
-		"System.Net.Http.Primitives.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

@@ -8,8 +8,8 @@
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Microsoft.Threading.Tasks.Extensions.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Newtonsoft.Json.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/PortableRest.dll
-/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.dll
-/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.Extensions.dll
-/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.Primitives.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Xamarin.Forms.Core.dll
 /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/Xamarin.Forms.Xaml.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.Primitives.dll
+/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/System.Net.Http.Extensions.dll

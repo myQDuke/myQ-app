@@ -9,7 +9,6 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net;
 
-
 namespace MedConnect.Utilies
 {
 	public class WebService
@@ -32,17 +31,19 @@ namespace MedConnect.Utilies
 		public async Task<User> testLogin(string username, string password) 
 		{
 			//using portable rest 
-			RestClient rc = new RestClient();
-			rc.BaseUrl = "http://cancerquest.azurewebsites.net";
-			var request = new RestRequest (_temp.BaseAddress + "/users/login/", HttpMethod.Post);
+			System.Diagnostics.Debug.WriteLine("im here");
+			RestClient rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
+			var request = new RestRequest ("/users/login/", HttpMethod.Post);
 			request.AddQueryString("username", username);
 			request.AddQueryString("password", password);
 
-			var response =  await rc.ExecuteAsync<User> (request);
+			System.Diagnostics.Debug.WriteLine(request);
+			var response =  await rc.SendAsync<User> (request);
+
+			System.Diagnostics.Debug.WriteLine(response.HttpResponseMessage);
 
 			System.Diagnostics.Debug.WriteLine(response);
-			return response;
-
+			return response.Content;
 
 		}
         //this will be async later, where the api call is made

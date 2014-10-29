@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.7.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MedConnect/MedConnect/ViewModels/MainViewModel.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MedConnect/MedConnect/Utilities/WebService.cs">
     <Files>
-      <File FileName="MedConnect/MedConnect/ViewModels/MainViewModel.cs" Line="44" Column="44" />
+      <File FileName="MedConnect/MedConnect/ViewModels/MainViewModel.cs" Line="14" Column="14" />
       <File FileName="MedConnect/MedConnect/Utilities/WebService.cs" Line="4" Column="4" />
       <File FileName="MedConnect/MedConnect/Models/Question.cs" Line="1" Column="1" />
       <File FileName="MedConnect/MedConnect/ViewModels/RecommendedQuestionsViewModel.cs" Line="1" Column="1" />
-      <File FileName="MedConnect/MedConnect/Views/RecommendedQuestionsPage.cs" Line="2" Column="2" />
+      <File FileName="MedConnect/MedConnect/Views/RecommendedQuestionsPage.cs" Line="1" Column="1" />
       <File FileName="MedConnect/MedConnect/ViewModels/ViewModel.cs" Line="1" Column="1" />
-      <File FileName="MedConnect/MedConnect/ViewModels/LoginViewModel.cs" Line="24" Column="24" />
-      <File FileName="MedConnect/MedConnect/Views/LoginPage.cs" Line="14" Column="14" />
+      <File FileName="MedConnect/MedConnect/ViewModels/LoginViewModel.cs" Line="1" Column="1" />
+      <File FileName="MedConnect/MedConnect/Views/LoginPage.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
