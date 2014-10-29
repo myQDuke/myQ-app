@@ -28,7 +28,7 @@ namespace MedConnect.Utilies
 			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
 			return po;
 		}
-		public async Task<User> testLogin(string username, string password) 
+		public async Task<Boolean> testLogin(string username, string password, User cur) 
 		{
 			//using portable rest 
 			System.Diagnostics.Debug.WriteLine("im here");
@@ -38,12 +38,18 @@ namespace MedConnect.Utilies
 			request.AddQueryString("password", password);
 
 			System.Diagnostics.Debug.WriteLine(request);
+
 			var response =  await rc.SendAsync<User> (request);
 
-			System.Diagnostics.Debug.WriteLine(response.HttpResponseMessage);
 
 			System.Diagnostics.Debug.WriteLine(response);
-			return response.Content;
+
+			//ensure success status code before trying to create 
+
+			cur = new User ();
+			cur = response.Content;
+
+			return response.HttpResponseMessage.IsSuccessStatusCode;
 
 		}
         //this will be async later, where the api call is made
