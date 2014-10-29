@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.androidtest" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MedConnect/MedConnect/Utilities/WebService.cs">
     <Files>
       <File FileName="MedConnect/MedConnect/ViewModels/MainViewModel.cs" Line="14" Column="14" />
