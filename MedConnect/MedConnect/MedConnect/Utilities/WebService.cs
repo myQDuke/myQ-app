@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using MedConnect.Models;
-using PortableRest;
 using Microsoft;
-using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net;
+using System.Net.Http;
+using PortableRest;
 
 namespace MedConnect.Utilies
 {
