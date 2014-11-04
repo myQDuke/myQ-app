@@ -49,50 +49,23 @@ namespace MedConnect.ViewModels
 		public MainViewModel () {
             _webService = new WebService();
             _recommendedQuestions = new ObservableCollection<Question>();
-
-			//testing connection
-			//testConnection ();
-            //getRecQuestions();
-			//_webService.testLogin("Jonno", "Test", _currentUser);
-		}
-		public async Task<ObservableCollection<Question>> testConnection()
-		{
-			ObservableCollection<Question> result = await _webService.testRest ();
-			foreach(Question q in result) 
-			{
-				System.Diagnostics.Debug.WriteLine(q.Text);
-			}
-
-			return result;
+			//test createUser
+			createUser ("Kevin", "Test", "jon@jo.com");
 		}
 
-        //this is for logging in
 		public async Task<User> authenticate(string username, string password)
         {
 
-			var lol = await _webService.testLogin (username, password);
+			var responseUser = await _webService.login (username, password);
 			//System.Diagnostics.Debug.WriteLine (_currentUser);
-			User = lol;
+			User = responseUser;
 			return User;
-
-			/*
-            if (_webService.authenticate(username, password))
-            {
-                _currentUser = new User();
-                _currentUser.Name = username;
-                _currentUser.Questions = _webService.getData();
-                cur.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this));
-            }
-            else {
-                cur.Navigation.PushAsync(new SignupPage());
-            }
-            */
         }
 
         public async void getRecQuestions()
         {
             RecommendedQuestions.Clear();
-            var tempQ = await _webService.testRest();
+            var tempQ = await _webService.getRecQuestions();
             foreach (var q in tempQ) {
                 //RecommendedQuestions.Add (q);
                 System.Diagnostics.Debug.WriteLine(q.Text);
@@ -100,22 +73,17 @@ namespace MedConnect.ViewModels
             RecommendedQuestions = tempQ;
 
         }
-
-        public void viewBasket(ContentPage currentPage)
-        {
-            //currentPage.Navigation.PushAsync(new SavedQuestionsPage(_currentUser, this));
-        }
-
-        public void viewRecommendedQuestions(ContentPage currentPage)
-        {
-            //currentPage.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this)); 
-        }
-
         public async void postQuestion(String s)
         {
             var response = await _webService.postQuestion(s);
         }
-        
+		public async Task<User> createUser(string username, string password, string email)
+		{
+			var responseUser = await _webService.createUser (username, password, email);
+			//System.Diagnostics.Debug.WriteLine (_currentUser);
+			User = responseUser;
+			return User;
+		}
 	}
 }
 

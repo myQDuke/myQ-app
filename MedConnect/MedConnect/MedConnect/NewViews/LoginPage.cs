@@ -11,10 +11,12 @@ namespace MedConnect.NewViews
     public class LoginPage : ContentPage 
     {
         MainViewModel _mainViewModel; 
+		MasterPage mp;
 
         public LoginPage()
         {
             _mainViewModel = new MainViewModel();
+			mp = new MasterPage(_mainViewModel);
 
             var image = new Image
             {
@@ -68,12 +70,12 @@ namespace MedConnect.NewViews
 
             signupButton.Clicked += (sender, args) =>
             {
-                Navigation.PushAsync(new SignupPage());
+				Navigation.PushAsync(new SignupPage(mp));
             };
         }
 
 		private async void HandleLogin(String username, String password) {
-			MasterPage mp = new MasterPage(_mainViewModel);
+
 			mp.Master = mp.getMasterContentPage();
 			mp.Detail = new LandingPage(mp);
 			await mp.MainView.authenticate(username,password);

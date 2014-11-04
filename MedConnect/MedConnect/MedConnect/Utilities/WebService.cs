@@ -14,69 +14,73 @@ namespace MedConnect.Utilies
 	public class WebService
 	{
 
-		HttpClient _temp = new HttpClient ();
-			
+		private RestClient _rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
+		private HttpClient _httpClient = new HttpClient();
+
 		public WebService ()
 		{
-			_temp.BaseAddress = new Uri("http://cancerquest.azurewebsites.net");
-
+			_httpClient.BaseAddress = new Uri ("http://cancerquest.azurewebsites.net");
 		}
 
-		public async Task<ObservableCollection<Question>> testRest()
+		public async Task<ObservableCollection<Question>> getRecQuestions()
 		{
-			var questions = await _temp.GetStringAsync (_temp.BaseAddress + "/questions/");
-            System.Diagnostics.Debug.WriteLine("i got the questions!!");
+			var questions = await _httpClient.GetStringAsync (_httpClient.BaseAddress + "/questions/");
+            //System.Diagnostics.Debug.WriteLine("i got the questions!!");
 			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
 			return po;
 		}
-		public async Task<User> testLogin(string username, string password) 
+		public async Task<User> login(string username, string password) 
 		{
-			//using portable rest 
-			System.Diagnostics.Debug.WriteLine("im here");
-			RestClient rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
 			var request = new RestRequest ("/users/login/", HttpMethod.Post);
 			request.AddQueryString("username", username);
 			request.AddQueryString("password", password);
-
-			System.Diagnostics.Debug.WriteLine(request);
-
-			var response =  await rc.SendAsync<User> (request);
-
+			var response =  await _rc.SendAsync<User> (request);
 
 			System.Diagnostics.Debug.WriteLine(response.Content.username);
-
-			//ensure success status code before trying to create 
 
 			return response.Content;
 
 		}
+		public async Task<User> createUser(string username, string password, string email)
+		{
+			var request = new RestRequest ("/users/", HttpMethod.Post);
+			request.AddQueryString("username", username);
+			request.AddQueryString("password", password);
+			request.AddQueryString("email", email);
+			var response =  await _rc.SendAsync<User> (request);
+
+			System.Diagnostics.Debug.WriteLine(response.Content.username);
+
+			return response.Content;
+		}
+		//this posts to main page
         public async Task<Question> postQuestion(string question)
         {
-            RestClient rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
             var request = new RestRequest("/questions/", HttpMethod.Post);            
 			request.AddQueryString("text", question);
 
-
-            var response = await rc.SendAsync<Question>(request);
+            var response = await _rc.SendAsync<Question>(request);
 
 			System.Diagnostics.Debug.WriteLine(response.Content.Text);
 			return response.Content;
         }
-        //this will be async later, where the api call is made
-        public Boolean authenticate(string username, string password)
-        {
+		//this posts to user library
+		public async Task<Question> postLibrary(string question, int userID)
+		{
 
-            if (username.Equals(Constants.USERNAME) && password.Equals(Constants.PASSWORD))
-                return true;
-            return false;
-        }
+			var request = new RestRequest("/questions/", HttpMethod.Post);            
+			request.AddQueryString("text", question);
 
-        public ObservableCollection<Question> getData()
-        {
-			ObservableCollection<Question> yolo = new ObservableCollection<Question>();
+			var response = await _rc.SendAsync<Question>(request);
 
-            return yolo;
-        }
+			System.Diagnostics.Debug.WriteLine(response.Content.Text);
+			return response.Content;
+		}
+		public async Task<ObservableCollection<Question>> getLibraryQuestions()
+		{
+			return null;
+		}
+			
 	}
 }
 
