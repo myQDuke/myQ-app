@@ -64,8 +64,14 @@ namespace MedConnect.NewViews
             {
                 string username = usernameEntry.Text;
                 string password = passwordEntry.Text; 
-
-				HandleLogin(username, password);
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                {
+                    DisplayAlert("Error", "Invalid username or password", "OK");
+                }
+                else
+                {
+                    HandleLogin(username, password);
+                }
             };
 
             signupButton.Clicked += (sender, args) =>
@@ -74,8 +80,8 @@ namespace MedConnect.NewViews
             };
         }
 
-		private async void HandleLogin(String username, String password) {
-
+		private async void HandleLogin(String username, String password) 
+        {
 			mp.Master = mp.getMasterContentPage();
 			mp.Detail = new LandingPage(mp);
 			await mp.MainView.authenticate(username,password);
@@ -84,6 +90,10 @@ namespace MedConnect.NewViews
 				await Navigation.PushModalAsync(mp);
 				mp.MainView.getLibraryQuestions ();
 			}
+            else
+            {
+                await DisplayAlert("Error", "Invalid username or password", "OK");
+            }
 		}
     }
 }

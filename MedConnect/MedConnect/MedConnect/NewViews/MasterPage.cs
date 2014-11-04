@@ -59,6 +59,11 @@ namespace MedConnect.NewViews
                 Text = "My Settings"
             };
 
+            var logoutButton = new Button
+            {
+                Text = "Logout"
+            };
+
             var master = new ContentPage
             {
                 Title = "Master",
@@ -66,7 +71,7 @@ namespace MedConnect.NewViews
                 Content = new StackLayout
                 {
                     Padding = new Thickness(5, 50),
-                    Children = { homePageButton, discoverPageButton, libraryPageButton, visitsPageButton, settingsPageButton }
+                    Children = { homePageButton, discoverPageButton, libraryPageButton, visitsPageButton, settingsPageButton, logoutButton }
                 }
             };
 
@@ -97,6 +102,12 @@ namespace MedConnect.NewViews
             settingsPageButton.Clicked += (sender, args) =>
             {
 
+            };
+
+            logoutButton.Clicked += (sender, args) =>
+            {
+                Detail = new NavigationPage(new LoginPage());
+                IsPresented = false; 
             };
 
             return master; 

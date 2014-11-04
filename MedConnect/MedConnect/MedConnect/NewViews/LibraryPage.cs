@@ -50,7 +50,7 @@ namespace MedConnect.NewViews
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
             listView.ItemTapped += (sender, args) =>
             {
-                var modalPage = new EditQuestionPage();
+                var modalPage = new EditQuestionPage(_masterPage);
                 Navigation.PushModalAsync(modalPage);
                 listView.SelectedItem = null;
             };

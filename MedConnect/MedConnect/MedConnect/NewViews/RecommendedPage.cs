@@ -30,7 +30,9 @@ namespace MedConnect.NewViews
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
             listView.ItemTapped += (sender, args) =>
             {
-                //
+                var question = args.Item as Question;
+                if (question == null) return;
+                DisplayAlert("Question Added", "Question added to your library!", "OK");
             };
 
             var header = new HeaderElement("Recommended Questions");
