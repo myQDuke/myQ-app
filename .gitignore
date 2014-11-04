@@ -28,7 +28,10 @@ UpgradeLog.*
 # dotCover
 *.dotCover
 
-
+ 
 !*.config
+!MedConnect/packages/repositories.config
+!\MedConnect\packages\repositories.config
+
 packages
 
