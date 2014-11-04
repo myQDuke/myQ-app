@@ -1,0 +1,35 @@
+# Version: 8.2.0.193 (959c1e4)
+# [first argument, ignore] # /Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.iOS/bin/iPhoneSimulator/Debug/mtouch.exe
+/Library/Frameworks/Xamarin.iOS.framework/Versions/8.2.0.193/bin/mtouch \
+	-sdkroot \
+	/Applications/Xcode.app/Contents/Developer \
+	--cache \
+	/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
+	--nomanifest \
+	--nosign \
+	-sim \
+	/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.iOS/bin/iPhoneSimulator/Debug/MedConnectiOS.app \
+	-r \
+	/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect/bin/Debug/MedConnect.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.Xml.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.Core.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/monotouch.dll \
+	-r \
+	/Users/kevinoh/CancerQuest_app/MedConnect/packages/Xamarin.Forms.1.0.6186/lib/MonoTouch10/Xamarin.Forms.Core.dll \
+	-r \
+	/Users/kevinoh/CancerQuest_app/MedConnect/packages/Xamarin.Forms.1.0.6186/lib/MonoTouch10/Xamarin.Forms.Platform.iOS.dll \
+	-r \
+	/Users/kevinoh/CancerQuest_app/MedConnect/packages/Xamarin.Forms.1.0.6186/lib/MonoTouch10/Xamarin.Forms.Xaml.dll \
+	-debug \
+	-nolink \
+	-sdk \
+	7.1 \
+	-targetver \
+	6.0 \
+	--abi=i386 \
+	/Users/kevinoh/CancerQuest_app/MedConnect/MedConnect/MedConnect.iOS/bin/iPhoneSimulator/Debug/FormsTemplateiOS.exe \
