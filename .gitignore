@@ -4,7 +4,10 @@
 # Build/test output
 obj
 bin
+Bin
 test-results
+
+*.log
 
 # VS sometimes writes these for no apparent reason
 _UpgradeReport_Files
@@ -25,5 +28,7 @@ UpgradeLog.*
 # dotCover
 *.dotCover
 
-packages
+
 !*.config
+packages
+
