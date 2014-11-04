@@ -61,12 +61,9 @@ namespace MedConnect.NewViews
             loginButton.Clicked += (sender, args) =>
             {
                 string username = usernameEntry.Text;
-                string password = passwordEntry.Text;
-                MainViewModel mv = new MainViewModel(); 
-                MasterPage mp = new MasterPage(mv);
-                mp.Master = mp.getMasterContentPage();
-                mp.Detail = new LandingPage(mp);
-                Navigation.PushModalAsync(mp);
+                string password = passwordEntry.Text; 
+
+				HandleLogin(username, password);
             };
 
             signupButton.Clicked += (sender, args) =>
@@ -74,5 +71,16 @@ namespace MedConnect.NewViews
                 Navigation.PushAsync(new SignupPage());
             };
         }
+
+		private async void HandleLogin(String username, String password) {
+			MasterPage mp = new MasterPage(_mainViewModel);
+			mp.Master = mp.getMasterContentPage();
+			mp.Detail = new LandingPage(mp);
+			await mp.MainView.authenticate(username,password);
+			if(mp.MainView.User.username != null) {
+				//System.Diagnostics.Debug.WriteLine (mp.MainView.User);
+				await Navigation.PushModalAsync(mp);
+			}
+		}
     }
 }

@@ -19,15 +19,14 @@ namespace MedConnect.NewViews
             Title = "Recommended";
             BackgroundColor = Color.FromHex("#C1C1C1");
             var tabs = new TabsHeader(_masterPage);
-            //_masterPage.getMainViewModel().getRecQuestions();
+            
+			_masterPage.MainView.getRecQuestions();	
 
-            ObservableCollection<Question> Questions = _masterPage.getMainViewModel()._recommendedQuestions; 
+			this.BindingContext = _masterPage.MainView;
 
-            this.BindingContext = _masterPage.getMainViewModel(); 
-
-            var listView = new ListView();
+            var listView = new ListView(); 	 
             listView.HasUnevenRows = true;
-            listView.ItemsSource = Questions; 
+			listView.SetBinding (ListView.ItemsSourceProperty, new Binding ("RecommendedQuestions"));
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
             listView.ItemTapped += (sender, args) =>
             {

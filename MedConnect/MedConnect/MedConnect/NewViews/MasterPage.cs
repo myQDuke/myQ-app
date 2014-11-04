@@ -7,12 +7,25 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using MedConnect.Models;
 using MedConnect.ViewModels;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Linq.Expressions;
 
 namespace MedConnect.NewViews
 {
     public class MasterPage : MasterDetailPage
     {
         MainViewModel _mainViewModel; 
+
+		public MainViewModel MainView {
+			get {
+				return _mainViewModel;
+			}
+			set {
+				_mainViewModel = value;
+				OnPropertyChanged("MainView");
+			}
+		}
 
         public MasterPage(MainViewModel mainViewModel)
         {
@@ -87,11 +100,6 @@ namespace MedConnect.NewViews
             };
 
             return master; 
-        }
-
-        public MainViewModel getMainViewModel()
-        {
-            return _mainViewModel;
         }
     }
 }

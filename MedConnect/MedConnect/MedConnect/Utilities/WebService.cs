@@ -29,7 +29,7 @@ namespace MedConnect.Utilies
 			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
 			return po;
 		}
-		public async Task<Boolean> testLogin(string username, string password, User cur) 
+		public async Task<User> testLogin(string username, string password) 
 		{
 			//using portable rest 
 			System.Diagnostics.Debug.WriteLine("im here");
@@ -43,26 +43,24 @@ namespace MedConnect.Utilies
 			var response =  await rc.SendAsync<User> (request);
 
 
-			System.Diagnostics.Debug.WriteLine(response);
+			System.Diagnostics.Debug.WriteLine(response.Content.username);
 
 			//ensure success status code before trying to create 
 
-			cur = new User ();
-			cur = response.Content;
-
-			return response.HttpResponseMessage.IsSuccessStatusCode;
+			return response.Content;
 
 		}
-        public async Task<Boolean> postQuestion(string question)
+        public async Task<Question> postQuestion(string question)
         {
             RestClient rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
-            var request = new RestRequest("/questions/", HttpMethod.Post);
-            request.AddQueryString("Text", question);
+            var request = new RestRequest("/questions/", HttpMethod.Post);            
+			request.AddQueryString("text", question);
+
 
             var response = await rc.SendAsync<Question>(request);
 
 			System.Diagnostics.Debug.WriteLine(response.Content.Text);
-			return response.HttpResponseMessage.IsSuccessStatusCode;
+			return response.Content;
         }
         //this will be async later, where the api call is made
         public Boolean authenticate(string username, string password)

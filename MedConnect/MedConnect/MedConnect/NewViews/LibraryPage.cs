@@ -59,7 +59,7 @@ namespace MedConnect.NewViews
 
             addQuestionButton.Clicked += (sender, args) =>
             {
-                var modalPage = new AddQuestionPage(_masterPage.getMainViewModel());
+				var modalPage = new AddQuestionPage(_masterPage.MainView);
                 Navigation.PushModalAsync(modalPage);
                 listView.SelectedItem = null;
             };

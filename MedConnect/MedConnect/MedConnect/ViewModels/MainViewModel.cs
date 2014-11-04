@@ -14,7 +14,7 @@ namespace MedConnect.ViewModels
 {
 	public class MainViewModel : ViewModel
 	{
-        public ObservableCollection<Question> _recommendedQuestions { get; set; }
+		private ObservableCollection<Question> _recommendedQuestions;
 
         public ObservableCollection<Question> RecommendedQuestions
         {
@@ -25,12 +25,25 @@ namespace MedConnect.ViewModels
             set
             {
                 _recommendedQuestions = value;
-                OnPropertyChanged("RecommendedQuestions");
+				OnPropertyChanged("RecommendedQuestions");
             }
         } 
 
         private WebService _webService;
-		private static User _currentUser = new User();
+		private static User _currentUser;
+
+		public User User
+		{
+			get
+			{
+				return _currentUser;
+			}
+			set
+			{
+				_currentUser = value;
+				OnPropertyChanged("User");
+			}
+		}
         //should we have instances of every view so that we can cache them? or is that stupid and should we make new ones everytime... 
 
 		public MainViewModel () {
@@ -39,8 +52,8 @@ namespace MedConnect.ViewModels
 
 			//testing connection
 			//testConnection ();
-            getRecQuestions();
-			_webService.testLogin("Jonno", "Test", _currentUser);
+            //getRecQuestions();
+			//_webService.testLogin("Jonno", "Test", _currentUser);
 		}
 		public async Task<ObservableCollection<Question>> testConnection()
 		{
@@ -54,18 +67,13 @@ namespace MedConnect.ViewModels
 		}
 
         //this is for logging in
-        public void authenticate(string username, string password, ContentPage cur)
+		public async Task<User> authenticate(string username, string password)
         {
 
-			var lol = _webService.testLogin (username, password, _currentUser);
-			System.Diagnostics.Debug.WriteLine (_currentUser);
-			if (lol.Result) {
-				System.Diagnostics.Debug.WriteLine ("helloooo");
-				//_currentUser.Questions = _webService.getData();
-				//cur.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this));
-			} else {
-				System.Diagnostics.Debug.WriteLine ("no helloooo");
-			}
+			var lol = await _webService.testLogin (username, password);
+			//System.Diagnostics.Debug.WriteLine (_currentUser);
+			User = lol;
+			return User;
 
 			/*
             if (_webService.authenticate(username, password))
