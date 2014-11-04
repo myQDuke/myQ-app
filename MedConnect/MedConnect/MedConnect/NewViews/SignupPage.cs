@@ -36,6 +36,7 @@ namespace MedConnect.NewViews
                 BackgroundColor = Color.FromHex("#9ee4e7"),
                 IsPassword = true
             };
+
 			var emailEntry = new Entry
 			{
 				Placeholder = "Type in your email",
@@ -62,7 +63,7 @@ namespace MedConnect.NewViews
             {
                 Orientation = StackOrientation.Vertical,
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Children = { header, usernameEntry, passwordEntry, passwordRetypeEntry, submitButton },
+                Children = { header, usernameEntry, passwordEntry, passwordRetypeEntry, emailEntry, submitButton },
                 Spacing = 20,
                 Padding = new Thickness(20, 20, 20, 20),
                 BackgroundColor = Color.FromHex("#FFFFFF")
