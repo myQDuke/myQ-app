@@ -92,31 +92,12 @@ namespace MedConnect.Droid
 			// aapt resource value: 0x7f02000f
 			public const int logo3 = 2130837519;
 			
-			// aapt resource value: 0x7f020010
-			public const int monoandroidsplash = 2130837520;
-			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 			}
 			
 			private Drawable()
-			{
-			}
-		}
-		
-		public partial class Style
-		{
-			
-			// aapt resource value: 0x7f030000
-			public const int Mono_Android_Theme_Splash = 2130903040;
-			
-			static Style()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Style()
 			{
 			}
 		}

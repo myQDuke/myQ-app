@@ -9,8 +9,12 @@ namespace MedConnect.NewViews
 {
     public class EditQuestionPage : ContentPage 
     {
-        public EditQuestionPage()
+        MasterPage _masterPage; 
+
+        public EditQuestionPage(MasterPage masterPage)
         {
+            _masterPage = masterPage;
+
             var rateQuestionLabel = new Label
             {
                 Text = "Was this question helpful?",
@@ -54,7 +58,9 @@ namespace MedConnect.NewViews
 
             cancelButton.Clicked += (sender, args) =>
             {
-                Navigation.PopModalAsync();
+                _masterPage.Master = _masterPage.getMasterContentPage();
+                _masterPage.Detail = new LibraryPage(_masterPage);
+                //Navigation.PopModalAsync();
             };
 
             helpfulButton.Clicked += (sender, args) =>
