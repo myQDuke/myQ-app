@@ -5,16 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using MedConnect.ViewModels;
+using MedConnect.Models;
 
 namespace MedConnect.NewViews
 {
     public class AddQuestionPage : ContentPage
     {
         MainViewModel _mainViewModel; 
+		Question _postedQuestion;
 
         public AddQuestionPage(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
+			_postedQuestion = new Question ();
 
             var header = new HeaderElement("Add a Question");
 
@@ -41,7 +44,8 @@ namespace MedConnect.NewViews
             submitQuestionButton.Clicked += (sender, args) =>
             {
                 string questionText = questionTextEntry.Text;
-                _mainViewModel.postQuestion(questionText);
+				HandlePost(questionText);
+
                 Navigation.PopModalAsync();
             };
 
@@ -56,5 +60,16 @@ namespace MedConnect.NewViews
 
             Content = mainLayout;
         }
+
+		public async void HandlePost(string questionText)
+		{
+			var response = await _mainViewModel.postQuestion(questionText);
+			
+			_postedQuestion = response;
+			System.Diagnostics.Debug.WriteLine(_postedQuestion.Text);
+			_mainViewModel.postLibrary(_postedQuestion.id);
+
+			System.Diagnostics.Debug.WriteLine ("hi");
+		}
     }
 }

@@ -53,7 +53,8 @@ namespace MedConnect.Utilies
 
 			return response.Content;
 		}
-		//this posts to main page
+		//this posts to create a question
+
         public async Task<Question> postQuestion(string question)
         {
             var request = new RestRequest("/questions/", HttpMethod.Post);            
@@ -65,11 +66,11 @@ namespace MedConnect.Utilies
 			return response.Content;
         }
 		//this posts to user library
-		public async Task<Question> postLibrary(string question, int userID)
+		public async Task<Question> postLibrary(int questionID, int userID)
 		{
 			string addr = "/users/" + userID + "/questions/";
 			var request = new RestRequest(addr, HttpMethod.Post);            
-			request.AddQueryString("text", question);
+			request.AddQueryString("id", questionID);
 
 			var response = await _rc.SendAsync<Question>(request);
 
