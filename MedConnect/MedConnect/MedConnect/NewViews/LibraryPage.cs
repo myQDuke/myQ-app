@@ -40,9 +40,13 @@ namespace MedConnect.NewViews
             Questions.Add(q2);
             Questions.Add(q3);
 
+			_masterPage.MainView.getLibraryQuestions ();
+
+			this.BindingContext = _masterPage.MainView;
+
             var listView = new ListView();
             listView.HasUnevenRows = true;
-            listView.ItemsSource = Questions;
+			listView.SetBinding (ListView.ItemsSourceProperty, new Binding ("LibraryQuestions"));
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
             listView.ItemTapped += (sender, args) =>
             {
