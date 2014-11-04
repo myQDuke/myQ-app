@@ -67,8 +67,8 @@ namespace MedConnect.Utilies
 		//this posts to user library
 		public async Task<Question> postLibrary(string question, int userID)
 		{
-
-			var request = new RestRequest("/questions/", HttpMethod.Post);            
+			string addr = "/users/" + userID + "/questions/";
+			var request = new RestRequest(addr, HttpMethod.Post);            
 			request.AddQueryString("text", question);
 
 			var response = await _rc.SendAsync<Question>(request);

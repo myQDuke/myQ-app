@@ -104,6 +104,10 @@ namespace MedConnect.ViewModels
         {
             var response = await _webService.postQuestion(s);
         }
+		public async void postLibrary(String s)
+		{
+			var response = await _webService.postLibrary(s, _currentUser.id);
+		}
 		public async Task<User> createUser(string username, string password, string email)
 		{
 			var responseUser = await _webService.createUser (username, password, email);
