@@ -20,25 +20,4 @@ c:\users\bec\documents\visual studio 2013\Projects\MedConnect\MedConnect\MedConn
 c:\users\bec\documents\visual studio 2013\Projects\MedConnect\MedConnect\MedConnect.Android\obj\Debug\R.cs.flag
 c:\users\bec\documents\visual studio 2013\Projects\MedConnect\MedConnect\MedConnect.Android\obj\Debug\uploadflags.txt
 c:\users\bec\documents\visual studio 2013\Projects\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.dll.config
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.dll.config
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.pdb
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.dll.mdb
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android.apk
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.Android-Signed.apk
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\Xamarin.Android.Support.v4.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\Xamarin.Forms.Core.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\Xamarin.Forms.Xaml.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.pdb
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\MedConnect.dll.mdb
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\Xamarin.Forms.Core.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\obj\Debug\MedConnect.Android.csprojResolveAssemblyReference.cache
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\obj\Debug\MedConnect.Android.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\obj\Debug\MedConnect.Android.pdb
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\obj\Debug\android\bin\MedConnect.Android.apk
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\obj\Debug\res\drawable\icon.png
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\obj\Debug\R.cs.flag
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect.Android\obj\Debug\uploadflags.txt

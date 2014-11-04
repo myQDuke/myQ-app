@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedConnect", "MedConnect\MedConnect\MedConnect.csproj", "{3BD304DE-6515-4C64-BAD0-66676AFCE299}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedConnect.Android", "MedConnect\MedConnect.Android\MedConnect.Android.csproj", "{9BC36EB2-AE84-4BED-BA86-1C2C9DC622E9}"
@@ -166,10 +164,10 @@ Global
 		{EC74D87B-E4A3-44A2-9853-DC117E006839}.Release|x86.Build.0 = Release|x86
 		{EC74D87B-E4A3-44A2-9853-DC117E006839}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MedConnect\MedConnect\MedConnect.csproj
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MedConnect\MedConnect.iOS\MedConnect.iOS.csproj
 	EndGlobalSection
 EndGlobal

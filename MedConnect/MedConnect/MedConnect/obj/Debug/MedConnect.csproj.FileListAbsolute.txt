@@ -23,31 +23,6 @@ c:\users\bec\documents\visual studio 2013\Projects\MedConnect\MedConnect\MedConn
 c:\users\bec\documents\visual studio 2013\Projects\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.Extensions.xml
 c:\users\bec\documents\visual studio 2013\Projects\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\Bec\Documents\Visual Studio 2013\Projects\MedConnect\MedConnect\MedConnect\obj\Debug\MedConnect.csprojResolveAssemblyReference.cache
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\obj\Debug\MedConnect.csproj.App.config
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\obj\Debug\MedConnect.csprojResolveAssemblyReference.cache
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\obj\Debug\MedConnect.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\obj\Debug\MedConnect.pdb
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.dll.config
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.pdb
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Microsoft.Threading.Tasks.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\PortableRest.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.Extensions.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.Primitives.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Xamarin.Forms.Core.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Xamarin.Forms.Xaml.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Microsoft.Threading.Tasks.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\PortableRest.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.Extensions.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\System.Net.Http.Primitives.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Xamarin.Forms.Core.xml
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\Bec\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.dll.config
 C:\Users\Bec\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.dll
 C:\Users\Bec\Documents\GitHub\CancerQuest_app\MedConnect\MedConnect\MedConnect\bin\Debug\MedConnect.pdb
