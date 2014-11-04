@@ -44,21 +44,37 @@ namespace MedConnect.ViewModels
 				OnPropertyChanged("User");
 			}
 		}
+		private ObservableCollection<Question> _libraryQuestions;
+
+		public ObservableCollection<Question> LibraryQuestions
+		{
+			get
+			{
+				return _libraryQuestions;
+			}
+			set
+			{
+				_libraryQuestions = value;
+				OnPropertyChanged ("LibraryQuestions");
+			}
+		}
         //should we have instances of every view so that we can cache them? or is that stupid and should we make new ones everytime... 
 
 		public MainViewModel () {
             _webService = new WebService();
             _recommendedQuestions = new ObservableCollection<Question>();
+			_libraryQuestions = new ObservableCollection<Question>();
 			//test createUser
-			createUser ("Kevin", "Test", "jon@jo.com");
+			//createUser ("Kevin", "Test", "jon@jo.com");
+
 		}
 
 		public async Task<User> authenticate(string username, string password)
         {
-
 			var responseUser = await _webService.login (username, password);
 			//System.Diagnostics.Debug.WriteLine (_currentUser);
 			User = responseUser;
+			_libraryQuestions = User.Questions; 
 			return User;
         }
 
@@ -71,8 +87,19 @@ namespace MedConnect.ViewModels
                 System.Diagnostics.Debug.WriteLine(q.Text);
             }
             RecommendedQuestions = tempQ;
-
         }
+		public async void getLibraryQuestions()
+		{
+			LibraryQuestions.Clear();
+			var tempQ = await _webService.getLibraryQuestions(_currentUser.id);
+			foreach (var q in tempQ) {
+				//RecommendedQuestions.Add (q);
+				System.Diagnostics.Debug.WriteLine(q.Text);
+			}
+			LibraryQuestions = tempQ;
+
+			System.Diagnostics.Debug.WriteLine(_currentUser.Questions);
+		}
         public async void postQuestion(String s)
         {
             var response = await _webService.postQuestion(s);

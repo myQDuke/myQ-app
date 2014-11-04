@@ -82,6 +82,7 @@ namespace MedConnect.NewViews
 			if(mp.MainView.User.username != null) {
 				//System.Diagnostics.Debug.WriteLine (mp.MainView.User);
 				await Navigation.PushModalAsync(mp);
+				mp.MainView.getLibraryQuestions ();
 			}
 		}
     }
