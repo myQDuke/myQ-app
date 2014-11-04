@@ -1,2 +1,0 @@
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\XamarinStore\XamarinStore.Droid\bin\Debug\XamarinStore.dll
-C:\Users\Kevin\Documents\GitHub\CancerQuest_app\XamarinStore\Components\json.net-4.5.11\lib\android\Newtonsoft.Json.dll
