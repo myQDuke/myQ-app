@@ -76,9 +76,13 @@ namespace MedConnect.Utilies
 			System.Diagnostics.Debug.WriteLine(response.Content.Text);
 			return response.Content;
 		}
-		public async Task<ObservableCollection<Question>> getLibraryQuestions()
+		public async Task<ObservableCollection<Question>> getLibraryQuestions(int userID)
 		{
-			return null;
+			string addr = "/users/" + userID + "/questions/";
+			var questions = await _httpClient.GetStringAsync (_httpClient.BaseAddress + addr);
+			//System.Diagnostics.Debug.WriteLine("i got the questions!!");
+			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
+			return po;
 		}
 			
 	}
