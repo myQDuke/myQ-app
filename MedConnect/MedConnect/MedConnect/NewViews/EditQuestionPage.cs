@@ -61,9 +61,9 @@ namespace MedConnect.NewViews
 
             cancelButton.Clicked += (sender, args) =>
             {
-                _masterPage.Master = _masterPage.getMasterContentPage();
-                _masterPage.Detail = new LibraryPage(_masterPage);
-                //Navigation.PopModalAsync();
+                //_masterPage.Master = _masterPage.getMasterContentPage();
+                //_masterPage.Detail = new LibraryPage(_masterPage);
+                Navigation.PopModalAsync();
             };
 
             helpfulButton.Clicked += (sender, args) =>
@@ -87,12 +87,14 @@ namespace MedConnect.NewViews
 
             Content = mainLayout;
 
+           /*
             var tapRecognizer = new TapGestureRecognizer();
             tapRecognizer.Tapped += (s, e) =>
             {
                 Navigation.PopModalAsync();
             };
             mainLayout.GestureRecognizers.Add(tapRecognizer);
+            */
         }
 
     }
