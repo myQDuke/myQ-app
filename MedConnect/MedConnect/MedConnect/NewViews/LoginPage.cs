@@ -92,7 +92,7 @@ namespace MedConnect.NewViews
 			}
             else
             {
-				System.Diagnostics.Debug.WriteLine ("fag muffin to the rescue");
+				//System.Diagnostics.Debug.WriteLine ("fag muffin to the rescue");
                 await DisplayAlert("Error", "Invalid username or password", "OK");
             }
 		}

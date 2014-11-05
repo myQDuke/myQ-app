@@ -70,7 +70,7 @@ namespace MedConnect.NewViews
 			_mainViewModel.postLibrary(_postedQuestion.id);
 			//on success do this later
 			_mainViewModel.LibraryQuestions.Add (_postedQuestion);
-			System.Diagnostics.Debug.WriteLine ("hi");
+
 		}
     }
 }
