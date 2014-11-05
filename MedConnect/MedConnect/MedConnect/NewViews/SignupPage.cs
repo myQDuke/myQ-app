@@ -76,6 +76,9 @@ namespace MedConnect.NewViews
 		{
 			var result = await _masterPage.MainView.createUser (username, password, email);
 			System.Diagnostics.Debug.WriteLine (result.username);
+			if (result.username != "null") {
+				await DisplayAlert("Error", "success! ", "OK");
+			}
 		}
     }
 }

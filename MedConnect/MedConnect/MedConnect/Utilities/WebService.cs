@@ -36,7 +36,7 @@ namespace MedConnect.Utilies
 			request.AddQueryString("password", password);
 			var response =  await _rc.SendAsync<User> (request);
 
-			System.Diagnostics.Debug.WriteLine(response.Content.username);
+			//System.Diagnostics.Debug.WriteLine(response.Content.username);
 
 			return response.Content;
 

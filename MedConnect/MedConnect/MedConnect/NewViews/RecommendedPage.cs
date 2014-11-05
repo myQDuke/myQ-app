@@ -32,7 +32,7 @@ namespace MedConnect.NewViews
             {
                 var question = args.Item as Question;
                 if (question == null) return;
-                DisplayAlert("Question Added", "Question added to your library!", "OK");
+				HandleAddLibrary(question.id);
             };
 
             var header = new HeaderElement("Recommended Questions");
@@ -45,5 +45,11 @@ namespace MedConnect.NewViews
             };
             
         }
+
+		public async void HandleAddLibrary(int questionID)
+		{
+			_masterPage.MainView.postLibrary(questionID);
+			await DisplayAlert("Question Added", "Question added to your library!", "OK");
+		}
     }
 }

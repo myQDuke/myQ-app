@@ -77,7 +77,9 @@ namespace MedConnect.ViewModels
 			var responseUser = await _webService.login (username, password);
 			//System.Diagnostics.Debug.WriteLine (_currentUser);
 			User = responseUser;
-			_libraryQuestions = User.Questions; 
+			if (User != null) {
+				_libraryQuestions = User.Questions; 
+			}
 			return User;
         }
 

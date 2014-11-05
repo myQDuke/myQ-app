@@ -85,13 +85,14 @@ namespace MedConnect.NewViews
 			mp.Master = mp.getMasterContentPage();
 			mp.Detail = new LandingPage(mp);
 			await mp.MainView.authenticate(username,password);
-			if(mp.MainView.User.username != null) {
+			if(mp.MainView.User != null) {
 				//System.Diagnostics.Debug.WriteLine (mp.MainView.User);
 				await Navigation.PushModalAsync(mp);
 				mp.MainView.getLibraryQuestions ();
 			}
             else
             {
+				System.Diagnostics.Debug.WriteLine ("fag muffin to the rescue");
                 await DisplayAlert("Error", "Invalid username or password", "OK");
             }
 		}
