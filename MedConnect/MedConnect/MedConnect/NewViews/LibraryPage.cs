@@ -15,32 +15,10 @@ namespace MedConnect.NewViews
 
         public LibraryPage(MasterPage masterPage)
         {
+            this.Appearing += LibraryPage_Appearing;
+
             _masterPage = masterPage; 
             BackgroundColor = Color.FromHex("#C1C1C1");
-            ObservableCollection<Question> Questions = new ObservableCollection<Question>();
-            Question q1 = new Question
-            {
-                Text = "This is a sample question",
-                Text2 = "More text",
-                Text3 = "I love Xamarin"
-            };
-            Question q2 = new Question
-            {
-                Text = "This is a sample question",
-                Text2 = "More text",
-                Text3 = "I love Xamarin"
-            };
-            Question q3 = new Question
-            {
-                Text = "Another sample question",
-                Text2 = "More text yay",
-                Text3 = "So beautiful"
-            };
-            Questions.Add(q1);
-            Questions.Add(q2);
-            Questions.Add(q3);
-
-			_masterPage.MainView.getLibraryQuestions ();
 
 			this.BindingContext = _masterPage.MainView;
 
@@ -50,7 +28,10 @@ namespace MedConnect.NewViews
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
             listView.ItemTapped += (sender, args) =>
             {
-                var modalPage = new EditQuestionPage(_masterPage);
+                var question = args.Item as Question;
+                if (question == null) return;
+
+                var modalPage = new EditQuestionPage(_masterPage, question.id);
                 Navigation.PushModalAsync(modalPage);
                 listView.SelectedItem = null;
             };
@@ -75,5 +56,12 @@ namespace MedConnect.NewViews
                 Children = { header, listView, addQuestionButton }
             };
         }
+
+        void LibraryPage_Appearing(object sender, EventArgs e)
+        {
+            _masterPage.MainView.getLibraryQuestions();
+        }
+
+        
     }
 }

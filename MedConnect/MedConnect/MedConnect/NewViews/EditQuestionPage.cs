@@ -9,11 +9,13 @@ namespace MedConnect.NewViews
 {
     public class EditQuestionPage : ContentPage 
     {
-        MasterPage _masterPage; 
+        MasterPage _masterPage;
+        int _questionID;
 
-        public EditQuestionPage(MasterPage masterPage)
+        public EditQuestionPage(MasterPage masterPage, int questionID)
         {
             _masterPage = masterPage;
+            _questionID = questionID;
 
             var rateQuestionLabel = new Label
             {
@@ -53,6 +55,7 @@ namespace MedConnect.NewViews
             removeQuestionButton.Clicked += (sender, args) =>
             {
                 System.Diagnostics.Debug.WriteLine("Question removed");
+                _masterPage.MainView.removeLibraryQuestion(_questionID);
                 Navigation.PopModalAsync();
             };
 
@@ -91,5 +94,6 @@ namespace MedConnect.NewViews
             };
             mainLayout.GestureRecognizers.Add(tapRecognizer);
         }
+
     }
 }

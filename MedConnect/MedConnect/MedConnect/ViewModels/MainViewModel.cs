@@ -121,6 +121,10 @@ namespace MedConnect.ViewModels
 			User = responseUser;
 			return User;
 		}
+        public void removeLibraryQuestion(int questionID)
+        {
+            _webService.removeLibraryQuestion(questionID, _currentUser.id);
+        }
 	}
 }
 

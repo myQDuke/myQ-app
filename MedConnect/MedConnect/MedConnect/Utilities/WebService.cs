@@ -14,20 +14,20 @@ namespace MedConnect.Utilies
 	public class WebService
 	{
 
-		private RestClient _rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
-		private HttpClient _httpClient = new HttpClient();
+		private RestClient _rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };	
 
 		public WebService ()
-		{
-			_httpClient.BaseAddress = new Uri ("http://cancerquest.azurewebsites.net");
+		{		
+            
 		}
 
 		public async Task<ObservableCollection<Question>> getRecQuestions()
-		{
-			var questions = await _httpClient.GetStringAsync (_httpClient.BaseAddress + "/questions/");
-            //System.Diagnostics.Debug.WriteLine("i got the questions!!");
-			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
-			return po;
+		{   
+            var request = new RestRequest("/questions", HttpMethod.Get);
+
+            var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+
+            return response.Content;
 		}
 		public async Task<User> login(string username, string password) 
 		{
@@ -74,17 +74,30 @@ namespace MedConnect.Utilies
 
 			var response = await _rc.SendAsync<Question>(request);
 
-			System.Diagnostics.Debug.WriteLine(response.Content.Text);
+			System.Diagnostics.Debug.WriteLine("Added Question: " + response.Content.Text);
 			return response.Content;
 		}
 		public async Task<ObservableCollection<Question>> getLibraryQuestions(int userID)
 		{
 			string addr = "/users/" + userID + "/questions/";
-			var questions = await _httpClient.GetStringAsync (_httpClient.BaseAddress + addr);
-			//System.Diagnostics.Debug.WriteLine("i got the questions!!");
-			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
-			return po;
+
+            var request = new RestRequest(addr, HttpMethod.Get); 
+
+            var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+            
+            return response.Content;
 		}
+        public async void removeLibraryQuestion(int questionID, int userID)
+        {
+            string addr = "/users/" + userID + "/questions/";
+
+            var request = new RestRequest(addr, HttpMethod.Delete);
+            request.AddQueryString("id", questionID);            
+            await _rc.SendAsync<String>(request);
+
+            System.Diagnostics.Debug.WriteLine("blamblalbmalbmlamblam");
+
+        }
 			
 	}
 }
