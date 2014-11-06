@@ -141,27 +141,12 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="icon_brightness.png" />
-    <Content Include="icon_expand.png" />
-    <Content Include="icon_heart.png" />
-    <Content Include="icon_calendar.png" />
-    <Content Include="icon_compose.png" />
-    <Content Include="icon_download.png" />
-    <Content Include="icon_library.png" />
-    <Content Include="icon_menu.png" />
-    <AndroidResource Include="icon_profle.png" />
-    <Content Include="icon_plus.png" />
-    <Content Include="icon_search.png" />
-    <Content Include="logo.png" />
-    <Content Include="logo2.png" />
-    <Content Include="logo3.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
-    <Content Include="icon_upload.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
