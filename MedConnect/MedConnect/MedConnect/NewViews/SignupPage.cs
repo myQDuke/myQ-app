@@ -53,9 +53,12 @@ namespace MedConnect.NewViews
 			{
 				string username = usernameEntry.Text;
 				string password = passwordEntry.Text; 
+				string repassword = passwordRetypeEntry.Text;
 				//check password and retype are same!!
 				string email = emailEntry.Text;
-
+				if(!(password.Equals(repassword))) {
+					DisplayAlert("Error", "Passwords do not match", "OK");
+				}
 				HandleSignUp(username, password, email);
 			};
 
