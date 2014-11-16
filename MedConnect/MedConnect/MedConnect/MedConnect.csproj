@@ -64,6 +64,8 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="ViewModels\VisitsViewModel.cs" />
+    <Compile Include="NewViews\VisitCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">

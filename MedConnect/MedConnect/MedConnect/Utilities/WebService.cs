@@ -92,7 +92,7 @@ namespace MedConnect.Utilies
 			string addr = "/users/" + userID + "/appointments";
 			var request = new RestRequest(addr, HttpMethod.Get); 
 
-			var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+			var response = await _rc.SendAsync<ObservableCollection<Visit>>(request);
 
 			return response.Content;
 		}
@@ -102,7 +102,7 @@ namespace MedConnect.Utilies
 			string addr = "/users/" + userID + "/appointments";
 			var request = new RestRequest(addr, HttpMethod.Post); 
 
-			var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+			var response = await _rc.SendAsync<Visit>(request);
 
 			return response.Content;
 		}
