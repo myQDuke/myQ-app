@@ -124,7 +124,11 @@ namespace MedConnect.ViewModels
 			var tempQ = await _webService.getVisits(_currentUser.id);
 			LibraryQuestions = tempQ;
 
-			System.Diagnostics.Debug.WriteLine(_currentUser.Questions);
+			System.Diagnostics.Debug.WriteLine(_currentUser.Visits);
+		}
+		public async void createVisit()
+		{
+			await _webService.createVisit (_currentUser.id);
 		}
 
 		public async void postLibrary(int questionID)
