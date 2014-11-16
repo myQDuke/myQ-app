@@ -58,7 +58,18 @@ namespace MedConnect.ViewModels
 				OnPropertyChanged ("LibraryQuestions");
 			}
 		}
+		private ObservableCollection<Visit> _visits;
 
+		public ObservableCollection<Visit> Visits
+		{
+			get{
+				return _visits;
+			}
+			set{
+				_visits = value;
+				OnPropertyChanged ("Visits");
+			}
+		}
 
         //should we have instances of every view so that we can cache them? or is that stupid and should we make new ones everytime... 
 
@@ -93,14 +104,11 @@ namespace MedConnect.ViewModels
             }
             RecommendedQuestions = tempQ;
         }
+
 		public async void getLibraryQuestions()
 		{
 			LibraryQuestions.Clear();
 			var tempQ = await _webService.getLibraryQuestions(_currentUser.id);
-			foreach (var q in tempQ) {
-				//RecommendedQuestions.Add (q);
-				System.Diagnostics.Debug.WriteLine(q.Text);
-			}
 			LibraryQuestions = tempQ;
 
 			System.Diagnostics.Debug.WriteLine(_currentUser.Questions);
@@ -110,6 +118,15 @@ namespace MedConnect.ViewModels
             var response = await _webService.postQuestion(s);
 			return response;
         }
+		public async void getVisits()
+		{
+			Visits.Clear();
+			var tempQ = await _webService.getVisits(_currentUser.id);
+			LibraryQuestions = tempQ;
+
+			System.Diagnostics.Debug.WriteLine(_currentUser.Questions);
+		}
+
 		public async void postLibrary(int questionID)
 		{
 			var response = await _webService.postLibrary(questionID, _currentUser.id);
