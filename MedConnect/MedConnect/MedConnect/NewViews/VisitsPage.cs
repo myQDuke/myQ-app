@@ -43,13 +43,20 @@ namespace MedConnect.NewViews
             listView.ItemTemplate = new DataTemplate(typeof(LibraryCell));
 
             var header = new HeaderElement("My Visits");
-            var footer = new VisitsFooter(); 
+            var addVisitsButton = new Button
+            {
+                Text = "Add New Visit"
+            };
+            addVisitsButton.Clicked += (sender, args) =>
+            {
+
+            };
 
             Content = new StackLayout
             {
                 Padding = new Thickness(20, 20, 20, 20),
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Children = { header, listView, footer }
+                Children = { header }
             };
         }
     }

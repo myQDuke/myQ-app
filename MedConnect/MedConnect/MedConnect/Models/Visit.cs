@@ -11,6 +11,8 @@ namespace MedConnect.Models
 	public class Visit
 	{
 		public ObservableCollection<Question> Questions { get; set; }
+        public string name { get; set; }
+
         //add recordings here
 
 		public Visit ()
