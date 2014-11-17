@@ -47,6 +47,7 @@ namespace MedConnect.NewViews
             {
                 Text = "Add New Visit"
             };
+
             addVisitsButton.Clicked += (sender, args) =>
             {
 
