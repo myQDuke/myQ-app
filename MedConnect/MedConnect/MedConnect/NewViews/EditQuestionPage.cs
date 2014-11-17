@@ -52,6 +52,19 @@ namespace MedConnect.NewViews
                 Text = "Cancel"
             };
 
+            this.BindingContext = _masterPage.MainView._visitsViewModel;
+
+            var listView = new ListView();
+            listView.HasUnevenRows = true;
+            listView.SetBinding(ListView.ItemsSourceProperty, new Binding("Visits"));
+            //listView.ItemsSource = Questions;
+            listView.ItemTemplate = new DataTemplate(typeof(VisitCell));
+
+            listView.ItemTapped += (sender, args) =>
+            {
+                listView.SelectedItem = null;
+            };
+
             removeQuestionButton.Clicked += (sender, args) =>
             {
                 System.Diagnostics.Debug.WriteLine("Question removed");
@@ -82,7 +95,7 @@ namespace MedConnect.NewViews
                 BackgroundColor = Color.FromRgba(1, 1, 1, 0.5),
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.CenterAndExpand,
-                Children = { rateQuestionLabel, yesNoLayout, removeQuestionButton, cancelButton }
+                Children = { rateQuestionLabel, yesNoLayout, removeQuestionButton, listView, cancelButton }
             };
 
             Content = mainLayout;
