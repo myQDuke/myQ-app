@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using Xamarin.Forms;
 using System.Diagnostics;
 using MedConnect.Models; 
@@ -39,7 +39,7 @@ namespace MedConnect.NewViews
             visitsTapRecognizer.Tapped += (s, e) =>
             {
                 _masterPage.Master = _masterPage.getMasterContentPage();
-                _masterPage.Detail = new VisitsPage();
+				_masterPage.Detail = new VisitsPage(_masterPage);
             };
             visitsEntry.GestureRecognizers.Add(visitsTapRecognizer);
 

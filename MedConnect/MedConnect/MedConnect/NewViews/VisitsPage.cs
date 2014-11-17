@@ -11,36 +11,36 @@ namespace MedConnect.NewViews
 {
     public class VisitsPage : ContentPage
     {
-        public VisitsPage()
+		private MasterPage _masterPage;
+		public VisitsPage(MasterPage masterPage)
         {
+			_masterPage = masterPage;
+
             BackgroundColor = Color.FromHex("#C1C1C1");
-            ObservableCollection<Question> Questions = new ObservableCollection<Question>();
-            Question q1 = new Question
+            ObservableCollection<Visit> Questions = new ObservableCollection<Visit>();
+            Visit q1 = new Visit
             {
-                Text = "This is a sample question",
-                Text2 = "More text",
-                Text3 = "I love Xamarin"
+                name = "This is a sample question",
+
             };
-            Question q2 = new Question
-            {
-                Text = "This is a sample question",
-                Text2 = "More text",
-                Text3 = "I love Xamarin"
-            };
-            Question q3 = new Question
-            {
-                Text = "Another sample question",
-                Text2 = "More text yay",
-                Text3 = "So beautiful"
-            };
+			Visit q2 = new Visit
+			{
+				name = "This is a sample question",
+
+			};
+            
             Questions.Add(q1);
             Questions.Add(q2);
-            Questions.Add(q3);
+
+			_masterPage.MainView.getVisits();
+
+			this.BindingContext = _masterPage.MainView._visitsViewModel;
 
             var listView = new ListView();
             listView.HasUnevenRows = true;
-            listView.ItemsSource = Questions;
-            listView.ItemTemplate = new DataTemplate(typeof(LibraryCell));
+			listView.SetBinding (ListView.ItemsSourceProperty, new Binding ("Visits"));
+			//listView.ItemsSource = Questions;
+            listView.ItemTemplate = new DataTemplate(typeof(VisitCell));
 
             var header = new HeaderElement("My Visits");
             var addVisitsButton = new Button
@@ -57,7 +57,7 @@ namespace MedConnect.NewViews
             {
                 Padding = new Thickness(20, 20, 20, 20),
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Children = { header }
+                Children = { header, listView, addVisitsButton}
             };
         }
     }

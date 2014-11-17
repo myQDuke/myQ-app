@@ -95,7 +95,7 @@ namespace MedConnect.NewViews
 
             visitsPageButton.Clicked += (sender, args) =>
             {
-                Detail = new NavigationPage(new VisitsPage());
+				Detail = new NavigationPage(new VisitsPage(this));
                 IsPresented = false;
             };
 

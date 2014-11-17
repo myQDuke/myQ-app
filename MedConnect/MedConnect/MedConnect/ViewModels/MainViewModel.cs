@@ -14,6 +14,10 @@ namespace MedConnect.ViewModels
 {
 	public class MainViewModel : ViewModel
 	{
+		private WebService _webService;
+		private static User _currentUser;
+		public VisitsViewModel _visitsViewModel;
+
 		private ObservableCollection<Question> _recommendedQuestions;
 
         public ObservableCollection<Question> RecommendedQuestions
@@ -28,9 +32,6 @@ namespace MedConnect.ViewModels
 				OnPropertyChanged("RecommendedQuestions");
             }
         } 
-
-        private WebService _webService;
-		private static User _currentUser;
 
 		public User User
 		{
@@ -58,18 +59,6 @@ namespace MedConnect.ViewModels
 				OnPropertyChanged ("LibraryQuestions");
 			}
 		}
-		private ObservableCollection<Visit> _visits;
-
-		public ObservableCollection<Visit> Visits
-		{
-			get{
-				return _visits;
-			}
-			set{
-				_visits = value;
-				OnPropertyChanged ("Visits");
-			}
-		}
 
         //should we have instances of every view so that we can cache them? or is that stupid and should we make new ones everytime... 
 
@@ -78,6 +67,7 @@ namespace MedConnect.ViewModels
             _recommendedQuestions = new ObservableCollection<Question>();
 			_libraryQuestions = new ObservableCollection<Question>();
 
+			_visitsViewModel = new VisitsViewModel (_webService);
 			//test createUser
 			//createUser ("Kevin", "Test", "jon@jo.com");
 
@@ -118,17 +108,9 @@ namespace MedConnect.ViewModels
             var response = await _webService.postQuestion(s);
 			return response;
         }
-		public async void getVisits()
+		public void getVisits()
 		{
-			Visits.Clear();
-			var tempQ = await _webService.getVisits(_currentUser.id);
-			LibraryQuestions = tempQ;
-
-			System.Diagnostics.Debug.WriteLine(_currentUser.Visits);
-		}
-		public async void createVisit()
-		{
-			await _webService.createVisit (_currentUser.id);
+			_visitsViewModel.getVisits (_currentUser.id);
 		}
 
 		public async void postLibrary(int questionID)
