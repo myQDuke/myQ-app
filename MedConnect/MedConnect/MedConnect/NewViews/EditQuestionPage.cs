@@ -60,8 +60,9 @@ namespace MedConnect.NewViews
             //listView.ItemsSource = Questions;
             listView.ItemTemplate = new DataTemplate(typeof(VisitCell));
 
-            listView.ItemTapped += (sender, args) =>
+            listView.ItemTapped += async (sender, args) =>
             {
+                var answer = await DisplayAlert("Add question to visit", "Are you sure you want to proceed?", "Yes", "No");
                 listView.SelectedItem = null;
             };
 
