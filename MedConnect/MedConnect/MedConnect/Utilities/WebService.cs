@@ -117,11 +117,31 @@ namespace MedConnect.Utilies
 
 			return response.Content;
 		}
+		public async Task<Visit> deleteVisit(int userID, int visitID)
+		{
+			string addr = "/users/" + userID + "/appointments/" + visitID;
+			var request = new RestRequest(addr, HttpMethod.Delete);
+
+			var response = await _rc.SendAsync<Visit> (request);
+
+			return response.Content;
+
+		}
 		public async Task<Question> addQuestionVisit(int userID, int questionID, int visitID)
 		{
 			string addr = "/users/" + userID + "/appointments/" + visitID;
 
 			var request = new RestRequest(addr, HttpMethod.Post);
+			request.AddQueryString("qid", questionID);
+			var response = await _rc.SendAsync<Question> (request);
+			System.Diagnostics.Debug.WriteLine ("yoloswag");
+			return response.Content;
+		}
+		public async Task<Question> deleteQuestionVisit(int userID, int questionID, int visitID)
+		{
+			string addr = "/users/" + userID + "/appointments/" + visitID;
+
+			var request = new RestRequest(addr, HttpMethod.Delete);
 			request.AddQueryString("qid", questionID);
 			var response = await _rc.SendAsync<Question> (request);
 			System.Diagnostics.Debug.WriteLine ("yoloswag");

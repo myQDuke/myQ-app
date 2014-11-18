@@ -70,6 +70,7 @@
     <Compile Include="NewViews\Cells\LibraryCell.cs" />
     <Compile Include="NewViews\Library\AddQuestionPage.cs" />
     <Compile Include="NewViews\Library\EditQuestionPage.cs" />
+    <Compile Include="Utilities\TagTranslator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
