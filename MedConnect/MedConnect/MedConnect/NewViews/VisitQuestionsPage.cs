@@ -41,6 +41,8 @@ namespace MedConnect.NewViews
                 Text = "Add Question"
             };
 
+            var footer = new VisitsFooter(); 
+
             addQuestionButton.Clicked += (sender, args) =>
             {
                 var modalPage = new AddQuestionPage(_masterPage.MainView);
@@ -52,7 +54,7 @@ namespace MedConnect.NewViews
             {
                 Padding = new Thickness(20, 20, 20, 20),
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Children = { header, listView, addQuestionButton }
+                Children = { header, listView, addQuestionButton, footer }
             };
         }
 
