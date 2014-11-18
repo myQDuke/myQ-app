@@ -125,9 +125,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="NewViews\Visits\" />
-    <Folder Include="NewViews\Library\" />
-    <Folder Include="NewViews\Cells\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

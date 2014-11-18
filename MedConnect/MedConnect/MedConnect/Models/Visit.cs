@@ -12,6 +12,7 @@ namespace MedConnect.Models
 	{
 		public ObservableCollection<Question> Questions { get; set; }
         public string name { get; set; }
+        public int id { get; set; }
 
         //add recordings here
 

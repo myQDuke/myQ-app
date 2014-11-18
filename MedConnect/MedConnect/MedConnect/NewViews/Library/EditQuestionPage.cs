@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedConnect.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,7 @@ namespace MedConnect.NewViews
             {
                 Text = "Cancel"
             };
-
+			_masterPage.MainView.getVisits();
             this.BindingContext = _masterPage.MainView._visitsViewModel;
 
             var listView = new ListView();
@@ -62,7 +63,11 @@ namespace MedConnect.NewViews
 
             listView.ItemTapped += async (sender, args) =>
             {
-                var answer = await DisplayAlert("Add question to visit", "Are you sure you want to proceed?", "Yes", "No");
+                var visit = args.Item as Visit;
+                if (visit == null) return;
+
+                //var answer = await DisplayAlert("Add question to visit", "Are you sure you want to proceed?", "Yes", "No");
+                HandleAddVisitQuestion(visit.id);
                 listView.SelectedItem = null;
             };
 
@@ -109,6 +114,16 @@ namespace MedConnect.NewViews
             };
             mainLayout.GestureRecognizers.Add(tapRecognizer);
             */
+        }
+
+        public async void HandleAddVisitQuestion(int visitID)
+        {
+            //use _questionID;
+            
+			int userID = _masterPage.MainView.User.id;
+			System.Diagnostics.Debug.WriteLine(userID + " qid: " + _questionID + " visitID: " + visitID);
+			_masterPage.MainView.postVisitQuestion (userID, _questionID, visitID);
+			await DisplayAlert("Question Added", "Question added to your visit!", "OK");
         }
 
     }

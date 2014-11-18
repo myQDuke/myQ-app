@@ -33,6 +33,7 @@ namespace MedConnect.NewViews
                 var question = args.Item as Question;
                 if (question == null) return;
 				HandleAddLibrary(question.id);
+                listView.SelectedItem = null;
             };
 
             var header = new HeaderElement("Recommended Questions");

@@ -117,9 +117,15 @@ namespace MedConnect.Utilies
 
 			return response.Content;
 		}
-		public async void addQuestionVisit(int questionID, int userID)
+		public async Task<Question> addQuestionVisit(int userID, int questionID, int visitID)
 		{
+			string addr = "/users/" + userID + "/appointments/" + visitID;
 
+			var request = new RestRequest(addr, HttpMethod.Post);
+			request.AddQueryString("qid", questionID);
+			var response = await _rc.SendAsync<Question> (request);
+			System.Diagnostics.Debug.WriteLine ("yoloswag");
+			return response.Content;
 		}
         public async void removeLibraryQuestion(int questionID, int userID)
         {
@@ -129,7 +135,7 @@ namespace MedConnect.Utilies
             request.AddQueryString("id", questionID);            
             await _rc.SendAsync<String>(request);
 
-            System.Diagnostics.Debug.WriteLine("blamblalbmalbmlamblam");
+            
 
         }
 			
