@@ -132,13 +132,17 @@ namespace MedConnect.Utilies
             string addr = "/users/" + userID + "/questions/";
 
             var request = new RestRequest(addr, HttpMethod.Delete);
-            request.AddQueryString("id", questionID);            
+            request.AddQueryString("id", questionID);
             await _rc.SendAsync<String>(request);
-
-            
-
         }
-			
+        public async Task<ObservableCollection<Question>> getSearchResults(string query)
+        {
+            var request = new RestRequest("/questions/search?q=" + query, HttpMethod.Get);
+
+            var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+
+            return response.Content;
+        }	
 	}
 }
 

@@ -17,6 +17,7 @@ namespace MedConnect.ViewModels
 		private WebService _webService;
 		private static User _currentUser;
 		public VisitsViewModel _visitsViewModel;
+        public SearchViewModel _searchViewModel;
 
 		private ObservableCollection<Question> _recommendedQuestions;
 
@@ -68,9 +69,10 @@ namespace MedConnect.ViewModels
 			_libraryQuestions = new ObservableCollection<Question>();
 
 			_visitsViewModel = new VisitsViewModel (_webService);
+            _searchViewModel = new SearchViewModel (_webService);
 			//test createUser
 			//createUser ("Kevin", "Test", "jon@jo.com");
-
+            _searchViewModel.getSearchResults("what");
 		}
 
 		public async Task<User> authenticate(string username, string password)
