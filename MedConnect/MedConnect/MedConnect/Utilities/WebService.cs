@@ -137,6 +137,7 @@ namespace MedConnect.Utilies
 			System.Diagnostics.Debug.WriteLine ("yoloswag");
 			return response.Content;
 		}
+
 		public async Task<Question> deleteQuestionVisit(int userID, int questionID, int visitID)
 		{
 			string addr = "/users/" + userID + "/appointments/" + visitID;
@@ -147,6 +148,7 @@ namespace MedConnect.Utilies
 			System.Diagnostics.Debug.WriteLine ("yoloswag");
 			return response.Content;
 		}
+
         public async void removeLibraryQuestion(int questionID, int userID)
         {
             string addr = "/users/" + userID + "/questions/";

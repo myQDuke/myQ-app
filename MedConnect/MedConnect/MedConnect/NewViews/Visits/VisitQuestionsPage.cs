@@ -22,19 +22,21 @@ namespace MedConnect.NewViews
             BackgroundColor = Color.FromHex("#C1C1C1");
 
 			//change lol 
-            this.BindingContext = _masterPage.MainView;
+			_masterPage.MainView._visitsViewModel.getVisitQuestions (_masterPage.MainView.User.id, _visit.id);
+
+			this.BindingContext = _masterPage.MainView._visitsViewModel;
 
             var listView = new ListView();
             listView.HasUnevenRows = true;
-            listView.SetBinding(ListView.ItemsSourceProperty, new Binding("LibraryQuestions"));
+            listView.SetBinding(ListView.ItemsSourceProperty, new Binding("VisitQuestions"));
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
             listView.ItemTapped += (sender, args) =>
             {
                 var question = args.Item as Question;
                 if (question == null) return;
 
-                var modalPage = new EditQuestionPage(_masterPage, question.id);
-                Navigation.PushModalAsync(modalPage);
+                //var modalPage = new EditQuestionPage(_masterPage, question.id);
+                //Navigation.PushModalAsync(modalPage);
                 listView.SelectedItem = null;
             };
 			var header = new HeaderElement(_visit.name);

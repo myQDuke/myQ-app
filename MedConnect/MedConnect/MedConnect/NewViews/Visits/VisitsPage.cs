@@ -60,7 +60,7 @@ namespace MedConnect.NewViews
 
             addVisitsButton.Clicked += (sender, args) =>
             {
-
+				HandleAddVisit();
             };
 
             Content = new StackLayout
@@ -70,5 +70,12 @@ namespace MedConnect.NewViews
                 Children = { header, listView, addVisitsButton}
             };
         }
+
+		public async void HandleAddVisit()
+		{
+			int userID = _masterPage.MainView.User.id;
+			_masterPage.MainView._visitsViewModel.createVisit (userID);
+			await DisplayAlert("Visit Created", "New Visit created!", "OK");
+		}
     }
 }
