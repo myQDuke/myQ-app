@@ -97,6 +97,17 @@ namespace MedConnect.Utilies
 			return response.Content;
 		}
 
+		public async Task<ObservableCollection<Question>> getVisitQuestions(int userID, int visitID)
+		{
+			string addr = "/users/" + userID + "/questions/" + visitID;
+
+			var request = new RestRequest(addr, HttpMethod.Get); 
+
+			var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+
+			return response.Content;
+		}
+
 		public async Task<Visit> createVisit(int userID)
 		{
 			string addr = "/users/" + userID + "/appointments";

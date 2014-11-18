@@ -42,6 +42,16 @@ namespace MedConnect.NewViews
 			//listView.ItemsSource = Questions;
             listView.ItemTemplate = new DataTemplate(typeof(VisitCell));
 
+			listView.ItemTapped += (sender, args) =>
+			{
+				var visit = args.Item as Visit;
+				if (visit == null) return;
+
+				var modalPage = new VisitQuestionsPage(_masterPage, visit);
+				Navigation.PushModalAsync(modalPage);
+				listView.SelectedItem = null;
+			};
+
             var header = new HeaderElement("My Visits");
             var addVisitsButton = new Button
             {

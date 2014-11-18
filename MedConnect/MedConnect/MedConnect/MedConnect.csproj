@@ -39,24 +39,16 @@
     <Compile Include="Models\QuestionTag.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="NewViews\AddQuestionPage.cs" />
     <Compile Include="NewViews\BrowsePage.cs" />
-    <Compile Include="NewViews\EditQuestionPage.cs" />
     <Compile Include="NewViews\HeaderElement.cs" />
-    <Compile Include="NewViews\LandingCell.cs" />
     <Compile Include="NewViews\LandingPage.cs" />
-    <Compile Include="NewViews\LibraryCell.cs" />
-    <Compile Include="NewViews\LibraryPage.cs" />
     <Compile Include="NewViews\LoginPage.cs" />
     <Compile Include="NewViews\MasterPage.cs" />
     <Compile Include="NewViews\MenuPage.cs" />
-    <Compile Include="NewViews\QuestionCell.cs" />
     <Compile Include="NewViews\RecommendedPage.cs" />
     <Compile Include="NewViews\SearchPage.cs" />
     <Compile Include="NewViews\SignupPage.cs" />
     <Compile Include="NewViews\TabsHeader.cs" />
-    <Compile Include="NewViews\VisitsFooter.cs" />
-    <Compile Include="NewViews\VisitsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\WebService.cs" />
     <Compile Include="Models\Visit.cs" />
@@ -65,7 +57,18 @@
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\VisitsViewModel.cs" />
-    <Compile Include="NewViews\VisitCell.cs" />
+    <Compile Include="ViewModels\LibraryViewModel.cs" />
+    <Compile Include="NewViews\Visits\EditVisitQuestionPage.cs" />
+    <Compile Include="NewViews\Visits\VisitQuestionsPage.cs" />
+    <Compile Include="NewViews\Visits\VisitsFooter.cs" />
+    <Compile Include="NewViews\Visits\VisitsPage.cs" />
+    <Compile Include="NewViews\Library\LibraryPage.cs" />
+    <Compile Include="NewViews\Cells\VisitCell.cs" />
+    <Compile Include="NewViews\Cells\LandingCell.cs" />
+    <Compile Include="NewViews\Cells\QuestionCell.cs" />
+    <Compile Include="NewViews\Cells\LibraryCell.cs" />
+    <Compile Include="NewViews\Library\AddQuestionPage.cs" />
+    <Compile Include="NewViews\Library\EditQuestionPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
@@ -122,4 +125,9 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="NewViews\Visits\" />
+    <Folder Include="NewViews\Library\" />
+    <Folder Include="NewViews\Cells\" />
+  </ItemGroup>
 </Project>

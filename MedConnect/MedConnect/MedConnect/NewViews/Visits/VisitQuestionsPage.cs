@@ -11,14 +11,17 @@ namespace MedConnect.NewViews
     public class VisitQuestionsPage : ContentPage 
     {
         private MasterPage _masterPage; 
+		private Visit _visit;
 
-        public VisitQuestionsPage(MasterPage masterPage)
+		public VisitQuestionsPage(MasterPage masterPage, Visit visit)
         {
             this.Appearing += LibraryPage_Appearing;
 
             _masterPage = masterPage;
+			_visit = visit;
             BackgroundColor = Color.FromHex("#C1C1C1");
 
+			//change lol 
             this.BindingContext = _masterPage.MainView;
 
             var listView = new ListView();
@@ -34,7 +37,7 @@ namespace MedConnect.NewViews
                 Navigation.PushModalAsync(modalPage);
                 listView.SelectedItem = null;
             };
-            var header = new HeaderElement("My Library");
+			var header = new HeaderElement(_visit.name);
 
             var addQuestionButton = new Button
             {

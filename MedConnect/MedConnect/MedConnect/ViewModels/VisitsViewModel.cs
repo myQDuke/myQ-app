@@ -29,6 +29,20 @@ namespace MedConnect
 				OnPropertyChanged ("Visits");
 			}
 		}
+		private ObservableCollection<Question> _visitQuestions;
+
+		public ObservableCollection<Question> VisitQuestions
+		{
+			get{
+				return _visitQuestions;
+			}
+			set{
+				_visitQuestions = value;
+				OnPropertyChanged ("VisitQuestions");
+			}
+		}
+
+
 		public VisitsViewModel (WebService webservice)
 		{
 			_webService = webservice;
@@ -49,6 +63,22 @@ namespace MedConnect
 		public async void createVisit(int userID)
 		{
 			await _webService.createVisit (userID);
+		}
+
+		public async void addVisitQuestion(int userID, int visitID)
+		{
+
+		}
+		public async void getVisitQuestions(int userID, int visitID)
+		{
+			//webservice call to get visit questions
+			VisitQuestions.Clear ();
+			var temp = await _webService.getVisitQuestions (userID, visitID);
+			VisitQuestions = temp;
+			foreach (var q in Visits) {
+				//RecommendedQuestions.Add (q);
+				System.Diagnostics.Debug.WriteLine(q.name);
+			}
 		}
 	}
 }
