@@ -31,7 +31,7 @@ namespace MedConnect.NewViews
                 var question = args.Item as Question;
                 if (question == null) return;
 
-                var modalPage = new EditQuestionPage(_masterPage, question.id);
+                var modalPage = new EditQuestionPage(_masterPage, question.ID);
                 Navigation.PushModalAsync(modalPage);
                 listView.SelectedItem = null;
             };

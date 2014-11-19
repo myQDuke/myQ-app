@@ -18,6 +18,7 @@ namespace MedConnect.ViewModels
 		private static User _currentUser;
 		public VisitsViewModel _visitsViewModel;
         public SearchViewModel _searchViewModel;
+        public TagTranslator _tagTranslator;
 
 		private ObservableCollection<Question> _recommendedQuestions;
 
@@ -72,7 +73,9 @@ namespace MedConnect.ViewModels
             _searchViewModel = new SearchViewModel (_webService);
 			//test createUser
 			//createUser ("Kevin", "Test", "jon@jo.com");
-            _searchViewModel.getSearchResults("what");
+            _tagTranslator = new TagTranslator(_webService);
+            //_searchViewModel.getSearchResults("what");
+		    _webService.getTags();
 		}
 
 		public async Task<User> authenticate(string username, string password)

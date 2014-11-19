@@ -47,6 +47,7 @@ namespace MedConnect
 		{
 			_webService = webservice;
 			_visits = new ObservableCollection<Visit>();
+            _visitQuestions = new ObservableCollection<Question>();
 		}
 
 		public async void getVisits(int userID)
@@ -56,6 +57,7 @@ namespace MedConnect
 			Visits = tempQ;
 			foreach (var q in Visits) {
 				//RecommendedQuestions.Add (q);
+                //if(q.name.Equals("")) q.name = "Test Lol";
 				System.Diagnostics.Debug.WriteLine(q.name);
 			}
 		}
@@ -72,14 +74,22 @@ namespace MedConnect
 		public async void getVisitQuestions(int userID, int visitID)
 		{
 			//webservice call to get visit questions
-			VisitQuestions.Clear ();
+            VisitQuestions.Clear();
 			var temp = await _webService.getVisitQuestions (userID, visitID);
-			VisitQuestions = temp;
+			VisitQuestions = temp.Questions;
 			foreach (var q in Visits) {
 				//RecommendedQuestions.Add (q);
 				System.Diagnostics.Debug.WriteLine(q.name);
 			}
 		}
+        public void removeVisitQuestion(int userID, int visitID, int questionID)
+        {
+            _webService.deleteQuestionVisit(userID, questionID, visitID);
+        }
+        public void deleteVisit(int userID, int visitID)
+        {
+            _webService.deleteVisit(userID, visitID);
+        }
 	}
 }
 

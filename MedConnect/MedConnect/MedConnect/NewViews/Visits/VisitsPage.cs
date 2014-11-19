@@ -14,6 +14,7 @@ namespace MedConnect.NewViews
 		private MasterPage _masterPage;
 		public VisitsPage(MasterPage masterPage)
         {
+            this.Appearing += visitPage_Appearing;
 			_masterPage = masterPage;
 
             BackgroundColor = Color.FromHex("#C1C1C1");
@@ -32,7 +33,7 @@ namespace MedConnect.NewViews
             Questions.Add(q1);
             Questions.Add(q2);
 
-			_masterPage.MainView.getVisits();
+			
 
 			this.BindingContext = _masterPage.MainView._visitsViewModel;
 
@@ -77,5 +78,9 @@ namespace MedConnect.NewViews
 			_masterPage.MainView._visitsViewModel.createVisit (userID);
 			await DisplayAlert("Visit Created", "New Visit created!", "OK");
 		}
+        private void visitPage_Appearing(object sender, EventArgs args)
+        {
+            _masterPage.MainView.getVisits();
+        }
     }
 }

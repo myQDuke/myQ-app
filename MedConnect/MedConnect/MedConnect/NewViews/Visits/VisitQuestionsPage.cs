@@ -15,14 +15,14 @@ namespace MedConnect.NewViews
 
 		public VisitQuestionsPage(MasterPage masterPage, Visit visit)
         {
-            this.Appearing += LibraryPage_Appearing;
+            this.Appearing += visitQuestionsPage_Appearing;
 
             _masterPage = masterPage;
 			_visit = visit;
             BackgroundColor = Color.FromHex("#C1C1C1");
 
 			//change lol 
-			_masterPage.MainView._visitsViewModel.getVisitQuestions (_masterPage.MainView.User.id, _visit.id);
+			
 
 			this.BindingContext = _masterPage.MainView._visitsViewModel;
 
@@ -35,8 +35,8 @@ namespace MedConnect.NewViews
                 var question = args.Item as Question;
                 if (question == null) return;
 
-                //var modalPage = new EditQuestionPage(_masterPage, question.id);
-                //Navigation.PushModalAsync(modalPage);
+                var modalPage = new EditVisitQuestionPage(_masterPage, question.ID, _visit.id);
+                Navigation.PushModalAsync(modalPage);
                 listView.SelectedItem = null;
             };
 			var header = new HeaderElement(_visit.name);
@@ -46,7 +46,7 @@ namespace MedConnect.NewViews
                 Text = "Add Question"
             };
 
-            var footer = new VisitsFooter(); 
+            var footer = new VisitsFooter(_visit, _masterPage); 
 
             addQuestionButton.Clicked += (sender, args) =>
             {
@@ -63,9 +63,9 @@ namespace MedConnect.NewViews
             };
         }
 
-        void LibraryPage_Appearing(object sender, EventArgs e)
+        void visitQuestionsPage_Appearing(object sender, EventArgs e)
         {
-            _masterPage.MainView.getLibraryQuestions();
+            _masterPage.MainView._visitsViewModel.getVisitQuestions(_masterPage.MainView.User.id, _visit.id);
         }
 
     }

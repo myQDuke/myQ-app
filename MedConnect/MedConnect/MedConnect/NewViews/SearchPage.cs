@@ -24,33 +24,15 @@ namespace MedConnect.NewViews
             {
                 Placeholder = "Search for questions",
             };
-
-            ObservableCollection<Question> Questions = new ObservableCollection<Question>();
-            Question q1 = new Question
+            searchBar.SearchButtonPressed += (sender, args) =>
             {
-              Text = "This is a sample question",
-              Text2 = "More text",
-              Text3 = "I love Xamarin"
+                string searchQuery = searchBar.Text;
+                System.Diagnostics.Debug.WriteLine(searchQuery);
             };
-            Question q2 = new Question
-            {
-                Text = "This is a sample question",
-                Text2 = "More text",
-                Text3 = "I love Xamarin"
-            };
-            Question q3 = new Question
-            {
-                Text = "Another sample question",
-                Text2 = "More text yay",
-                Text3 = "So beautiful"
-            };
-            Questions.Add(q1);
-            Questions.Add(q2);
-            Questions.Add(q3);
+            
 
             var listView = new ListView();
             listView.HasUnevenRows = true;
-            listView.ItemsSource = Questions;
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
 
             Content = new StackLayout

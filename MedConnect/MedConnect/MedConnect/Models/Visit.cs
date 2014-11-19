@@ -16,14 +16,6 @@ namespace MedConnect.Models
 
         //add recordings here
 
-		public Visit ()
-		{
-		}
-
-        public void addQuestion(Question toAdd)
-        {
-            Questions.Add(toAdd);
-        }
 	}
 }
 

@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionTag.cs" />
     <Compile Include="Models\Tag.cs" />
@@ -49,6 +50,8 @@
     <Compile Include="NewViews\SearchPage.cs" />
     <Compile Include="NewViews\SignupPage.cs" />
     <Compile Include="NewViews\TabsHeader.cs" />
+    <Compile Include="NewViews\Visits\BrowseVisits.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\WebService.cs" />
     <Compile Include="Models\Visit.cs" />

@@ -6,8 +6,8 @@ namespace MedConnect
 	public class Tag
 	{
         public int id { get; set; }
-        public string text { get; set; }
-        public QuestionTag questionTag { get; set; } 
+        public string Text { get; set; }
+        public int Categoryid { get; set; }
 
         public Tag ()
 		{

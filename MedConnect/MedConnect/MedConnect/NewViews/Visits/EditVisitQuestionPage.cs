@@ -12,10 +12,13 @@ namespace MedConnect.NewViews
     {
 		private MasterPage _masterPage;
 		private int _questionID;
-		public EditVisitQuestionPage(MasterPage masterPage, int questionID)
+        private int _visitID;
+
+		public EditVisitQuestionPage(MasterPage masterPage, int questionID, int visitID)
 		{
 			_masterPage = masterPage;
 			_questionID = questionID;
+            _visitID = visitID;
 
 			var rateQuestionLabel = new Label
 			{
@@ -44,13 +47,37 @@ namespace MedConnect.NewViews
 
 			var removeQuestionButton = new Button
 			{
-				Text = "Remove question"
+				Text = "Remove question from appointment"
 			};
 
 			var cancelButton = new Button
 			{
 				Text = "Cancel"
 			};
+
+            removeQuestionButton.Clicked += (sender, args) =>
+            {
+                System.Diagnostics.Debug.WriteLine("Question removed");
+                int userID = _masterPage.MainView.User.id;
+                _masterPage.MainView._visitsViewModel.removeVisitQuestion(userID,_visitID,_questionID);
+                Navigation.PopModalAsync();
+            };
+            cancelButton.Clicked += (sender, args) =>
+            {
+                Navigation.PopModalAsync();
+            };
+
+
+            var mainLayout = new StackLayout
+            {
+                Padding = new Thickness(50, 50, 50, 50),
+                BackgroundColor = Color.FromRgba(1, 1, 1, 0.5),
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Children = { rateQuestionLabel, yesNoLayout, removeQuestionButton, cancelButton }
+            };
+
+            Content = mainLayout;
 		}
     }
 }

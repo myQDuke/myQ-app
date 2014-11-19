@@ -32,7 +32,7 @@ namespace MedConnect.NewViews
             {
                 var question = args.Item as Question;
                 if (question == null) return;
-				HandleAddLibrary(question.id);
+				HandleAddLibrary(question.ID);
                 listView.SelectedItem = null;
             };
 

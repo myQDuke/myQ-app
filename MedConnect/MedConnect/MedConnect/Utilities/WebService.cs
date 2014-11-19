@@ -14,8 +14,8 @@ namespace MedConnect.Utilies
 	public class WebService
 	{
 
-		private RestClient _rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };	
-
+        private RestClient _rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
+        //
 		public WebService ()
 		{		
             
@@ -79,7 +79,7 @@ namespace MedConnect.Utilies
 		}
 		public async Task<ObservableCollection<Question>> getLibraryQuestions(int userID)
 		{
-			string addr = "/users/" + userID + "/questions/";
+            string addr = "/users/" + userID + "/questions/";
 
             var request = new RestRequest(addr, HttpMethod.Get); 
 
@@ -97,13 +97,13 @@ namespace MedConnect.Utilies
 			return response.Content;
 		}
 
-		public async Task<ObservableCollection<Question>> getVisitQuestions(int userID, int visitID)
+		public async Task<Visit> getVisitQuestions(int userID, int visitID)
 		{
-			string addr = "/users/" + userID + "/questions/" + visitID;
+            string addr = "/users/" + userID + "/appointments/" + visitID;
 
 			var request = new RestRequest(addr, HttpMethod.Get); 
 
-			var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+			var response = await _rc.SendAsync<Visit>(request);
 
 			return response.Content;
 		}
@@ -111,42 +111,43 @@ namespace MedConnect.Utilies
 		public async Task<Visit> createVisit(int userID)
 		{
 			string addr = "/users/" + userID + "/appointments";
-			var request = new RestRequest(addr, HttpMethod.Post); 
+			var request = new RestRequest(addr, HttpMethod.Post);
+            request.AddQueryString("name", "Test Appointment");
+
 
 			var response = await _rc.SendAsync<Visit>(request);
 
 			return response.Content;
 		}
-		public async Task<Visit> deleteVisit(int userID, int visitID)
+		public async void deleteVisit(int userID, int visitID)
 		{
 			string addr = "/users/" + userID + "/appointments/" + visitID;
 			var request = new RestRequest(addr, HttpMethod.Delete);
 
 			var response = await _rc.SendAsync<Visit> (request);
 
-			return response.Content;
-
+            System.Diagnostics.Debug.WriteLine("yoloswag");
 		}
 		public async Task<Question> addQuestionVisit(int userID, int questionID, int visitID)
 		{
-			string addr = "/users/" + userID + "/appointments/" + visitID;
+			string addr = "/users/" + userID + "/appointments/" + visitID + "/question";
 
 			var request = new RestRequest(addr, HttpMethod.Post);
 			request.AddQueryString("qid", questionID);
 			var response = await _rc.SendAsync<Question> (request);
-			System.Diagnostics.Debug.WriteLine ("yoloswag");
+
 			return response.Content;
 		}
 
-		public async Task<Question> deleteQuestionVisit(int userID, int questionID, int visitID)
+		public async void deleteQuestionVisit(int userID, int questionID, int visitID)
 		{
-			string addr = "/users/" + userID + "/appointments/" + visitID;
+            string addr = "/users/" + userID + "/appointments/" + visitID + "/question";
 
 			var request = new RestRequest(addr, HttpMethod.Delete);
 			request.AddQueryString("qid", questionID);
+            
 			var response = await _rc.SendAsync<Question> (request);
 			System.Diagnostics.Debug.WriteLine ("yoloswag");
-			return response.Content;
 		}
 
         public async void removeLibraryQuestion(int questionID, int userID)
@@ -165,6 +166,23 @@ namespace MedConnect.Utilies
 
             return response.Content;
         }	
+
+
+
+
+
+
+        //tags yo:
+
+        public async void getTags()
+        {
+            var request = new RestRequest("/tags", HttpMethod.Get);
+
+            var response = await _rc.SendAsync<ObservableCollection<Category>>(request);
+            System.Diagnostics.Debug.WriteLine("yoloswag");
+
+            //return response.Content;
+        }
 	}
 }
 

@@ -67,7 +67,7 @@ namespace MedConnect.NewViews
 			
 			_postedQuestion = response;
 			System.Diagnostics.Debug.WriteLine(_postedQuestion.Text);
-			_mainViewModel.postLibrary(_postedQuestion.id);
+			_mainViewModel.postLibrary(_postedQuestion.ID);
 			//on success do this later
 			_mainViewModel.LibraryQuestions.Add (_postedQuestion);
 
