@@ -41,7 +41,7 @@ namespace MedConnect.Models
                 _notHelpfulVotes = value;
                 OnPropertyChanged();
                 OnPropertyChanged("TotalVotes");
-                OnPropertyChanged("Rat");
+                OnPropertyChanged("RatingText");
             }
         }
 
@@ -58,7 +58,7 @@ namespace MedConnect.Models
         {
             get
             {
-                return String.Format("{0} out of {1} people found this helpful", HelpfulVotes, TotalVotes);
+                return String.Format("{0} out of {1} found this helpful", HelpfulVotes, TotalVotes);
             }
         }
 

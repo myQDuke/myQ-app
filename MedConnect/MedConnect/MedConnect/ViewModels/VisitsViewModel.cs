@@ -85,6 +85,12 @@ namespace MedConnect
 				}
 				q.TagInfo = temp;
 			}
+            foreach (Question q in VisitQuestions)
+            {
+                var rate = await _webService.getRating(q.ID);
+                q.HelpfulVotes = rate.helpful;
+                q.NotHelpfulVotes = rate.total - rate.helpful;
+            }
 		}
         public void removeVisitQuestion(int userID, int visitID, int questionID)
         {

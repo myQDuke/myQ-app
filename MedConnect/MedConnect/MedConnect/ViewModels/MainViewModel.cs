@@ -97,12 +97,18 @@ namespace MedConnect.ViewModels
 
 			foreach (Question q in RecommendedQuestions) {
 				string temp = "";
+
 				foreach (Tag t in q.Tags) {
-					System.Diagnostics.Debug.WriteLine(t.Text);
 					temp = temp + t.Text;
 				}
 				q.TagInfo = temp;
 			}
+            foreach (Question q in RecommendedQuestions)
+            {
+                var rate = await _webService.getRating(q.ID);
+                q.HelpfulVotes = rate.helpful;
+                q.NotHelpfulVotes = rate.total - rate.helpful;
+            }
 
         }
 
@@ -119,6 +125,12 @@ namespace MedConnect.ViewModels
 				}
 				q.TagInfo = temp;
 			}
+            foreach (Question q in LibraryQuestions)
+            {
+                var rate = await _webService.getRating(q.ID);
+                q.HelpfulVotes = rate.helpful;
+                q.NotHelpfulVotes = rate.total - rate.helpful;
+            }
 			System.Diagnostics.Debug.WriteLine(_currentUser.Questions);
 		}
 		public async Task<Question> postQuestion(String s)

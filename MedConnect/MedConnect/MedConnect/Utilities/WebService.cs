@@ -186,6 +186,17 @@ namespace MedConnect.Utilies
 
 		//ratings yo:
 
+	    public async Task<Rating> getRating(int questionID)
+	    {
+            string addr = "/questions/" + questionID + "/rating";
+
+            var request = new RestRequest(addr, HttpMethod.Get);
+
+	        var response = await _rc.SendAsync<Rating>(request);
+
+	        return response.Content;
+	    }
+
 	}
 }
 

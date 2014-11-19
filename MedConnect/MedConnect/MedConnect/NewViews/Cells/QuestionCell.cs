@@ -23,14 +23,14 @@ namespace MedConnect.NewViews
                 TextColor = Color.FromHex("#636363"),
                 Font = Font.SystemFontOfSize(NamedSize.Small)
             };
-            ratingLabel.SetBinding(Label.TextProperty, "TagInfo");
+            ratingLabel.SetBinding(Label.TextProperty, "RatingText");
 
             var tagsLabel = new Label
             {
                 TextColor = Color.FromHex("#636363"),
                 Font = Font.SystemFontOfSize(NamedSize.Small)
             };
-            //tagsLabel.SetBinding(Label.TextProperty, "Text3");
+            tagsLabel.SetBinding(Label.TextProperty, "TagInfo");
 
             var image = new Image
             {

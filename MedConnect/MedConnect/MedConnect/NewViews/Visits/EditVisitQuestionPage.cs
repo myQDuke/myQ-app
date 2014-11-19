@@ -60,6 +60,7 @@ namespace MedConnect.NewViews
                 System.Diagnostics.Debug.WriteLine("Question removed");
                 int userID = _masterPage.MainView.User.id;
                 _masterPage.MainView._visitsViewModel.removeVisitQuestion(userID,_visitID,_questionID);
+                
                 Navigation.PopModalAsync();
             };
             cancelButton.Clicked += (sender, args) =>
