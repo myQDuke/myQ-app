@@ -27,9 +27,5 @@ public final class R {
         public static final int logo=0x7f02000d;
         public static final int logo2=0x7f02000e;
         public static final int logo3=0x7f02000f;
-        public static final int monoandroidsplash=0x7f020010;
-    }
-    public static final class style {
-        public static final int Mono_Android_Theme_Splash=0x7f030000;
     }
 }

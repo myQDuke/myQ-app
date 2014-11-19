@@ -1,12 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MedConnect/MedConnect/ViewModels/MainViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MedConnect\MedConnect\Utilities\WebService.cs">
     <Files>
-      <File FileName="MedConnect/MedConnect/ViewModels/MainViewModel.cs" Line="18" Column="18" />
-      <File FileName="MedConnect/MedConnect/Utilities/WebService.cs" Line="40" Column="40" />
-      <File FileName="MedConnect/MedConnect/Models/Question.cs" Line="1" Column="1" />
-      <File FileName="MedConnect/MedConnect/ViewModels/ViewModel.cs" Line="1" Column="1" />
-      <File FileName="MedConnect/MedConnect/NewViews/LoginPage.cs" Line="1" Column="1" />
+      <File FileName="MedConnect\MedConnect\ViewModels\MainViewModel.cs" Line="2" Column="2" />
+      <File FileName="MedConnect\MedConnect\Utilities\WebService.cs" Line="3" Column="3" />
+      <File FileName="MedConnect\MedConnect\Models\Question.cs" Line="1" Column="1" />
+      <File FileName="MedConnect\MedConnect\ViewModels\ViewModel.cs" Line="1" Column="1" />
+      <File FileName="MedConnect\MedConnect\NewViews\LoginPage.cs" Line="1" Column="1" />
+      <File FileName="MedConnect\MedConnect\MedConnect.csproj" Line="4" Column="4" />
+      <File FileName="..\..\..\..\..\..\Program Files (x86)\MSBuild\12.0\bin\Microsoft.Common.CurrentVersion.targets" Line="5" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

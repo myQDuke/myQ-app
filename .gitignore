@@ -3,6 +3,7 @@
 
 # Build/test output
 obj
+Bin
 bin
 test-results
 
