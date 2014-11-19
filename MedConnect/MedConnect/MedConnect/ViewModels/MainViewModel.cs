@@ -75,7 +75,7 @@ namespace MedConnect.ViewModels
 			//createUser ("Kevin", "Test", "jon@jo.com");
             _tagTranslator = new TagTranslator(_webService);
             //_searchViewModel.getSearchResults("what");
-		    _webService.getTags();
+		    //_webService.getTags();
 		}
 
 		public async Task<User> authenticate(string username, string password)

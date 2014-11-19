@@ -174,14 +174,14 @@ namespace MedConnect.Utilies
 
         //tags yo:
 
-        public async void getTags()
+        public async Task<ObservableCollection<Category>> getTags()
         {
             var request = new RestRequest("/tags", HttpMethod.Get);
 
             var response = await _rc.SendAsync<ObservableCollection<Category>>(request);
             System.Diagnostics.Debug.WriteLine("yoloswag");
 
-            //return response.Content;
+            return response.Content;
         }
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using MedConnect.Utilies;
 using MedConnect.Models;
@@ -10,38 +11,37 @@ namespace MedConnect
 	public class TagTranslator
 	{
 		private WebService _webService;
-		private Dictionary<int,string> dicTags;
-		private List<Tag> allTags;
+		private Dictionary<int,ObservableCollection<Tag>> dicTags;
+		private ObservableCollection<Category> allCategories;
 
 		public TagTranslator (WebService webservice)
 		{
 			_webService = webservice;
-			dicTags = new Dictionary<int, string> ();
-			allTags = new List<Tag> ();
-            getTags();
-            initializeTagDict();
+			dicTags = new Dictionary<int, ObservableCollection<Tag>> ();
+            allCategories = new ObservableCollection<Category>();
+            getCategories();
+            initializeCategoryDict();
 
 		}
 
-		public string getTagName(int tagID)
+		public string getTagName(int categoryID, int tagID)
 		{
 			//result = dicTags.get(tagID);
 			//return result;
             return null;
 		}
 
-        public async void getTags()
+        public async void getCategories()
         {
-            //var temp = await _webService.getTags();
-            //allTags = temp;
-
+            var temp = await _webService.getTags();
+            allCategories = temp;
         }
 
-        private void initializeTagDict()
+        private void initializeCategoryDict()
         {
-            foreach(Tag q in allTags)
+            foreach(Category q in allCategories)
             {
-                dicTags.Add(q.id, q.Text);
+                dicTags.Add(q.id, q.Tag);
             }
         }
 		/*
