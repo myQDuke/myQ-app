@@ -13,6 +13,7 @@ namespace MedConnect.NewViews
 
         public BrowsePage(MasterPage masterPage)
         {
+			Title = "Browse";
             _masterPage = masterPage;
             var header = new HeaderElement("Browse");
             var tabs = new TabsHeader(_masterPage);

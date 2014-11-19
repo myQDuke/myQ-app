@@ -13,6 +13,7 @@ namespace MedConnect.NewViews
 
         public LandingPage(MasterPage masterPage) 
         {
+			Title = "Home";
             _masterPage = masterPage; 
             var header = new HeaderElement("Home");
             var discoverEntry = new LandingCell("Discover", "Find new questions", "icon_search.png", "#9ee4e7");

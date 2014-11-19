@@ -15,6 +15,7 @@ namespace MedConnect.NewViews
 
         public SearchPage(MasterPage masterPage)
         {
+			Title = "Search";
             _masterPage = masterPage; 
 
             BackgroundColor = Color.FromHex("#C1C1C1");
