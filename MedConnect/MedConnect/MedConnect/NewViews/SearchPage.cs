@@ -19,7 +19,7 @@ namespace MedConnect.NewViews
 
             BackgroundColor = Color.FromHex("#C1C1C1");
             var header = new HeaderElement("Search");
-            
+            var listView = new ListView();
             SearchBar searchBar = new SearchBar
             {
                 Placeholder = "Search for questions",
@@ -28,12 +28,9 @@ namespace MedConnect.NewViews
             {
                 string searchQuery = searchBar.Text;
                 System.Diagnostics.Debug.WriteLine(searchQuery);
+                HandleSearch(searchQuery, listView);
             };
-            
 
-            var listView = new ListView();
-            listView.HasUnevenRows = true;
-            listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
 
             Content = new StackLayout
             {
@@ -45,6 +42,30 @@ namespace MedConnect.NewViews
                     }
                 }
             };
+        }
+
+        public void HandleSearch(string searchQuery, ListView listview)
+        {
+            _masterPage.MainView._searchViewModel.getSearchResults(searchQuery);
+
+            this.BindingContext = _masterPage.MainView._searchViewModel;
+            listview.HasUnevenRows = true;
+            listview.SetBinding(ListView.ItemsSourceProperty, new Binding("Results"));
+            listview.ItemTemplate = new DataTemplate(typeof(QuestionCell));
+
+            listview.ItemTapped += (sender, args) =>
+            {
+                var question = args.Item as Question;
+                if (question == null) return;
+
+                HandleAddLibrary(question.ID);
+                listview.SelectedItem = null;
+            };
+        }
+        public async void HandleAddLibrary(int questionID)
+        {
+            _masterPage.MainView.postLibrary(questionID);
+            await DisplayAlert("Question Added", "Question added to your library!", "OK");
         }
     }
 }
