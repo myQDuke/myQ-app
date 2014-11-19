@@ -197,6 +197,17 @@ namespace MedConnect.Utilies
 	        return response.Content;
 	    }
 
+	    public async void rateQuestion(int userID, int questionID, string rating)
+	    {
+            string addr = "/questions/" + questionID + "/rating";
+	        var request = new RestRequest(addr, HttpMethod.Post);
+            request.AddQueryString("user", userID);
+            request.AddQueryString("vote", rating);
+
+	        await _rc.SendAsync<Rating>(request);
+
+	    }
+
 	}
 }
 

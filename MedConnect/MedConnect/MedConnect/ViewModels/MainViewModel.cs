@@ -162,6 +162,11 @@ namespace MedConnect.ViewModels
         {
             _webService.removeLibraryQuestion(questionID, _currentUser.id);
         }
+
+	    public void rateQuestion(int questionID, string rating)
+	    {
+	        _webService.rateQuestion(_currentUser.id, questionID, rating);
+	    }
 	}
 }
 

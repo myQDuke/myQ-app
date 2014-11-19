@@ -88,10 +88,14 @@ namespace MedConnect.NewViews
             helpfulButton.Clicked += (sender, args) =>
             {
                 System.Diagnostics.Debug.WriteLine("User voted question helpful");
+                _masterPage.MainView.rateQuestion(_questionID,"Helpful");
+                Navigation.PopModalAsync();
             };
 
             notHelpfulButton.Clicked += (sender, args) =>
             {
+                _masterPage.MainView.rateQuestion(_questionID, "Unhelpful");
+                Navigation.PopModalAsync();
                 System.Diagnostics.Debug.WriteLine("User voted question unhelpful");
             };
 
