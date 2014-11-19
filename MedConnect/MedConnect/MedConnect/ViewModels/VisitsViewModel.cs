@@ -77,20 +77,7 @@ namespace MedConnect
             VisitQuestions.Clear();
 			var tmp = await _webService.getVisitQuestions (userID, visitID);
 			VisitQuestions = tmp.Questions;
-			foreach (Question q in VisitQuestions) {
-				string temp = "";
-				foreach (Tag t in q.Tags) {
-					System.Diagnostics.Debug.WriteLine(t.Text);
-					temp = temp + t.Text;
-				}
-				q.TagInfo = temp;
-			}
-            foreach (Question q in VisitQuestions)
-            {
-                var rate = await _webService.getRating(q.ID);
-                q.HelpfulVotes = rate.helpful;
-                q.NotHelpfulVotes = rate.total - rate.helpful;
-            }
+			_webService.addQuestionInfo (VisitQuestions);
 		}
         public void removeVisitQuestion(int userID, int visitID, int questionID)
         {

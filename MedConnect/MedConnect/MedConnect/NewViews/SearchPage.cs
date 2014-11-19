@@ -29,6 +29,7 @@ namespace MedConnect.NewViews
                 string searchQuery = searchBar.Text;
                 System.Diagnostics.Debug.WriteLine(searchQuery);
                 HandleSearch(searchQuery, listView);
+
             };
 
 
@@ -59,6 +60,7 @@ namespace MedConnect.NewViews
                 if (question == null) return;
 
                 HandleAddLibrary(question.ID);
+
                 listview.SelectedItem = null;
             };
         }
@@ -66,6 +68,7 @@ namespace MedConnect.NewViews
         {
             _masterPage.MainView.postLibrary(questionID);
             await DisplayAlert("Question Added", "Question added to your library!", "OK");
+
         }
     }
 }

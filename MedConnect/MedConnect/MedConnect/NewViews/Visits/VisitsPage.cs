@@ -62,7 +62,7 @@ namespace MedConnect.NewViews
             addVisitsButton.Clicked += (sender, args) =>
             {
 				HandleAddVisit();
-                Navigation.PopModalAsync();
+                //Navigation.PopModalAsync();
             };
 
             Content = new StackLayout

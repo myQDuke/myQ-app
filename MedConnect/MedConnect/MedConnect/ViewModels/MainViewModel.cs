@@ -95,20 +95,7 @@ namespace MedConnect.ViewModels
             var tempQ = await _webService.getRecQuestions();
             RecommendedQuestions = tempQ;
 
-			foreach (Question q in RecommendedQuestions) {
-				string temp = "";
-
-				foreach (Tag t in q.Tags) {
-					temp = temp + t.Text;
-				}
-				q.TagInfo = temp;
-			}
-            foreach (Question q in RecommendedQuestions)
-            {
-                var rate = await _webService.getRating(q.ID);
-                q.HelpfulVotes = rate.helpful;
-                q.NotHelpfulVotes = rate.total - rate.helpful;
-            }
+			_webService.addQuestionInfo (RecommendedQuestions);
 
         }
 
@@ -117,21 +104,8 @@ namespace MedConnect.ViewModels
 			LibraryQuestions.Clear();
 			var tempQ = await _webService.getLibraryQuestions(_currentUser.id);
 			LibraryQuestions = tempQ;
-			foreach (Question q in LibraryQuestions) {
-				string temp = "";
-				foreach (Tag t in q.Tags) {
-					System.Diagnostics.Debug.WriteLine(t.Text);
-					temp = temp + t.Text;
-				}
-				q.TagInfo = temp;
-			}
-            foreach (Question q in LibraryQuestions)
-            {
-                var rate = await _webService.getRating(q.ID);
-                q.HelpfulVotes = rate.helpful;
-                q.NotHelpfulVotes = rate.total - rate.helpful;
-            }
-			System.Diagnostics.Debug.WriteLine(_currentUser.Questions);
+			_webService.addQuestionInfo (LibraryQuestions);
+
 		}
 		public async Task<Question> postQuestion(String s)
         {

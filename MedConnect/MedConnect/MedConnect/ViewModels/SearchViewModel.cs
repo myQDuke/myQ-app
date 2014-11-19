@@ -43,23 +43,7 @@ namespace MedConnect.ViewModels
 
             var tmp = await _webService.getSearchResults(query);
             Results = tmp;
-            foreach (Question q in Results)
-            {
-                string temp = "";
-                foreach (Tag t in q.Tags)
-                {
-                    System.Diagnostics.Debug.WriteLine(t.Text);
-                    temp = temp + t.Text;
-                }
-                q.TagInfo = temp;
-            }
-            foreach (Question q in Results)
-            {
-                var rate = await _webService.getRating(q.ID);
-                q.HelpfulVotes = rate.helpful;
-                q.NotHelpfulVotes = rate.total - rate.helpful;
-            }
-            System.Diagnostics.Debug.WriteLine("yolo");
+			_webService.addQuestionInfo (Results);
         }
 
 
