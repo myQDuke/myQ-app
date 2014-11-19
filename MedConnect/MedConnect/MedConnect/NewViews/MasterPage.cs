@@ -34,6 +34,7 @@ namespace MedConnect.NewViews
 
         public ContentPage getMasterContentPage()
         {
+
             var homePageButton = new Button
             {
                 Text = "Home"
@@ -106,7 +107,7 @@ namespace MedConnect.NewViews
 
             logoutButton.Clicked += (sender, args) =>
             {
-                Detail = new NavigationPage(new LoginPage());
+				Navigation.PushModalAsync(new LoginPage());
                 IsPresented = false; 
             };
 

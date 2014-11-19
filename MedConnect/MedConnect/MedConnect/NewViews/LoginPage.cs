@@ -52,9 +52,15 @@ namespace MedConnect.NewViews
                 BackgroundColor = Color.FromHex("#76ccd0")
             };
 
+			var loginContent = new StackLayout {
+				Children = { usernameEntry, passwordEntry, loginButton, signupButton }
+			};
+
+			var toShow = loginContent;
+
             Content = new StackLayout
             {
-                Children = { image, usernameEntry, passwordEntry, loginButton, signupButton },
+                Children = { image, toShow },
                 Padding = new Thickness(40, 40, 40, 20),
                 Spacing = 20,
                 BackgroundColor = Color.FromHex("#FFFFFF")
@@ -62,10 +68,16 @@ namespace MedConnect.NewViews
 
             loginButton.Clicked += (sender, args) =>
             {
+				/*
+				toShow = new ActivityIndicator {
+					IsRunning = true
+				};
+				*/
                 string username = usernameEntry.Text;
                 string password = passwordEntry.Text; 
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 {
+					//toShow = loginContent;
                     DisplayAlert("Error", "Invalid username or password", "OK");
                 }
                 else

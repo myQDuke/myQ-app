@@ -29,6 +29,12 @@ namespace MedConnect.Utilies
 
             return response.Content;
 		}
+		public async Task<ObservableCollection<Question>> getSortedQuestions(string parameter)
+		{
+			///questions/?sort=popular&order=desc
+			return null;
+
+		}
 		public async Task<User> login(string username, string password) 
 		{
 			var request = new RestRequest ("/users/login/", HttpMethod.Post);
