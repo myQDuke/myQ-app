@@ -15,6 +15,7 @@ namespace MedConnect.Models
         private int _notHelpfulVotes;
         public int ID { get; set; }
         public string Text { get; set; }
+		public string TagInfo { get; set; }
 
 
         public int HelpfulVotes

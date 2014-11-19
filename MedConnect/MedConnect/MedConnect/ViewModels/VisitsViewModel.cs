@@ -75,11 +75,15 @@ namespace MedConnect
 		{
 			//webservice call to get visit questions
             VisitQuestions.Clear();
-			var temp = await _webService.getVisitQuestions (userID, visitID);
-			VisitQuestions = temp.Questions;
-			foreach (var q in Visits) {
-				//RecommendedQuestions.Add (q);
-				System.Diagnostics.Debug.WriteLine(q.name);
+			var tmp = await _webService.getVisitQuestions (userID, visitID);
+			VisitQuestions = tmp.Questions;
+			foreach (Question q in VisitQuestions) {
+				string temp = "";
+				foreach (Tag t in q.Tags) {
+					System.Diagnostics.Debug.WriteLine(t.Text);
+					temp = temp + t.Text;
+				}
+				q.TagInfo = temp;
 			}
 		}
         public void removeVisitQuestion(int userID, int visitID, int questionID)

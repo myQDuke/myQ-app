@@ -93,11 +93,17 @@ namespace MedConnect.ViewModels
         {
             RecommendedQuestions.Clear();
             var tempQ = await _webService.getRecQuestions();
-            foreach (var q in tempQ) {
-                //RecommendedQuestions.Add (q);
-                System.Diagnostics.Debug.WriteLine(q.Text);
-            }
             RecommendedQuestions = tempQ;
+
+			foreach (Question q in RecommendedQuestions) {
+				string temp = "";
+				foreach (Tag t in q.Tags) {
+					System.Diagnostics.Debug.WriteLine(t.Text);
+					temp = temp + t.Text;
+				}
+				q.TagInfo = temp;
+			}
+
         }
 
 		public async void getLibraryQuestions()
@@ -105,7 +111,14 @@ namespace MedConnect.ViewModels
 			LibraryQuestions.Clear();
 			var tempQ = await _webService.getLibraryQuestions(_currentUser.id);
 			LibraryQuestions = tempQ;
-
+			foreach (Question q in LibraryQuestions) {
+				string temp = "";
+				foreach (Tag t in q.Tags) {
+					System.Diagnostics.Debug.WriteLine(t.Text);
+					temp = temp + t.Text;
+				}
+				q.TagInfo = temp;
+			}
 			System.Diagnostics.Debug.WriteLine(_currentUser.Questions);
 		}
 		public async Task<Question> postQuestion(String s)

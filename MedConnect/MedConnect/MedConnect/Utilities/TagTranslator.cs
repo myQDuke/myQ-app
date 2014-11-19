@@ -20,21 +20,27 @@ namespace MedConnect
 			dicTags = new Dictionary<int, ObservableCollection<Tag>> ();
             allCategories = new ObservableCollection<Category>();
             getCategories();
-            initializeCategoryDict();
 
 		}
 
 		public string getTagName(int categoryID, int tagID)
 		{
-			//result = dicTags.get(tagID);
-			//return result;
-            return null;
+			string tagName = "temp";
+			ObservableCollection<Tag> cur = dicTags [categoryID];
+			foreach (Tag t in cur) {
+				if (t.id == tagID) {
+					tagName = t.Text;
+				}
+			}
+			System.Diagnostics.Debug.WriteLine(tagName);
+			return tagName;
 		}
 
         public async void getCategories()
         {
             var temp = await _webService.getTags();
             allCategories = temp;
+			initializeCategoryDict();
         }
 
         private void initializeCategoryDict()
@@ -43,6 +49,8 @@ namespace MedConnect
             {
                 dicTags.Add(q.id, q.Tag);
             }
+
+			System.Diagnostics.Debug.WriteLine("yolo");
         }
 		/*
 		 * Get all tags
