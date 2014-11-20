@@ -154,9 +154,9 @@
     <Content Include="icon_profle.png" />
     <Content Include="icon_search.png" />
     <Content Include="icon_upload.png" />
-    <AndroidResource Include="logo.png" />
-    <AndroidResource Include="logo2.png" />
-    <AndroidResource Include="logo3.png" />
+    <Content Include="logo.png" />
+    <Content Include="logo2.png" />
+    <Content Include="logo3.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
