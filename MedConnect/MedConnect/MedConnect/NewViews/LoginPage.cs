@@ -58,13 +58,15 @@ namespace MedConnect.NewViews
 
 			var toShow = loginContent;
 
-            Content = new StackLayout
-            {
-                Children = { image, toShow },
-                Padding = new Thickness(40, 40, 40, 20),
-                Spacing = 20,
-                BackgroundColor = Color.FromHex("#FFFFFF")
-            };
+			Content = new ScrollView {
+				Content = new StackLayout
+	            {
+	                Children = { image, toShow },
+	                Padding = new Thickness(40, 40, 40, 20),
+	                Spacing = 20,
+	                BackgroundColor = Color.FromHex("#FFFFFF")
+	            }
+			};
 
             loginButton.Clicked += (sender, args) =>
             {
