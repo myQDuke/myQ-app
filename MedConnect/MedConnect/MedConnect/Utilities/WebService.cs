@@ -2,83 +2,236 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using MedConnect.Models;
-using PortableRest;
 using Microsoft;
-using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net;
+using System.Net.Http;
+using PortableRest;
 
 namespace MedConnect.Utilies
 {
 	public class WebService
 	{
 
-		HttpClient _temp = new HttpClient ();
-			
+        private RestClient _rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
+        //
 		public WebService ()
-		{
-			_temp.BaseAddress = new Uri("http://cancerquest.azurewebsites.net");
-
+		{		
+            
 		}
 
-		public async Task<ObservableCollection<Question>> testRest()
-		{
-			var questions = await _temp.GetStringAsync (_temp.BaseAddress + "/questions/");
-            System.Diagnostics.Debug.WriteLine("i got the questions!!");
-			var po =  JsonConvert.DeserializeObject<ObservableCollection<Question>>(questions);
-			return po;
+		public async Task<ObservableCollection<Question>> getRecQuestions()
+		{   
+            var request = new RestRequest("/questions", HttpMethod.Get);
+
+            var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+
+            return response.Content;
 		}
-		public async Task<Boolean> testLogin(string username, string password, User cur) 
+		public async Task<ObservableCollection<Question>> getSortedQuestions(string parameter)
 		{
-			//using portable rest 
-			System.Diagnostics.Debug.WriteLine("im here");
-			RestClient rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
+			///questions/?sort=popular&order=desc
+			return null;
+
+		}
+		public async Task<User> login(string username, string password) 
+		{
 			var request = new RestRequest ("/users/login/", HttpMethod.Post);
 			request.AddQueryString("username", username);
 			request.AddQueryString("password", password);
+			var response =  await _rc.SendAsync<User> (request);
 
-			System.Diagnostics.Debug.WriteLine(request);
+			//System.Diagnostics.Debug.WriteLine(response.Content.username);
 
-			var response =  await rc.SendAsync<User> (request);
-
-
-			System.Diagnostics.Debug.WriteLine(response);
-
-			//ensure success status code before trying to create 
-
-			cur = new User ();
-			cur = response.Content;
-
-			return response.HttpResponseMessage.IsSuccessStatusCode;
+			return response.Content;
 
 		}
-        public async Task<Boolean> postQuestion(string question)
-        {
-            RestClient rc = new RestClient { BaseUrl = "http://cancerquest.azurewebsites.net" };
-            var request = new RestRequest("/questions/", HttpMethod.Post);
-            request.AddQueryString("Text", question);
+		public async Task<User> createUser(string username, string password, string email)
+		{
+			var request = new RestRequest ("/users/", HttpMethod.Post);
+			request.AddQueryString("username", username);
+			request.AddQueryString("password", password);
+			request.AddQueryString("email", email);
+			var response =  await _rc.SendAsync<User> (request);
 
-            var response = await rc.SendAsync<Question>(request);
+			System.Diagnostics.Debug.WriteLine(response.Content.username);
+
+			return response.Content;
+		}
+		//this posts to create a question
+
+        public async Task<Question> postQuestion(string question)
+        {
+            var request = new RestRequest("/questions/", HttpMethod.Post);            
+			request.AddQueryString("text", question);
+
+            var response = await _rc.SendAsync<Question>(request);
 
 			System.Diagnostics.Debug.WriteLine(response.Content.Text);
-			return response.HttpResponseMessage.IsSuccessStatusCode;
+			return response.Content;
         }
-        //this will be async later, where the api call is made
-        public Boolean authenticate(string username, string password)
+		//this posts to user library
+		public async Task<Question> postLibrary(int questionID, int userID)
+		{
+			string addr = "/users/" + userID + "/questions/";
+			var request = new RestRequest(addr, HttpMethod.Post);            
+			request.AddQueryString("id", questionID);
+
+			var response = await _rc.SendAsync<Question>(request);
+
+			System.Diagnostics.Debug.WriteLine("Added Question: " + response.Content.Text);
+			return response.Content;
+		}
+		public async Task<ObservableCollection<Question>> getLibraryQuestions(int userID)
+		{
+            string addr = "/users/" + userID + "/questions/";
+
+            var request = new RestRequest(addr, HttpMethod.Get); 
+
+            var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+            
+            return response.Content;
+		}
+		public async Task<ObservableCollection<Visit>> getVisits(int userID)
+		{
+			string addr = "/users/" + userID + "/appointments";
+			var request = new RestRequest(addr, HttpMethod.Get); 
+
+			var response = await _rc.SendAsync<ObservableCollection<Visit>>(request);
+
+			return response.Content;
+		}
+
+		public async Task<Visit> getVisitQuestions(int userID, int visitID)
+		{
+            string addr = "/users/" + userID + "/appointments/" + visitID;
+
+			var request = new RestRequest(addr, HttpMethod.Get); 
+
+			var response = await _rc.SendAsync<Visit>(request);
+
+			return response.Content;
+		}
+
+		public async Task<Visit> createVisit(int userID)
+		{
+			string addr = "/users/" + userID + "/appointments";
+			var request = new RestRequest(addr, HttpMethod.Post);
+            request.AddQueryString("name", "Test Appointment");
+
+
+			var response = await _rc.SendAsync<Visit>(request);
+
+			return response.Content;
+		}
+		public async void deleteVisit(int userID, int visitID)
+		{
+			string addr = "/users/" + userID + "/appointments/" + visitID;
+			var request = new RestRequest(addr, HttpMethod.Delete);
+
+			var response = await _rc.SendAsync<Visit> (request);
+
+            System.Diagnostics.Debug.WriteLine("yoloswag");
+		}
+		public async Task<Question> addQuestionVisit(int userID, int questionID, int visitID)
+		{
+			string addr = "/users/" + userID + "/appointments/" + visitID + "/question";
+
+			var request = new RestRequest(addr, HttpMethod.Post);
+			request.AddQueryString("qid", questionID);
+			var response = await _rc.SendAsync<Question> (request);
+
+			return response.Content;
+		}
+
+		public async void deleteQuestionVisit(int userID, int questionID, int visitID)
+		{
+            string addr = "/users/" + userID + "/appointments/" + visitID + "/question";
+
+			var request = new RestRequest(addr, HttpMethod.Delete);
+			request.AddQueryString("qid", questionID);
+            
+			var response = await _rc.SendAsync<Question> (request);
+			System.Diagnostics.Debug.WriteLine ("yoloswag");
+		}
+
+        public async void removeLibraryQuestion(int questionID, int userID)
         {
+            string addr = "/users/" + userID + "/questions/";
 
-            if (username.Equals(Constants.USERNAME) && password.Equals(Constants.PASSWORD))
-                return true;
-            return false;
+            var request = new RestRequest(addr, HttpMethod.Delete);
+            request.AddQueryString("id", questionID);
+            await _rc.SendAsync<String>(request);
         }
-
-        public ObservableCollection<Question> getData()
+        public async Task<ObservableCollection<Question>> getSearchResults(string query)
         {
-			ObservableCollection<Question> yolo = new ObservableCollection<Question>();
+            var request = new RestRequest("/questions/search?q=" + query, HttpMethod.Get);
 
-            return yolo;
+            var response = await _rc.SendAsync<ObservableCollection<Question>>(request);
+
+            return response.Content;
+        }	
+
+
+
+
+
+
+        //tags yo:
+
+        public async Task<ObservableCollection<Category>> getTags()
+        {
+            var request = new RestRequest("/tags", HttpMethod.Get);
+
+            var response = await _rc.SendAsync<ObservableCollection<Category>>(request);
+            System.Diagnostics.Debug.WriteLine("yoloswag");
+
+            return response.Content;
         }
+
+		//ratings yo:
+
+	    public async Task<Rating> getRating(int questionID)
+	    {
+            string addr = "/questions/" + questionID + "/rating";
+
+            var request = new RestRequest(addr, HttpMethod.Get);
+
+	        var response = await _rc.SendAsync<Rating>(request);
+
+	        return response.Content;
+	    }
+
+	    public async void rateQuestion(int userID, int questionID, string rating)
+	    {
+            string addr = "/questions/" + questionID + "/rating";
+	        var request = new RestRequest(addr, HttpMethod.Post);
+            request.AddQueryString("user", userID);
+            request.AddQueryString("vote", rating);
+
+	        await _rc.SendAsync<Rating>(request);
+
+	    }
+
+		public async void addQuestionInfo(ObservableCollection<Question> questions)
+		{
+			foreach (Question q in questions) {
+				string temp = "";
+
+				foreach (Tag t in q.Tags) {
+					temp = temp + " " + t.Text;
+				}
+				q.TagInfo = temp;
+			}
+			foreach (Question q in questions)
+			{
+				var rate = await getRating(q.ID);
+				q.HelpfulVotes = rate.helpful;
+				q.NotHelpfulVotes = rate.total - rate.helpful;
+			}
+		}
+
 	}
 }
 

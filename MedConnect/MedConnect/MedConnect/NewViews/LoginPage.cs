@@ -11,10 +11,16 @@ namespace MedConnect.NewViews
     public class LoginPage : ContentPage 
     {
         MainViewModel _mainViewModel; 
+		MasterPage mp;
+
+        private StackLayout loginForm;
+
+        private StackLayout loginView;
 
         public LoginPage()
         {
             _mainViewModel = new MainViewModel();
+			mp = new MasterPage(_mainViewModel);
 
             var image = new Image
             {
@@ -50,29 +56,76 @@ namespace MedConnect.NewViews
                 BackgroundColor = Color.FromHex("#76ccd0")
             };
 
-            Content = new StackLayout
-            {
-                Children = { image, usernameEntry, passwordEntry, loginButton, signupButton },
-                Padding = new Thickness(40, 40, 40, 20),
-                Spacing = 20,
-                BackgroundColor = Color.FromHex("#FFFFFF")
-            };
+			loginForm = new StackLayout {
+				Children = { usernameEntry, passwordEntry, loginButton, signupButton }
+			};
+
+			Content = new ScrollView {
+				Content = new StackLayout
+	            {
+	                Children = { image, loginForm },
+	                Padding = new Thickness(40, 40, 40, 20),
+	                Spacing = 20,
+	                BackgroundColor = Color.FromHex("#FFFFFF")
+	            }
+			};
+
+            loginView = (StackLayout)((ScrollView)Content).Content;
 
             loginButton.Clicked += (sender, args) =>
             {
+                setLoginForm(
+                    new ActivityIndicator
+                    {
+                        IsRunning = true
+                    }
+                );
+
                 string username = usernameEntry.Text;
-                string password = passwordEntry.Text;
-                MainViewModel mv = new MainViewModel(); 
-                MasterPage mp = new MasterPage(mv);
-                mp.Master = mp.getMasterContentPage();
-                mp.Detail = new LandingPage(mp);
-                Navigation.PushModalAsync(mp);
+                string password = passwordEntry.Text; 
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                {
+					setLoginForm();
+                    DisplayAlert("Error", "Invalid username or password", "OK");
+                }
+                else
+                {
+                    HandleLogin(username, password);
+                }
             };
 
             signupButton.Clicked += (sender, args) =>
             {
-                Navigation.PushAsync(new SignupPage());
+				Navigation.PushAsync(new SignupPage(mp));
             };
         }
+
+        private void setLoginForm(View view = null)
+        {
+            if (view == null)
+            {
+                view = loginForm;
+            }
+            loginView.Children[1] = view;
+        }
+
+		private async void HandleLogin(String username, String password) 
+        {
+			mp.Master = mp.getMasterContentPage();
+			mp.Detail = new LandingPage(mp);
+			await mp.MainView.authenticate(username,password);
+			if(mp.MainView.User != null) {
+				//System.Diagnostics.Debug.WriteLine (mp.MainView.User);
+				await Navigation.PushModalAsync(mp);
+				mp.MainView.getLibraryQuestions ();
+                setLoginForm();
+			}
+            else
+            {
+                setLoginForm();
+				//System.Diagnostics.Debug.WriteLine ("fag muffin to the rescue");
+                await DisplayAlert("Error", "Invalid username or password", "OK");
+            }
+		}
     }
 }

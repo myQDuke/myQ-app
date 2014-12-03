@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using Xamarin.Forms;
 using System.Diagnostics;
 using MedConnect.Models; 
@@ -13,6 +13,7 @@ namespace MedConnect.NewViews
 
         public LandingPage(MasterPage masterPage) 
         {
+			Title = "Home";
             _masterPage = masterPage; 
             var header = new HeaderElement("Home");
             var discoverEntry = new LandingCell("Discover", "Find new questions", "icon_search.png", "#9ee4e7");
@@ -39,7 +40,7 @@ namespace MedConnect.NewViews
             visitsTapRecognizer.Tapped += (s, e) =>
             {
                 _masterPage.Master = _masterPage.getMasterContentPage();
-                _masterPage.Detail = new VisitsPage();
+				_masterPage.Detail = new VisitsPage(_masterPage);
             };
             visitsEntry.GestureRecognizers.Add(visitsTapRecognizer);
 

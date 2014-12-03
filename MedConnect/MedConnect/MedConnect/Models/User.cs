@@ -13,6 +13,7 @@ namespace MedConnect.Models
         public string password { get; set; }
         public string email { get; set; }
         public string gender { get; set; }
+		public int id { get; set; }
         public ObservableCollection<Question> Questions { get; set; }
 		public ObservableCollection<Visit> Visits { get; set; }
 

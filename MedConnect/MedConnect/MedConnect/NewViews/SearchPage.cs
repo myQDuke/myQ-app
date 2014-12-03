@@ -15,43 +15,24 @@ namespace MedConnect.NewViews
 
         public SearchPage(MasterPage masterPage)
         {
+			Title = "Search";
             _masterPage = masterPage; 
 
             BackgroundColor = Color.FromHex("#C1C1C1");
             var header = new HeaderElement("Search");
-            
+            var listView = new ListView();
             SearchBar searchBar = new SearchBar
             {
                 Placeholder = "Search for questions",
             };
+            searchBar.SearchButtonPressed += (sender, args) =>
+            {
+                string searchQuery = searchBar.Text;
+                System.Diagnostics.Debug.WriteLine(searchQuery);
+                HandleSearch(searchQuery, listView);
 
-            ObservableCollection<Question> Questions = new ObservableCollection<Question>();
-            Question q1 = new Question
-            {
-              Text = "This is a sample question",
-              Text2 = "More text",
-              Text3 = "I love Xamarin"
             };
-            Question q2 = new Question
-            {
-                Text = "This is a sample question",
-                Text2 = "More text",
-                Text3 = "I love Xamarin"
-            };
-            Question q3 = new Question
-            {
-                Text = "Another sample question",
-                Text2 = "More text yay",
-                Text3 = "So beautiful"
-            };
-            Questions.Add(q1);
-            Questions.Add(q2);
-            Questions.Add(q3);
 
-            var listView = new ListView();
-            listView.HasUnevenRows = true;
-            listView.ItemsSource = Questions;
-            listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
 
             Content = new StackLayout
             {
@@ -63,6 +44,32 @@ namespace MedConnect.NewViews
                     }
                 }
             };
+        }
+
+        public void HandleSearch(string searchQuery, ListView listview)
+        {
+            _masterPage.MainView._searchViewModel.getSearchResults(searchQuery);
+
+            this.BindingContext = _masterPage.MainView._searchViewModel;
+            listview.HasUnevenRows = true;
+            listview.SetBinding(ListView.ItemsSourceProperty, new Binding("Results"));
+            listview.ItemTemplate = new DataTemplate(typeof(QuestionCell));
+
+            listview.ItemTapped += (sender, args) =>
+            {
+                var question = args.Item as Question;
+                if (question == null) return;
+
+                HandleAddLibrary(question.ID);
+
+                listview.SelectedItem = null;
+            };
+        }
+        public async void HandleAddLibrary(int questionID)
+        {
+            _masterPage.MainView.postLibrary(questionID);
+            await DisplayAlert("Question Added", "Question added to your library!", "OK");
+
         }
     }
 }

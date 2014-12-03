@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedConnect.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,13 @@ namespace MedConnect.NewViews
 {
     public class VisitsFooter : StackLayout
     {
-        public VisitsFooter()
+        private Visit _visit;
+        private MasterPage _masterPage;
+        public VisitsFooter(Visit visit, MasterPage masterPage)
         {
+            _visit = visit;
+            _masterPage = masterPage;
+
             var deleteLabel = new Label
             {
                 Text = "Delete",
@@ -28,7 +34,9 @@ namespace MedConnect.NewViews
             var deleteTapRecognizer = new TapGestureRecognizer();
             deleteTapRecognizer.Tapped += (s, e) =>
             {
+                _masterPage.MainView._visitsViewModel.deleteVisit(_masterPage.MainView.User.id, _visit.id);
 
+                Navigation.PushModalAsync(new VisitsPage(_masterPage));
             };
             deleteTab.GestureRecognizers.Add(deleteTapRecognizer);
 

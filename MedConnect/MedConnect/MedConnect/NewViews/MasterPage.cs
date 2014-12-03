@@ -7,12 +7,25 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using MedConnect.Models;
 using MedConnect.ViewModels;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Linq.Expressions;
 
 namespace MedConnect.NewViews
 {
     public class MasterPage : MasterDetailPage
     {
         MainViewModel _mainViewModel; 
+
+		public MainViewModel MainView {
+			get {
+				return _mainViewModel;
+			}
+			set {
+				_mainViewModel = value;
+				OnPropertyChanged("MainView");
+			}
+		}
 
         public MasterPage(MainViewModel mainViewModel)
         {
@@ -21,6 +34,7 @@ namespace MedConnect.NewViews
 
         public ContentPage getMasterContentPage()
         {
+
             var homePageButton = new Button
             {
                 Text = "Home"
@@ -46,6 +60,11 @@ namespace MedConnect.NewViews
                 Text = "My Settings"
             };
 
+            var logoutButton = new Button
+            {
+                Text = "Logout"
+            };
+
             var master = new ContentPage
             {
                 Title = "Master",
@@ -53,7 +72,7 @@ namespace MedConnect.NewViews
                 Content = new StackLayout
                 {
                     Padding = new Thickness(5, 50),
-                    Children = { homePageButton, discoverPageButton, libraryPageButton, visitsPageButton, settingsPageButton }
+                    Children = { homePageButton, discoverPageButton, libraryPageButton, visitsPageButton, settingsPageButton, logoutButton }
                 }
             };
 
@@ -77,7 +96,7 @@ namespace MedConnect.NewViews
 
             visitsPageButton.Clicked += (sender, args) =>
             {
-                Detail = new NavigationPage(new VisitsPage());
+				Detail = new NavigationPage(new VisitsPage(this));
                 IsPresented = false;
             };
 
@@ -86,12 +105,13 @@ namespace MedConnect.NewViews
 
             };
 
-            return master; 
-        }
+            logoutButton.Clicked += (sender, args) =>
+            {
+				Navigation.PushModalAsync(new LoginPage());
+                IsPresented = false; 
+            };
 
-        public MainViewModel getMainViewModel()
-        {
-            return _mainViewModel;
+            return master; 
         }
     }
 }

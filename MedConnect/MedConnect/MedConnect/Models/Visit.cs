@@ -11,16 +11,11 @@ namespace MedConnect.Models
 	public class Visit
 	{
 		public ObservableCollection<Question> Questions { get; set; }
+        public string name { get; set; }
+        public int id { get; set; }
+
         //add recordings here
 
-		public Visit ()
-		{
-		}
-
-        public void addQuestion(Question toAdd)
-        {
-            Questions.Add(toAdd);
-        }
 	}
 }
 

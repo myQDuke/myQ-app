@@ -3,9 +3,11 @@
 
 # Build/test output
 obj
-Bin
 bin
+Bin
 test-results
+
+*.log
 
 # VS sometimes writes these for no apparent reason
 _UpgradeReport_Files
@@ -26,4 +28,10 @@ UpgradeLog.*
 # dotCover
 *.dotCover
 
+ 
+!*.config
+!MedConnect/packages/repositories.config
+!\MedConnect\packages\repositories.config
+
 packages
+

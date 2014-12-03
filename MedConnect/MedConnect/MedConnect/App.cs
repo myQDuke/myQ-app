@@ -1,5 +1,4 @@
-﻿using PortableRest;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +11,8 @@ namespace MedConnect
     {
         public static Page GetMainPage()
         {
-            var loginPage = new LoginPage(); 
-            return new NavigationPage(loginPage);
+            var loginPage = new LoginPage();
+            return loginPage;
         }
     }
 }

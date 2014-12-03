@@ -14,7 +14,13 @@ namespace MedConnect.ViewModels
 {
 	public class MainViewModel : ViewModel
 	{
-        public ObservableCollection<Question> _recommendedQuestions { get; set; }
+		private WebService _webService;
+		private static User _currentUser;
+		public VisitsViewModel _visitsViewModel;
+        public SearchViewModel _searchViewModel;
+        public TagTranslator _tagTranslator;
+
+		private ObservableCollection<Question> _recommendedQuestions;
 
         public ObservableCollection<Question> RecommendedQuestions
         {
@@ -25,89 +31,116 @@ namespace MedConnect.ViewModels
             set
             {
                 _recommendedQuestions = value;
-                OnPropertyChanged("RecommendedQuestions");
+				OnPropertyChanged("RecommendedQuestions");
             }
         } 
 
-        private WebService _webService;
-		private static User _currentUser = new User();
+		public User User
+		{
+			get
+			{
+				return _currentUser;
+			}
+			set
+			{
+				_currentUser = value;
+				OnPropertyChanged("User");
+			}
+		}
+		private ObservableCollection<Question> _libraryQuestions;
+
+		public ObservableCollection<Question> LibraryQuestions
+		{
+			get
+			{
+				return _libraryQuestions;
+			}
+			set
+			{
+				_libraryQuestions = value;
+				OnPropertyChanged ("LibraryQuestions");
+			}
+		}
+
         //should we have instances of every view so that we can cache them? or is that stupid and should we make new ones everytime... 
 
 		public MainViewModel () {
             _webService = new WebService();
             _recommendedQuestions = new ObservableCollection<Question>();
+			_libraryQuestions = new ObservableCollection<Question>();
 
-			//testing connection
-			//testConnection ();
-            getRecQuestions();
-			_webService.testLogin("Jonno", "Test", _currentUser);
-		}
-		public async Task<ObservableCollection<Question>> testConnection()
-		{
-			ObservableCollection<Question> result = await _webService.testRest ();
-			foreach(Question q in result) 
-			{
-				System.Diagnostics.Debug.WriteLine(q.Text);
-			}
-
-			return result;
+			_visitsViewModel = new VisitsViewModel (_webService);
+            _searchViewModel = new SearchViewModel (_webService);
+			//test createUser
+			//createUser ("Kevin", "Test", "jon@jo.com");
+            _tagTranslator = new TagTranslator(_webService);
+            //_searchViewModel.getSearchResults("what");
+		    //_webService.getTags();
 		}
 
-        //this is for logging in
-        public void authenticate(string username, string password, ContentPage cur)
+		public async Task<User> authenticate(string username, string password)
         {
-
-			var lol = _webService.testLogin (username, password, _currentUser);
-			System.Diagnostics.Debug.WriteLine (_currentUser);
-			if (lol.Result) {
-				System.Diagnostics.Debug.WriteLine ("helloooo");
-				//_currentUser.Questions = _webService.getData();
-				//cur.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this));
-			} else {
-				System.Diagnostics.Debug.WriteLine ("no helloooo");
+			var responseUser = await _webService.login (username, password);
+			//System.Diagnostics.Debug.WriteLine (_currentUser);
+			User = responseUser;
+			if (User != null) {
+				_libraryQuestions = User.Questions; 
 			}
-
-			/*
-            if (_webService.authenticate(username, password))
-            {
-                _currentUser = new User();
-                _currentUser.Name = username;
-                _currentUser.Questions = _webService.getData();
-                cur.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this));
-            }
-            else {
-                cur.Navigation.PushAsync(new SignupPage());
-            }
-            */
+			return User;
         }
 
         public async void getRecQuestions()
         {
             RecommendedQuestions.Clear();
-            var tempQ = await _webService.testRest();
-            foreach (var q in tempQ) {
-                //RecommendedQuestions.Add (q);
-                System.Diagnostics.Debug.WriteLine(q.Text);
-            }
+            var tempQ = await _webService.getRecQuestions();
             RecommendedQuestions = tempQ;
 
+			_webService.addQuestionInfo (RecommendedQuestions);
+
         }
 
-        public void viewBasket(ContentPage currentPage)
-        {
-            //currentPage.Navigation.PushAsync(new SavedQuestionsPage(_currentUser, this));
-        }
+		public async void getLibraryQuestions()
+		{
+			LibraryQuestions.Clear();
+			var tempQ = await _webService.getLibraryQuestions(_currentUser.id);
+			LibraryQuestions = tempQ;
+			_webService.addQuestionInfo (LibraryQuestions);
 
-        public void viewRecommendedQuestions(ContentPage currentPage)
-        {
-            //currentPage.Navigation.PushAsync(new RecommendedQuestionsPage(_currentUser, this)); 
-        }
-
-        public async void postQuestion(String s)
+		}
+		public async Task<Question> postQuestion(String s)
         {
             var response = await _webService.postQuestion(s);
+			return response;
         }
-        
+		public void getVisits()
+		{
+			_visitsViewModel.getVisits (_currentUser.id);
+		}
+
+		public async void postLibrary(int questionID)
+		{
+			var response = await _webService.postLibrary(questionID, _currentUser.id);
+		}
+		public async void postVisitQuestion(int userID, int questionID, int visitID)
+		{
+			await _webService.addQuestionVisit (userID, questionID, visitID);
+		}
+		public async Task<User> createUser(string username, string password, string email)
+		{
+			var responseUser = await _webService.createUser (username, password, email);
+			//System.Diagnostics.Debug.WriteLine (_currentUser);
+			User = responseUser;
+			return User;
+		}
+        public void removeLibraryQuestion(int questionID)
+        {
+            _webService.removeLibraryQuestion(questionID, _currentUser.id);
+        }
+
+	    public void rateQuestion(int questionID, string rating)
+	    {
+	        _webService.rateQuestion(_currentUser.id, questionID, rating);
+	    }
 	}
 }
 
