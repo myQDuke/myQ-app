@@ -13,6 +13,9 @@ namespace MedConnect.NewViews
         MainViewModel _mainViewModel; 
 		MasterPage mp;
 
+		StackLayout loginView;
+		StackLayout loginForm;
+
         public LoginPage()
         {
             _mainViewModel = new MainViewModel();
@@ -52,15 +55,15 @@ namespace MedConnect.NewViews
                 BackgroundColor = Color.FromHex("#76ccd0")
             };
 
-			var loginContent = new StackLayout {
+			loginForm = new StackLayout {
 				Children = { usernameEntry, passwordEntry, loginButton, signupButton }
 			};
 
-			var toShow = loginContent;
+			loginView = loginForm;
 
             Content = new StackLayout
             {
-                Children = { image, toShow },
+				Children = { image, loginView },
                 Padding = new Thickness(40, 40, 40, 20),
                 Spacing = 20,
                 BackgroundColor = Color.FromHex("#FFFFFF")
@@ -68,11 +71,14 @@ namespace MedConnect.NewViews
 
             loginButton.Clicked += (sender, args) =>
             {
-				/*
-				toShow = new ActivityIndicator {
-					IsRunning = true
+				loginView = new StackLayout {
+					Children = { 
+						new ActivityIndicator {
+							IsRunning = true
+						}
+					}
 				};
-				*/
+
                 string username = usernameEntry.Text;
                 string password = passwordEntry.Text; 
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))

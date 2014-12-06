@@ -76,6 +76,7 @@
     <Compile Include="Utilities\TagTranslator.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="NewViews\Visits\AddVisitQuestion.cs" />
+    <Compile Include="Models\Session.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
