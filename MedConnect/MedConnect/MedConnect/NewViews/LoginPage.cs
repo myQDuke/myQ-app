@@ -20,7 +20,7 @@ namespace MedConnect.NewViews
         public LoginPage()
         {
             _mainViewModel = new MainViewModel();
-			mp = new MasterPage(_mainViewModel);
+            mp = new MasterPage(_mainViewModel);
 
             var image = new Image
             {
