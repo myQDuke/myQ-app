@@ -13,13 +13,14 @@ namespace MedConnect.NewViews
         MainViewModel _mainViewModel; 
 		MasterPage mp;
 
-		StackLayout loginView;
-		StackLayout loginForm;
+        private StackLayout loginForm;
+
+        private StackLayout loginView;
 
         public LoginPage()
         {
             _mainViewModel = new MainViewModel();
-			mp = new MasterPage(_mainViewModel);
+            mp = new MasterPage(_mainViewModel);
 
             var image = new Image
             {
@@ -59,31 +60,32 @@ namespace MedConnect.NewViews
 				Children = { usernameEntry, passwordEntry, loginButton, signupButton }
 			};
 
-			loginView = loginForm;
+			Content = new ScrollView {
+				Content = new StackLayout
+	            {
+	                Children = { image, loginForm },
+	                Padding = new Thickness(40, 40, 40, 20),
+	                Spacing = 20,
+	                BackgroundColor = Color.FromHex("#FFFFFF")
+	            }
+			};
 
-            Content = new StackLayout
-            {
-				Children = { image, loginView },
-                Padding = new Thickness(40, 40, 40, 20),
-                Spacing = 20,
-                BackgroundColor = Color.FromHex("#FFFFFF")
-            };
+            loginView = (StackLayout)((ScrollView)Content).Content;
 
             loginButton.Clicked += (sender, args) =>
             {
-				loginView = new StackLayout {
-					Children = { 
-						new ActivityIndicator {
-							IsRunning = true
-						}
-					}
-				};
+                setLoginForm(
+                    new ActivityIndicator
+                    {
+                        IsRunning = true
+                    }
+                );
 
                 string username = usernameEntry.Text;
                 string password = passwordEntry.Text; 
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 {
-					//toShow = loginContent;
+					setLoginForm();
                     DisplayAlert("Error", "Invalid username or password", "OK");
                 }
                 else
@@ -98,6 +100,15 @@ namespace MedConnect.NewViews
             };
         }
 
+        private void setLoginForm(View view = null)
+        {
+            if (view == null)
+            {
+                view = loginForm;
+            }
+            loginView.Children[1] = view;
+        }
+
 		private async void HandleLogin(String username, String password) 
         {
 			mp.Master = mp.getMasterContentPage();
@@ -107,9 +118,11 @@ namespace MedConnect.NewViews
 				//System.Diagnostics.Debug.WriteLine (mp.MainView.User);
 				await Navigation.PushModalAsync(mp);
 				mp.MainView.getLibraryQuestions ();
+                setLoginForm();
 			}
             else
             {
+                setLoginForm();
 				//System.Diagnostics.Debug.WriteLine ("fag muffin to the rescue");
                 await DisplayAlert("Error", "Invalid username or password", "OK");
             }

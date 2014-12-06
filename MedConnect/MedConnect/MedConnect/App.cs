@@ -12,7 +12,6 @@ namespace MedConnect
         public static Page GetMainPage()
         {
             var loginPage = new LoginPage();
-
             return loginPage;
         }
     }

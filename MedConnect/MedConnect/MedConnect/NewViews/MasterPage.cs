@@ -35,6 +35,11 @@ namespace MedConnect.NewViews
         public ContentPage getMasterContentPage()
         {
 
+            var aboutPageButton = new Button
+            {
+                Text = "About"
+            };
+
             var homePageButton = new Button
             {
                 Text = "Home"
@@ -60,6 +65,11 @@ namespace MedConnect.NewViews
                 Text = "My Settings"
             };
 
+            var helpPageButton = new Button
+            {
+                Text = "Help"
+            };
+
             var logoutButton = new Button
             {
                 Text = "Logout"
@@ -72,13 +82,19 @@ namespace MedConnect.NewViews
                 Content = new StackLayout
                 {
                     Padding = new Thickness(5, 50),
-                    Children = { homePageButton, discoverPageButton, libraryPageButton, visitsPageButton, settingsPageButton, logoutButton }
+                    Children = { homePageButton, aboutPageButton, discoverPageButton, libraryPageButton, visitsPageButton, settingsPageButton, helpPageButton, logoutButton }
                 }
             };
 
             homePageButton.Clicked += (sender, args) =>
             {
                 Detail = new NavigationPage(new LandingPage(this));
+                IsPresented = false;
+            };
+
+            aboutPageButton.Clicked += (sender, args) =>
+            {
+                Detail = new NavigationPage(new AboutPage());
                 IsPresented = false;
             };
 
@@ -103,6 +119,13 @@ namespace MedConnect.NewViews
             settingsPageButton.Clicked += (sender, args) =>
             {
 
+            };
+
+
+            helpPageButton.Clicked += (sender, args) =>
+            {
+                Detail = new NavigationPage(new TutorialPage());
+                IsPresented = false; 
             };
 
             logoutButton.Clicked += (sender, args) =>
