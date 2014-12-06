@@ -39,7 +39,7 @@ namespace MedConnect.NewViews
             mostHelpfulTapRecognizer.Tapped += (s, e) =>
             {
                 _masterPage.Master = _masterPage.getMasterContentPage();
-                _masterPage.Detail = new LibraryPage(_masterPage);
+                _masterPage.Detail = new MostHelpfulPage(_masterPage);
             };
             mostHelpfulEntry.GestureRecognizers.Add(mostHelpfulTapRecognizer);
 
@@ -47,7 +47,7 @@ namespace MedConnect.NewViews
             recentlyAddedTapRecognizer.Tapped += (s, e) =>
             {
                 _masterPage.Master = _masterPage.getMasterContentPage();
-                _masterPage.Detail = new VisitsPage(_masterPage);
+                _masterPage.Detail = new RecentlyUpdatedPage(_masterPage);
             };
             recentlyAddedEntry.GestureRecognizers.Add(recentlyAddedTapRecognizer);
 
