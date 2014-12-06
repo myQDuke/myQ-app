@@ -47,7 +47,7 @@ namespace MedConnect.NewViews
             recentlyAddedTapRecognizer.Tapped += (s, e) =>
             {
                 _masterPage.Master = _masterPage.getMasterContentPage();
-                _masterPage.Detail = new RecentlyUpdatedPage(_masterPage);
+                _masterPage.Detail = new RecentlyAddedPage(_masterPage);
             };
             recentlyAddedEntry.GestureRecognizers.Add(recentlyAddedTapRecognizer);
 
