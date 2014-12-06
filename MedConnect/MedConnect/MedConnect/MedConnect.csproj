@@ -40,6 +40,7 @@
     <Compile Include="Models\QuestionTag.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="NewViews\AboutPage.cs" />
     <Compile Include="NewViews\BrowsePage.cs" />
     <Compile Include="NewViews\HeaderElement.cs" />
     <Compile Include="NewViews\LandingPage.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="NewViews\SearchPage.cs" />
     <Compile Include="NewViews\SignupPage.cs" />
     <Compile Include="NewViews\TabsHeader.cs" />
+    <Compile Include="NewViews\TutorialPage.cs" />
     <Compile Include="NewViews\Visits\BrowseVisits.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
