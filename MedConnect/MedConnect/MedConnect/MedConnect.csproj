@@ -49,6 +49,7 @@
     <Compile Include="NewViews\MenuPage.cs" />
     <Compile Include="NewViews\RecommendedPage.cs" />
     <Compile Include="NewViews\SearchPage.cs" />
+    <Compile Include="NewViews\SettingsPage.cs" />
     <Compile Include="NewViews\SignupPage.cs" />
     <Compile Include="NewViews\TabsHeader.cs" />
     <Compile Include="NewViews\TutorialPage.cs" />

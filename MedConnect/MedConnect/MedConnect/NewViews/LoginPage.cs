@@ -8,6 +8,10 @@ using MedConnect.ViewModels;
 
 namespace MedConnect.NewViews
 {
+    /*
+     * The LoginPage allows users to login to the app if they already have an account
+     * If not, users can use the page to access the SignupPage, which is used to create a new account 
+     */
     public class LoginPage : ContentPage 
     {
         MainViewModel _mainViewModel; 

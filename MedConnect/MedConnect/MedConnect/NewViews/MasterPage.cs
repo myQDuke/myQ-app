@@ -13,6 +13,11 @@ using System.Linq.Expressions;
 
 namespace MedConnect.NewViews
 {
+    /*
+     * The MasterPage allows for users to navigate between the different views through the main menu button 
+     * The MasterPage controls the navigation of pages; each page that is displayed on screen is a DetailPage 
+     * The MasterPage must hold an instance of the MainViewModel to pass to the detail pages 
+     */
     public class MasterPage : MasterDetailPage
     {
         MainViewModel _mainViewModel; 
@@ -118,9 +123,9 @@ namespace MedConnect.NewViews
 
             settingsPageButton.Clicked += (sender, args) =>
             {
-
+                Detail = new NavigationPage(new SettingsPage(this));
+                IsPresented = false; 
             };
-
 
             helpPageButton.Clicked += (sender, args) =>
             {

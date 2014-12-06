@@ -9,6 +9,10 @@ using MedConnect.ViewModels;
 
 namespace MedConnect.NewViews
 {
+    /*
+     * The RecommendPage contains questions drawn from the database that are recommended for the specific user
+     * Questions are selected from the DB based on the user's profile (gender, cancer type, age range, etc.) 
+     */
     public class RecommendedPage : ContentPage 
     {
         MasterPage _masterPage;

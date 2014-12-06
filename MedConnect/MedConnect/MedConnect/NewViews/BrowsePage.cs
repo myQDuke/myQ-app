@@ -11,6 +11,11 @@ namespace MedConnect.NewViews
     {
         MasterPage _masterPage; 
 
+        /* 
+         * The BrowsePage allows users to look at different lists of questions.
+         * Lists include Most Popular, Most Helpful, and Recently Added 
+         * Each list is encapsulated as a LandingCell that takes the user to a separate page 
+         */
         public BrowsePage(MasterPage masterPage)
         {
 			Title = "Browse";
