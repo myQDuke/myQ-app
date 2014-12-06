@@ -27,6 +27,30 @@ namespace MedConnect.NewViews
             var mostHelpfulEntry = new LandingCell("Most Helpful", "Save questions to your library", "icon_brightness.png", "#9ee4e7");
             var recentlyAddedEntry = new LandingCell("Recently Added", "Organize your saved questions", "icon_upload.png", "#9ee4e7");
 
+            var mostPopularTapRecognizer = new TapGestureRecognizer();
+            mostPopularTapRecognizer.Tapped += (s, e) =>
+            {
+                _masterPage.Master = _masterPage.getMasterContentPage();
+                _masterPage.Detail = new MostPopularPage(_masterPage);
+            };
+            mostPopularEntry.GestureRecognizers.Add(mostPopularTapRecognizer);
+
+            var mostHelpfulTapRecognizer = new TapGestureRecognizer();
+            mostHelpfulTapRecognizer.Tapped += (s, e) =>
+            {
+                _masterPage.Master = _masterPage.getMasterContentPage();
+                _masterPage.Detail = new LibraryPage(_masterPage);
+            };
+            mostHelpfulEntry.GestureRecognizers.Add(mostHelpfulTapRecognizer);
+
+            var recentlyAddedTapRecognizer = new TapGestureRecognizer();
+            recentlyAddedTapRecognizer.Tapped += (s, e) =>
+            {
+                _masterPage.Master = _masterPage.getMasterContentPage();
+                _masterPage.Detail = new VisitsPage(_masterPage);
+            };
+            recentlyAddedEntry.GestureRecognizers.Add(recentlyAddedTapRecognizer);
+
             Content = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
