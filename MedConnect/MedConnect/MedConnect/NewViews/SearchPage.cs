@@ -9,6 +9,9 @@ using Xamarin.Forms;
 
 namespace MedConnect.NewViews
 {
+    /* 
+     * The SearchPage 
+     */
     public class SearchPage : ContentPage
     {
         MasterPage _masterPage; 
