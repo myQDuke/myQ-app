@@ -19,11 +19,12 @@ namespace MedConnect.NewViews
             Title = "Most Helpful Questions";
             BackgroundColor = Color.FromHex("#C1C1C1");
 
+            _masterPage.MainView.getSortedQuestions("helpful");
             this.BindingContext = _masterPage.MainView;
 
             var listView = new ListView();
             listView.HasUnevenRows = true;
-            //listView.SetBinding(ListView.ItemsSourceProperty, new Binding("RecommendedQuestions"));
+            listView.SetBinding(ListView.ItemsSourceProperty, new Binding("RecommendedQuestions"));
             listView.ItemTemplate = new DataTemplate(typeof(QuestionCell));
             listView.ItemTapped += (sender, args) =>
             {

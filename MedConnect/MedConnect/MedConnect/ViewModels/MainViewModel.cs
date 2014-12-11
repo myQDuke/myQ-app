@@ -89,7 +89,7 @@ namespace MedConnect.ViewModels
 				_libraryQuestions = User.Questions; 
 			}
 			_webService.setSession (User.session);
-			getSortedQuestions ("popular");
+			//getSortedQuestions ("popular");
 			return User;
         }
 
