@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedConnect", "MedConnect\MedConnect\MedConnect.csproj", "{3BD304DE-6515-4C64-BAD0-66676AFCE299}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myQ", "MedConnect\MedConnect\myQ.csproj", "{3BD304DE-6515-4C64-BAD0-66676AFCE299}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedConnect.Android", "MedConnect\MedConnect.Android\MedConnect.Android.csproj", "{9BC36EB2-AE84-4BED-BA86-1C2C9DC622E9}"
 EndProject

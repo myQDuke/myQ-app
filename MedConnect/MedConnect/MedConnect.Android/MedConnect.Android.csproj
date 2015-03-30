@@ -112,9 +112,9 @@
     <AndroidResource Include="Resources\Drawable\add_question.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MedConnect\MedConnect.csproj">
+    <ProjectReference Include="..\MedConnect\myQ.csproj">
       <Project>{3BD304DE-6515-4C64-BAD0-66676AFCE299}</Project>
-      <Name>MedConnect</Name>
+      <Name>myQ</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
