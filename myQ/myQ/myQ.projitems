@@ -10,5 +10,56 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)myQ.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Basket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Category.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Question.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\QuestionTag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Rating.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Session.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Tag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Visit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\AboutPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\BrowsePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\HeaderElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\LandingPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\LoginPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\MasterPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\MostHelpfulPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\MostPopularPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\RecentlyAddedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\RecommendedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\SearchPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\SettingsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\SignupPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\TabsHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\TutorialPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Cells\LandingCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Cells\LibraryCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Cells\QuestionCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Cells\VisitCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Library\AddQuestionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Library\EditQuestionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Library\LibraryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Visits\AddVisitQuestion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Visits\BrowseVisits.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Visits\EditVisitQuestionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Visits\VisitQuestionsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Visits\VisitsFooter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NewViews\Visits\VisitsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\TagTranslator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\WebService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LibraryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SearchViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VisitsViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)NewViews\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utilities\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
   </ItemGroup>
 </Project>
