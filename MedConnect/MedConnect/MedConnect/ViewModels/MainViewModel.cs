@@ -87,8 +87,9 @@ namespace MedConnect.ViewModels
 			User = responseUser;
 			if (User != null) {
 				_libraryQuestions = User.Questions; 
+				_webService.setSession (User.session);
 			}
-			_webService.setSession (User.session);
+
 			//getSortedQuestions ("popular");
 			return User;
         }

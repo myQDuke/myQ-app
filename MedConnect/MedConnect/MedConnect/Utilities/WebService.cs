@@ -59,7 +59,6 @@ namespace MedConnect.Utilies
 			//System.Diagnostics.Debug.WriteLine(response.Content.username);
 
 			return response.Content;
-
 		}
 		public async Task<User> createUser(string username, string password, string email)
 		{
